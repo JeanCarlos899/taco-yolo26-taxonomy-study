@@ -50,3 +50,5 @@ presentation/*.out
 presentation/*.snm
 presentation/*.toc
 presentation/*.synctex.gz
+presentation/main.pdf
+presentation/compile-pass*.txt

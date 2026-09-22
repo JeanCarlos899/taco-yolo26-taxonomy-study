@@ -1,19 +1,12 @@
 {
-  "image_id": 99,
-  "file_name": "batch_1/000128.JPG",
-  "instances": 13,
-  "fine_classes": 10,
+  "image_id": 852,
+  "file_name": "batch_3/IMG_4939.JPG",
+  "instances": 3,
+  "fine_classes": 3,
   "classes": [
-    "Aluminium foil",
-    "Other plastic bottle",
-    "Plastic bottle cap",
-    "Food Can",
-    "Drink can",
-    "Toilet tube",
-    "Other carton",
-    "Drink carton",
-    "Plastic film",
-    "Pop tab"
+    "Paper cup",
+    "Plastic lid",
+    "Paper bag"
   ],
   "note": "Segmentation polygons and bounding boxes are read from data/annotations.json and scaled to the downloaded image resolution."
 }

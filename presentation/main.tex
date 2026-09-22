@@ -141,19 +141,19 @@
 
 % 4
 \begin{frame}{Como o TACO representa cada objeto}
-  \vspace{0.05cm}
+  \vspace{0.01cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.205\textwidth}
       \centering{\color{ufpidark}\bfseries Imagem original}\par\vspace{0.10cm}
-      \includegraphics[height=3.65cm,width=\linewidth,keepaspectratio]{assets/taco_original_example.png}
+      \includegraphics[height=3.58cm,width=\linewidth,keepaspectratio]{assets/taco_original_example.png}
     \end{column}
     \begin{column}{0.205\textwidth}
       \centering{\color{ufpidark}\bfseries Segmentação Fine}\par\vspace{0.10cm}
-      \includegraphics[height=3.65cm,width=\linewidth,keepaspectratio]{assets/taco_segmentation_example.png}
+      \includegraphics[height=3.58cm,width=\linewidth,keepaspectratio]{assets/taco_segmentation_example.png}
     \end{column}
     \begin{column}{0.205\textwidth}
       \centering{\color{ufpidark}\bfseries Caixas COCO}\par\vspace{0.10cm}
-      \includegraphics[height=3.65cm,width=\linewidth,keepaspectratio]{assets/taco_bbox_example.png}
+      \includegraphics[height=3.58cm,width=\linewidth,keepaspectratio]{assets/taco_bbox_example.png}
     \end{column}
     \begin{column}{0.31\textwidth}
       {\fontsize{14}{17}\selectfont\bfseries O JSON fornece}\par
@@ -163,31 +163,32 @@
       {\color{ufpidark}\fontsize{13}{16}\selectfont\bfseries Remapeamento}\par
       \vspace{0.06cm}
       {\fontsize{10.5}{13}\selectfont
-      Drink can $\rightarrow$ Metal $\rightarrow$ Litter}
+      Paper cup $\rightarrow$ Paper/Cardboard $\rightarrow$ Litter\\[0.06cm]
+      Plastic lid $\rightarrow$ Plastic $\rightarrow$ Litter}
       \vspace{0.18cm}
 
-      {\color{muted}\fontsize{9.5}{12}\selectfont 13 objetos e 10 classes Fine. O YOLO utiliza as caixas; as máscaras documentam a anotação original.}
+      {\color{muted}\fontsize{9.5}{12}\selectfont 3 objetos e 3 classes Fine. O YOLO utiliza as caixas; as máscaras documentam a anotação original.}
     \end{column}
   \end{columns}
 \end{frame}
 
 % 5
 \begin{frame}{Desenho experimental controlado}
-  \vspace{-0.05cm}
-  \includegraphics[height=3.45cm,width=\textwidth,keepaspectratio]{../paper/figures/methodology_pipeline.pdf}
-  \vspace{0.05cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.31\textwidth}
-      {\color{ufpidark}\bfseries Mesma base}\par
-      1.050 treino, 225 validação e 225 teste.
+  \vspace{-0.10cm}
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.72\textwidth}
+      \centering
+      \includegraphics[height=5.05cm,width=\linewidth,keepaspectratio]{../paper/figures/methodology_pipeline.pdf}
     \end{column}
-    \begin{column}{0.31\textwidth}
-      {\color{ufpidark}\bfseries Mesmo detector}\par
-      YOLO26n, entrada 640, lote 24, até 60 épocas.
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      {\color{ufpidark}\bfseries Três repetições}\par
-      Sementes 42, 123 e 2026.
+    \begin{column}{0.25\textwidth}
+      {\color{ufpidark}\bfseries Partição fixa}\par
+      \vspace{0.06cm}{\fontsize{11}{13}\selectfont 1.050 treino\\225 validação\\225 teste}\par
+      \vspace{0.28cm}
+      {\color{ufpidark}\bfseries YOLO26n}\par
+      \vspace{0.06cm}{\fontsize{11}{13}\selectfont Entrada 640\\Lote 24\\Até 60 épocas}\par
+      \vspace{0.28cm}
+      {\color{ufpidark}\bfseries Sementes}\par
+      \vspace{0.06cm}{\fontsize{11}{13}\selectfont 42, 123 e 2026}
     \end{column}
   \end{columns}
 \end{frame}
@@ -321,23 +322,29 @@
 
 % 10
 \begin{frame}{Os erros semânticos não explicam tudo}
-  \begin{columns}[c,onlytextwidth]
-    \begin{column}{0.43\textwidth}
-      \bigmetric{56,95\%}{dos casamentos espaciais recebem classe Fine incorreta}
-      \vspace{0.75cm}
-      \bigmetric{63,5\%}{dos 637 objetos de teste são omitidos}
+  \vspace{0.20cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      {\fontsize{17}{21}\selectfont\bfseries Entre detecções localizadas}\par
+      \vspace{0.30cm}
+      {\color{ufpidark}\fontsize{28}{31}\selectfont\bfseries 56,95\%}\par
+      \vspace{0.06cm}
+      {\fontsize{12.5}{15}\selectfont classe Fine incorreta}\par
+      \vspace{0.22cm}
+      {\color{muted}\fontsize{11}{14}\selectfont $132{,}3$ confusões em $232{,}3$ casamentos espaciais, em média.}
     \end{column}
-    \begin{column}{0.53\textwidth}
-      {\fontsize{18}{23}\selectfont\bfseries Duas limitações coexistem}\par
-      \vspace{0.28cm}
-      \begin{itemize}
-        \item confusão entre rótulos visualmente próximos
-        \item cobertura espacial insuficiente, sobretudo por omissões
-      \end{itemize}
-      \vspace{0.25cm}
-      {\color{muted}\fontsize{11.5}{14}\selectfont Média de três sementes, confiança 0,25 e IoU $\geq 0{,}5$ para casamentos espaciais.}
+    \begin{column}{0.47\textwidth}
+      {\fontsize{17}{21}\selectfont\bfseries Entre objetos anotados}\par
+      \vspace{0.30cm}
+      {\color{ufpidark}\fontsize{28}{31}\selectfont\bfseries 63,5\%}\par
+      \vspace{0.06cm}
+      {\fontsize{12.5}{15}\selectfont objetos omitidos}\par
+      \vspace{0.22cm}
+      {\color{muted}\fontsize{11}{14}\selectfont $404{,}7$ omissões entre os 637 objetos do teste, em média.}
     \end{column}
   \end{columns}
+  \vspace{0.45cm}
+  {\color{muted}\fontsize{10.5}{13}\selectfont Médias de três sementes, confiança 0,25. Casamento espacial definido por IoU $\geq 0{,}5$. As porcentagens têm denominadores diferentes.}
 \end{frame}
 
 % 11

@@ -9,7 +9,7 @@ from PIL import Image, ImageColor, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 ANNOTATIONS = ROOT / "data" / "annotations.json"
 OUTPUT = ROOT / "presentation" / "assets"
-IMAGE_ID = 99
+IMAGE_ID = 852
 
 PALETTE = [
     "#006633", "#d95f02", "#3561a7", "#8e44ad", "#c0392b",
@@ -87,7 +87,9 @@ def main() -> None:
         y, height = y * scale_y, height * scale_y
         boxes_draw.rectangle((x, y, x + width, y + height), outline=color, width=4)
         if row["id"] in label_ids:
-            label(boxes_draw, (x + 3, max(2, y + 3)), categories[row["category_id"]], color)
+            class_name = categories[row["category_id"]]
+            label_y = y + height - 21 if class_name == "Paper cup" else max(2, y + 3)
+            label(boxes_draw, (x + 3, label_y), class_name, color)
     boxes.save(OUTPUT / "taco_bbox_example.png", optimize=True)
 
     manifest = {
