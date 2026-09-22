@@ -9,6 +9,7 @@
     "error_decomposition_multiseed": true,
     "tex_factual_fragments": true,
     "author_and_affiliation": true,
+    "impersonal_academic_style": true,
     "required_figures": true
   }
 }

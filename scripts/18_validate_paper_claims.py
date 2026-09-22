@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -94,6 +95,16 @@ def main() -> None:
     require("email@exemplo.com" not in corpus and "Nome do(a) Autor(a)" not in corpus,
             "Placeholder identity remains in the paper.")
 
+    first_person_pattern = re.compile(
+        r"\b(?:nós|nosso|nossa|nossos|nossas|usamos|mantemos|derivamos|treinamos|"
+        r"aplicamos|reportamos|fizemos|orientamos|contamos|selecionamos|empregamos|"
+        r"fixamos|medimos|alteramos|investigamos|confirmamos|reutilizamos|avaliamos|"
+        r"comparamos|definimos|mostramos|propomos|adotamos)\b",
+        flags=re.IGNORECASE,
+    )
+    require(first_person_pattern.search(corpus) is None,
+            "First-person authorial language remains in the paper.")
+
     required_assets = ["methodology_pipeline.pdf", "class_rank_distribution.pdf",
                        "taxonomy_and_hierarchy.pdf", "qualitative_analysis.pdf",
                        "model_level_examples.pdf"]
@@ -110,6 +121,7 @@ def main() -> None:
             "error_decomposition_multiseed": True,
             "tex_factual_fragments": True,
             "author_and_affiliation": True,
+            "impersonal_academic_style": True,
             "required_figures": True,
         },
     }

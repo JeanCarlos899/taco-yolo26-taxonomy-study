@@ -1,17 +1,17 @@
 \section{Metodologia}
 
-A Figura~\ref{fig:pipeline} sintetiza o desenho experimental. A partir de uma única versão auditada do TACO, mantemos a partição e as caixas constantes, derivamos três taxonomias, treinamos cada uma sob protocolo idêntico e aplicamos cinco análises complementares no mesmo conjunto de teste.
+A Figura~\ref{fig:pipeline} sintetiza o desenho experimental. A partir de uma única versão auditada do TACO, a partição e as caixas foram mantidas constantes, três taxonomias foram derivadas e treinadas sob protocolo idêntico, e cinco análises complementares foram aplicadas ao mesmo conjunto de teste.
 
 \begin{figure}[!t]
   \centering
   \includegraphics[width=.97\linewidth]{methodology_pipeline.pdf}
-  \caption{Pipeline experimental. Somente a taxonomia varia entre os três ramos de treinamento; imagens, caixas, partição, arquitetura e hiperparâmetros permanecem fixos.}
+  \caption{Fluxo experimental. Somente a taxonomia varia entre os três ramos de treinamento; imagens, caixas, partição, arquitetura e hiperparâmetros permanecem fixos.}
   \label{fig:pipeline}
 \end{figure}
 
 \subsection{Dados, auditoria e partição}
 
-Usamos exclusivamente o arquivo \path{data/annotations.json}, obtido do repositório oficial TACO \cite{proenca2020tacorepo}. As anotações seguem o formato COCO \cite{lin2014coco}; neste estudo, usamos somente \textit{bounding boxes}. A auditoria programática confirmou 1.500 imagens, 4.784 objetos, 60 categorias, nenhuma imagem vazia e nenhum arquivo ausente. Sete caixas excediam a borda em no máximo 1,32 pixel; elas foram recortadas apenas na conversão, mantendo o JSON oficial intacto e registrando cada alteração.
+Foi utilizado exclusivamente o arquivo \path{data/annotations.json}, obtido do repositório oficial TACO \cite{proenca2020tacorepo}. As anotações seguem o formato COCO \cite{lin2014coco}; somente as caixas delimitadoras (\textit{bounding boxes}) foram consideradas. A auditoria programática confirmou 1.500 imagens, 4.784 objetos, 60 categorias, nenhuma imagem vazia e nenhum arquivo ausente. Sete caixas excediam a borda em no máximo 1,32 pixel; o recorte foi efetuado apenas durante a conversão, preservando-se o JSON oficial e registrando-se cada alteração.
 
 A partição foi sorteada uma vez por imagem com semente 42: treino, validação e teste receberam, respectivamente, 1.050/225/225 imagens e 3.359/788/637 objetos. As três taxonomias reutilizam exatamente essa partição. As coordenadas COCO $(x,y,w,h)$ foram convertidas para centro, largura e altura normalizados do YOLO; scripts verificaram limites, dimensões positivas, IDs e igualdade das partições. Imagens com orientação EXIF foram transpostas fisicamente antes da conversão.
 
@@ -24,22 +24,22 @@ A partição foi sorteada uma vez por imagem com semente 42: treino, validação
 
 \subsection{Taxonomias}
 
-Fine preserva as 60 categorias oficiais. Material remapeia todas elas para Plastic (24 categorias de origem), Metal (9), Glass (4), Paper/Cardboard (13), Organic (1) e Other (9). Compostos ou itens sem associação natural, como bateria, sapato e embalagens multicamadas, foram enviados a Other; cada decisão e sua justificativa estão em \path{configs/material_mapping.json}. Binary atribui \textit{Litter} a todas as instâncias. As caixas não mudam entre versões. A Figura~\ref{fig:distribution} evidencia a cauda longa que motiva os agrupamentos.
+Fine preserva as 60 categorias oficiais. Material remapeia todas elas para Plastic (24 categorias de origem), Metal (9), Glass (4), Paper/Cardboard (13), Organic (1) e Other (9). Compostos ou itens sem associação natural, como bateria, sapato e embalagens multicamadas, foram atribuídos a Other; cada decisão e sua justificativa estão em \path{configs/material_mapping.json}. Binary atribui \textit{Litter} a todas as instâncias. As caixas permanecem inalteradas entre as versões. A Figura~\ref{fig:distribution} evidencia a cauda longa que motiva os agrupamentos.
 
 \subsection{Modelo e protocolo experimental}
 
-Treinamos YOLO26n inicializado com pesos COCO, entrada $640\times640$, lote 24, até 60 épocas, \textit{early stopping} com paciência 15, AdamW \cite{loshchilov2019adamw} e taxa inicial $10^{-3}$. Foram mantidas as transformações padrão da implementação Ultralytics, precisão mista e determinismo. Todos os experimentos usaram Python 3.12.10, PyTorch 2.8.0+cu128 e Ultralytics 8.4.157 em uma RTX 3060 Laptop de 6~GB. As sementes 42, 123 e 2026 foram aplicadas às três taxonomias; não houve ajuste específico por configuração.
+O YOLO26n foi inicializado com pesos COCO e treinado com entrada $640\times640$, lote 24, até 60 épocas, parada antecipada (\textit{early stopping}) com paciência 15, AdamW \cite{loshchilov2019adamw} e taxa inicial $10^{-3}$. Foram mantidas as transformações padrão da implementação Ultralytics, a precisão mista e a execução determinística. Os experimentos utilizaram Python 3.12.10, PyTorch 2.8.0+cu128 e Ultralytics 8.4.157 em uma RTX 3060 Laptop de 6~GB. As sementes 42, 123 e 2026 foram aplicadas às três taxonomias, sem ajuste específico por configuração.
 
 \subsection{Avaliação e incerteza}
 
-No teste fixo, reportamos precisão, revocação, $F_1$, AP$_{50}$ e AP$_{50:95}$ da implementação Ultralytics; esta última média usa IoU de 0,50 a 0,95 em passos de 0,05. A Tabela principal apresenta média e desvio-padrão entre sementes.
+No teste fixo, são reportadas precisão, revocação, $F_1$, AP$_{50}$ e AP$_{50:95}$ da implementação Ultralytics; esta última métrica utiliza IoU de 0,50 a 0,95 em incrementos de 0,05. A tabela principal apresenta média e desvio-padrão entre sementes.
 
-Para uma caixa predita $B$ e uma verdade-terreno $G$, definimos a sobreposição por
+Para uma caixa predita $B$ e uma verdade-terreno $G$, a sobreposição é definida por
 \begin{equation}
   \operatorname{IoU}(B,G)=\frac{|B\cap G|}{|B\cup G|}.
   \label{eq:iou}
 \end{equation}
-Em cada limiar $\tau$, o AP é a média da precisão interpolada em 101 níveis de recall. A métrica mais estrita agrega dez limiares:
+Em cada limiar $\tau$, o AP é a média da precisão interpolada em 101 níveis de revocação. A métrica mais estrita agrega dez limiares:
 \begin{equation}
   \operatorname{AP}_{50:95}=\frac{1}{10}\sum_{k=0}^{9}
   \operatorname{AP}_{0{,}50+0{,}05k}.
@@ -54,10 +54,10 @@ Para decompor o erro, um avaliador controlado faz casamento guloso um-para-um em
 \end{equation}
 preservando geometria e confiança. Como o número de classes e a macro-média também mudam, o ganho hierárquico combina o crédito recuperado por confusões colapsadas com o efeito da agregação de categorias. Esta implementação não é numericamente idêntica ao avaliador nativo; seus valores são comparados apenas entre si.
 
-Aplicamos bootstrap percentil pareado \cite{efron1993bootstrap} para obter ICs de 95\%. Em cada réplica $b$, reamostramos com reposição as 225 imagens e calculamos
+Foi aplicado bootstrap percentil pareado \cite{efron1993bootstrap} para a obtenção de ICs de 95\%. Em cada réplica $b$, as 225 imagens são reamostradas com reposição e calcula-se
 \begin{equation}
   \Delta^{(b)}=M_A(\mathcal{I}^{(b)})-M_B(\mathcal{I}^{(b)}),\quad
   IC_{95\%}=[Q_{0{,}025}(\Delta),Q_{0{,}975}(\Delta)].
   \label{eq:bootstrap}
 \end{equation}
-Fizemos 2.000 reamostragens para cada uma das três sementes, com os mesmos índices nos dois lados de cada comparação. Reportamos a média e o desvio-padrão das diferenças médias do bootstrap entre sementes. Para tornar a leitura uniforme, orientamos as diferenças de modo que valores positivos sempre favoreçam a taxonomia mais simples; também contamos em quantas sementes o IC exclui zero. O cálculo foi acelerado pré-computando os casamentos por classe e limiar de IoU; testes automatizados confirmaram equivalência numérica com o avaliador original a $10^{-12}$. Para a análise de cauda longa, $n$ é o número de instâncias de treino por classe: rara ($n\leq19$), média ($20\leq n\leq100$) e frequente ($n>100$). Esses cortes são estratos operacionais deste estudo, não uma definição universal de cauda longa. Métricas por classe incluem somente rótulos presentes no teste fixo.
+Foram realizadas 2.000 reamostragens para cada uma das três sementes, com índices idênticos nos dois termos de cada comparação. São apresentados a média e o desvio-padrão das diferenças médias do bootstrap entre sementes. Para uniformizar a interpretação, as diferenças foram orientadas de modo que valores positivos favoreçam a taxonomia mais simples; também se contabilizou o número de sementes cujo IC excluiu zero. O cálculo foi acelerado mediante pré-computação dos casamentos por classe e limiar de IoU; testes automatizados confirmaram equivalência numérica com o avaliador original a $10^{-12}$. Para a análise de cauda longa, $n$ corresponde ao número de instâncias de treino por classe: rara ($n\leq19$), média ($20\leq n\leq100$) e frequente ($n>100$). Esses cortes constituem estratos operacionais deste estudo, e não uma definição universal de cauda longa. As métricas por classe incluem somente rótulos presentes no teste fixo.

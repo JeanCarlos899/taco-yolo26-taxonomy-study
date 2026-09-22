@@ -15,7 +15,7 @@ O bootstrap separa média superior de evidência repetível. Embora Material ten
 
 \subsection{Localização versus semântica}
 
-A Tabela~\ref{tab:hierarchy} responde a uma pergunta diferente: o que acontece quando as \emph{mesmas} caixas e confianças produzidas pelo modelo Fine são julgadas com menos detalhe semântico? Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; ao ignorar classes, chegou a $0{,}466$. Como não há novo treinamento nesta análise, o ganho mostra quanto da penalização depende dos rótulos, embora a mudança da macro-média impeça interpretá-lo como contagem pura de erros semânticos. A Tabela~\ref{tab:bootstrap} informa se esse efeito se repete entre sementes.
+A Tabela~\ref{tab:hierarchy} quantifica a variação observada quando as \emph{mesmas} caixas e confianças produzidas pelo modelo Fine são avaliadas com menor granularidade semântica. Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; sem distinção entre classes, alcançou $0{,}466$. Como esta análise não envolve novo treinamento, o ganho estima a parcela da penalização associada aos rótulos, embora a alteração da macro-média impeça sua interpretação como contagem pura de erros semânticos. A Tabela~\ref{tab:bootstrap} apresenta a repetibilidade desse efeito entre sementes.
 
 \begin{table}[H]
   \centering
@@ -43,7 +43,7 @@ Cada célula da Tabela~\ref{tab:bootstrap} apresenta ganho médio $\pm$ desvio-p
 
 \subsection{Exemplos nos níveis Material e Binary}
 
-A Figura~\ref{fig:model-level} amplia a análise visual para os outros modelos. Em (a), o modelo Material localiza e classifica corretamente um filme plástico. Os painéis (b) e (c) usam a mesma garrafa: o modelo Material preserva a localização, mas prevê Paper/Cardboard em vez de Plastic, enquanto o modelo Binary a reconhece como \textit{Litter}. Esse par mostra, em uma entrada controlada, como remover a exigência de material pode recuperar um acerto. O painel (d) estabelece o limite dessa simplificação: mesmo sem precisar distinguir materiais, o modelo Binary omite um pneu grande no limiar de confiança 0,25. Logo, reduzir a taxonomia elimina certos erros semânticos, mas não garante cobertura espacial.
+A Figura~\ref{fig:model-level} amplia a análise visual para os demais modelos. Em (a), o modelo Material localiza e classifica corretamente um filme plástico. Os painéis (b) e (c) utilizam a mesma garrafa: o modelo Material preserva a localização, mas prediz Paper/Cardboard em vez de Plastic, enquanto o modelo Binary a identifica como \textit{Litter}. A comparação evidencia que a remoção da exigência de material pode converter uma confusão semântica em detecção correta. O painel (d) delimita esse efeito: apesar da ausência de distinção entre materiais, o modelo Binary omite um pneu de grandes dimensões no limiar de confiança 0,25. A redução da granularidade elimina determinados erros semânticos, mas não assegura cobertura espacial.
 
 \begin{figure}[H]
   \centering
@@ -54,7 +54,7 @@ A Figura~\ref{fig:model-level} amplia a análise visual para os outros modelos. 
 
 \subsection{Cauda longa e tipos de erro}
 
-A Tabela~\ref{tab:tail} mostra crescimento monotônico com a frequência. Entre as classes presentes no teste, as raras obtiveram AP$_{50}=0{,}046$ e recall $0{,}053$, enquanto as frequentes atingiram 0,207 e 0,282. Logo, a dificuldade Fine não se distribui uniformemente entre rótulos.
+A Tabela~\ref{tab:tail} apresenta crescimento monotônico do desempenho com a frequência. Entre as classes presentes no teste, as raras obtiveram AP$_{50}=0{,}046$ e revocação $0{,}053$, enquanto as frequentes atingiram 0,207 e 0,282. Esse resultado indica que a dificuldade da taxonomia Fine não se distribui uniformemente entre os rótulos.
 
 \begin{table}[H]
   \centering
