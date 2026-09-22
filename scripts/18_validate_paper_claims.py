@@ -79,7 +79,9 @@ def main() -> None:
     required_fragments = ["1.500 imagens", "4.784 objetos", "1.050/225/225", "3.359/788/637",
                           "0,146", "0,183", "0,567", "0{,}103", "0{,}171", "0{,}466",
                           "2.000 reamostragens", "56{,}95", "404{,}7", "63{,}5",
-                          "Fine como Material", "Fine como Binary", "1/3", "2/3", "3/3"]
+                          "Fine como Material", "Fine como Binary", "1/3", "2/3", "3/3",
+                          "poucas classes de ``cabeça''", "muitas classes da ``cauda''",
+                          "estratos operacionais deste estudo"]
     missing = [item for item in required_fragments if item not in corpus]
     require(not missing, f"Expected factual fragments missing from TeX: {missing}")
 
