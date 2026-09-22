@@ -1,0 +1,12 @@
+{
+  "thresholds": {
+    "rare_max": 19,
+    "medium_max": 100
+  },
+  "basis": "training instances only",
+  "definitions": {
+    "Rare": "<= 19",
+    "Medium": "20..100",
+    "Frequent": "> 100"
+  }
+}

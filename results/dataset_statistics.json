@@ -1,0 +1,109 @@
+{
+  "num_images": 1500,
+  "num_objects": 4784,
+  "num_categories": 60,
+  "images_without_objects": 0,
+  "invalid_bounding_boxes": 7,
+  "missing_image_files": 0,
+  "missing_images": [],
+  "invalid_boxes": [
+    {
+      "annotation_id": 371,
+      "image_id": 109,
+      "file_name": "batch_10/000008.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        1003.0,
+        -1.0,
+        787.0,
+        411.0
+      ]
+    },
+    {
+      "annotation_id": 387,
+      "image_id": 112,
+      "file_name": "batch_10/000011.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        1408.0,
+        -1.0,
+        369.0,
+        471.0
+      ]
+    },
+    {
+      "annotation_id": 707,
+      "image_id": 209,
+      "file_name": "batch_11/000008.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        0.0,
+        -1.0,
+        1352.0,
+        2364.0
+      ]
+    },
+    {
+      "annotation_id": 859,
+      "image_id": 278,
+      "file_name": "batch_11/000077.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        -1.0,
+        366.0,
+        198.0,
+        307.0
+      ]
+    },
+    {
+      "annotation_id": 1621,
+      "image_id": 457,
+      "file_name": "batch_13/000056.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        799.0,
+        -1.0,
+        492.0,
+        484.0
+      ]
+    },
+    {
+      "annotation_id": 1777,
+      "image_id": 549,
+      "file_name": "batch_14/000048.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        171.03125,
+        -1.3166667,
+        518.35625,
+        413.4333367
+      ]
+    },
+    {
+      "annotation_id": 2186,
+      "image_id": 679,
+      "file_name": "batch_15/000078.jpg",
+      "reasons": [
+        "outside_image"
+      ],
+      "bbox": [
+        1311.0,
+        -0.5,
+        286.0,
+        589.0
+      ]
+    }
+  ]
+}

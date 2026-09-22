@@ -1,0 +1,40 @@
+{
+  "generator": "scripts/17_generate_paper_assets.py",
+  "inputs": [
+    {
+      "path": "configs/experiment.yaml",
+      "sha256": "897a13549a52bc2f283550e91cffffd0abe95557128d00a313373abe44cf583f",
+      "bytes": 311
+    },
+    {
+      "path": "configs/material_mapping.json",
+      "sha256": "ff808dcad6a58edf885721b8ac9b34e73c0777db56b94ce802157444db7adec1",
+      "bytes": 3686
+    },
+    {
+      "path": "splits/split.json",
+      "sha256": "45550de4921e9c3c6a04f4af2b8abbfd5d8940666fb1869616e20a7d0da4dd21",
+      "bytes": 41432
+    },
+    {
+      "path": "results/multiseed_raw.csv",
+      "sha256": "e13e3c6dbf524c8e33745b9cd0e431832fbbbaea5d2695996e070d34372b9b39",
+      "bytes": 1032
+    },
+    {
+      "path": "results/bootstrap_comparisons.csv",
+      "sha256": "7e651c559bb109f4e99687a2c08dc01ddca39a8e86627bf74191267305c599e0",
+      "bytes": 1101
+    },
+    {
+      "path": "results/fine_error_decomposition.csv",
+      "sha256": "301db08bd16b7262e1d53e2ee345313d5b320167827779713a7c06bec6c32db1",
+      "bytes": 169
+    },
+    {
+      "path": "results/class_distribution.csv",
+      "sha256": "1d47d1e97cda3afb2b1999d185da57de8f179399887fa00708873787ac0d0d61",
+      "bytes": 2001
+    }
+  ]
+}

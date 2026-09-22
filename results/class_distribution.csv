@@ -1,0 +1,61 @@
+class_id,class_name,train_instances,val_instances,test_instances,frequency_group
+0,Aluminium foil,38,17,7,Medium
+1,Battery,1,1,0,Rare
+2,Aluminium blister pack,5,1,0,Rare
+3,Carded blister pack,0,1,0,Rare
+4,Other plastic bottle,30,10,10,Medium
+5,Clear plastic bottle,199,56,30,Frequent
+6,Glass bottle,80,13,11,Medium
+7,Plastic bottle cap,141,39,29,Frequent
+8,Metal bottle cap,65,7,8,Medium
+9,Broken glass,134,0,4,Frequent
+10,Food Can,29,4,1,Medium
+11,Aerosol,8,2,0,Rare
+12,Drink can,157,48,24,Frequent
+13,Toilet tube,2,3,0,Rare
+14,Other carton,69,9,15,Medium
+15,Egg carton,8,2,1,Rare
+16,Drink carton,30,6,9,Medium
+17,Corrugated carton,41,10,13,Medium
+18,Meal carton,21,5,4,Medium
+19,Pizza box,2,1,0,Rare
+20,Paper cup,48,6,13,Medium
+21,Disposable plastic cup,66,19,19,Medium
+22,Foam cup,8,0,5,Rare
+23,Glass cup,4,1,1,Rare
+24,Other plastic cup,2,0,0,Rare
+25,Food waste,7,0,1,Rare
+26,Glass jar,6,0,0,Rare
+27,Plastic lid,51,12,14,Medium
+28,Metal lid,6,1,3,Rare
+29,Other plastic,185,28,60,Frequent
+30,Magazine paper,11,1,0,Rare
+31,Tissues,24,10,8,Medium
+32,Wrapping paper,9,1,2,Rare
+33,Normal paper,53,11,18,Medium
+34,Paper bag,16,6,5,Rare
+35,Plastified paper bag,0,0,0,Rare
+36,Plastic film,320,78,53,Frequent
+37,Six pack rings,1,1,3,Rare
+38,Garbage bag,20,4,7,Medium
+39,Other plastic wrapper,159,69,32,Frequent
+40,Single-use carrier bag,37,12,12,Medium
+41,Polypropylene bag,2,1,0,Rare
+42,Crisp packet,31,5,3,Medium
+43,Spread tub,5,3,1,Rare
+44,Tupperware,2,1,1,Rare
+45,Disposable food container,27,8,3,Medium
+46,Foam food container,10,2,3,Rare
+47,Other plastic container,6,0,0,Rare
+48,Plastic glooves,3,0,1,Rare
+49,Plastic utensils,27,8,2,Medium
+50,Pop tab,67,23,9,Medium
+51,Rope & strings,21,5,3,Medium
+52,Scrap metal,7,9,4,Rare
+53,Shoe,5,1,1,Rare
+54,Squeezable tube,5,1,1,Rare
+55,Plastic straw,122,20,15,Frequent
+56,Paper straw,2,1,1,Rare
+57,Styrofoam piece,90,12,10,Medium
+58,Unlabeled litter,346,95,76,Frequent
+59,Cigarette,488,98,81,Frequent

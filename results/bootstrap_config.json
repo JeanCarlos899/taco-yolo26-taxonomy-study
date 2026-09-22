@@ -1,0 +1,8 @@
+{
+  "method": "paired nonparametric percentile bootstrap by test image",
+  "iterations": 2000,
+  "confidence_level": 0.95,
+  "random_seed": 42,
+  "unit": "image",
+  "note": "All comparisons use the controlled evaluator and identical resampled image indices."
+}

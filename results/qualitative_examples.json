@@ -1,0 +1,27 @@
+[
+  {
+    "category": "correct_fine",
+    "image": "batch_6/000032.JPG",
+    "rendered_file": "figures/error_examples/correct_fine.jpg"
+  },
+  {
+    "category": "within_material_confusion",
+    "image": "batch_1/000050.jpg",
+    "rendered_file": "figures/error_examples/within_material_confusion.jpg"
+  },
+  {
+    "category": "cross_material_confusion",
+    "image": "batch_6/000017.JPG",
+    "rendered_file": "figures/error_examples/cross_material_confusion.jpg"
+  },
+  {
+    "category": "localization_failure",
+    "image": "batch_3/IMG_4915.JPG",
+    "rendered_file": "figures/error_examples/localization_failure.jpg"
+  },
+  {
+    "category": "missed_detection",
+    "image": "batch_1/000007.jpg",
+    "rendered_file": "figures/error_examples/missed_detection.jpg"
+  }
+]

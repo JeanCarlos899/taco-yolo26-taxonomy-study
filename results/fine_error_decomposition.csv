@@ -1,0 +1,7 @@
+category,count
+correct_fine,97
+within_material_confusion,51
+cross_material_confusion,73
+localization_failure,43
+background_false_positive,42
+missed_detection,416

@@ -1,0 +1,21 @@
+ground_truth,predicted,count
+Clear plastic bottle,Plastic film,4
+Disposable plastic cup,Clear plastic bottle,4
+Other carton,Drink can,3
+Disposable plastic cup,Plastic film,3
+Crisp packet,Other plastic wrapper,2
+Other carton,Other plastic wrapper,2
+Styrofoam piece,Plastic film,2
+Cigarette,Other plastic,2
+Clear plastic bottle,Glass bottle,2
+Normal paper,Other plastic,2
+Other plastic bottle,Other plastic wrapper,2
+Drink carton,Other plastic wrapper,2
+Unlabeled litter,Drink can,2
+Other plastic bottle,Drink can,2
+Glass bottle,Drink can,2
+Metal bottle cap,Plastic bottle cap,2
+Plastic bottle cap,Other plastic,2
+Plastic lid,Aluminium foil,2
+Single-use carrier bag,Plastic film,2
+Tissues,Plastic film,2

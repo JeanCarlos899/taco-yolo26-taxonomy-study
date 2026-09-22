@@ -1,0 +1,33 @@
+{
+  "dataset": {
+    "images": 1500,
+    "objects": 4784,
+    "fine_classes": 60,
+    "images_without_objects": 0,
+    "boxes_clipped_during_conversion": 7
+  },
+  "split_images": {
+    "train": 1050,
+    "val": 225,
+    "test": 225
+  },
+  "split_objects": {
+    "train": 3359,
+    "val": 788,
+    "test": 637
+  },
+  "material_macroclasses": {
+    "Plastic": 24,
+    "Metal": 9,
+    "Glass": 4,
+    "Paper/Cardboard": 13,
+    "Organic": 1,
+    "Other": 9
+  },
+  "binary_class": "Litter",
+  "seeds": [
+    42,
+    123,
+    2026
+  ]
+}

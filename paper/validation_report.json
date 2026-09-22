@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": {
+    "dataset_and_split": true,
+    "training_configuration": true,
+    "native_multiseed_metrics": true,
+    "hierarchical_multiseed_metrics": true,
+    "bootstrap_interpretation": true,
+    "error_decomposition": true,
+    "tex_factual_fragments": true,
+    "required_figures": true
+  }
+}

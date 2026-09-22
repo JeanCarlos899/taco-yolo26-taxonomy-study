@@ -1,0 +1,99 @@
+true_class,predicted_class,error_scope,count
+Clear plastic bottle,Plastic film,within_material_confusion,4
+Disposable plastic cup,Clear plastic bottle,within_material_confusion,4
+Other carton,Drink can,cross_material_confusion,3
+Disposable plastic cup,Plastic film,within_material_confusion,3
+Crisp packet,Other plastic wrapper,cross_material_confusion,2
+Other carton,Other plastic wrapper,cross_material_confusion,2
+Styrofoam piece,Plastic film,within_material_confusion,2
+Cigarette,Other plastic,cross_material_confusion,2
+Clear plastic bottle,Glass bottle,cross_material_confusion,2
+Normal paper,Other plastic,cross_material_confusion,2
+Other plastic bottle,Other plastic wrapper,within_material_confusion,2
+Drink carton,Other plastic wrapper,cross_material_confusion,2
+Unlabeled litter,Drink can,cross_material_confusion,2
+Other plastic bottle,Drink can,cross_material_confusion,2
+Glass bottle,Drink can,cross_material_confusion,2
+Metal bottle cap,Plastic bottle cap,cross_material_confusion,2
+Plastic bottle cap,Other plastic,within_material_confusion,2
+Plastic lid,Aluminium foil,cross_material_confusion,2
+Single-use carrier bag,Plastic film,within_material_confusion,2
+Tissues,Plastic film,cross_material_confusion,2
+Food Can,Drink can,within_material_confusion,1
+Pop tab,Drink can,within_material_confusion,1
+Other plastic bottle,Aerosol,cross_material_confusion,1
+Drink can,Aerosol,within_material_confusion,1
+Single-use carrier bag,Paper bag,cross_material_confusion,1
+Egg carton,Paper bag,within_material_confusion,1
+Plastic straw,Other plastic,within_material_confusion,1
+Unlabeled litter,Plastic bottle cap,cross_material_confusion,1
+Tissues,Other plastic,cross_material_confusion,1
+Plastic film,Styrofoam piece,within_material_confusion,1
+Plastic film,Other carton,cross_material_confusion,1
+Crisp packet,Other carton,cross_material_confusion,1
+Cigarette,Clear plastic bottle,cross_material_confusion,1
+Unlabeled litter,Other plastic wrapper,cross_material_confusion,1
+Plastic film,Unlabeled litter,cross_material_confusion,1
+Plastic film,Garbage bag,within_material_confusion,1
+Plastic lid,Other plastic wrapper,within_material_confusion,1
+Plastic film,Clear plastic bottle,within_material_confusion,1
+Plastic film,Single-use carrier bag,within_material_confusion,1
+Tissues,Other plastic wrapper,cross_material_confusion,1
+Normal paper,Other plastic wrapper,cross_material_confusion,1
+Paper cup,Other plastic wrapper,cross_material_confusion,1
+Glass bottle,Other carton,cross_material_confusion,1
+Plastic lid,Paper cup,cross_material_confusion,1
+Disposable food container,Plastic lid,within_material_confusion,1
+Other plastic bottle,Other carton,cross_material_confusion,1
+Clear plastic bottle,Drink can,cross_material_confusion,1
+Plastic bottle cap,Drink can,cross_material_confusion,1
+Wrapping paper,Other plastic wrapper,cross_material_confusion,1
+Other plastic,Unlabeled litter,cross_material_confusion,1
+Other plastic,Plastic utensils,within_material_confusion,1
+Other plastic wrapper,Plastic film,within_material_confusion,1
+Plastic lid,Food Can,cross_material_confusion,1
+Disposable plastic cup,Food Can,cross_material_confusion,1
+Drink can,Clear plastic bottle,cross_material_confusion,1
+Shoe,Drink can,cross_material_confusion,1
+Other carton,Paper cup,within_material_confusion,1
+Meal carton,Paper cup,within_material_confusion,1
+Disposable plastic cup,Metal bottle cap,cross_material_confusion,1
+Plastic film,Disposable food container,within_material_confusion,1
+Plastic film,Other plastic wrapper,within_material_confusion,1
+Aluminium foil,Other carton,cross_material_confusion,1
+Normal paper,Corrugated carton,within_material_confusion,1
+Aluminium foil,Plastic film,cross_material_confusion,1
+Other plastic,Plastic film,within_material_confusion,1
+Disposable food container,Disposable plastic cup,within_material_confusion,1
+Other plastic bottle,Clear plastic bottle,within_material_confusion,1
+Paper cup,Drink can,cross_material_confusion,1
+Paper bag,Crisp packet,cross_material_confusion,1
+Disposable plastic cup,Drink can,cross_material_confusion,1
+Tupperware,Drink can,cross_material_confusion,1
+Corrugated carton,Other carton,within_material_confusion,1
+Disposable plastic cup,Other plastic,within_material_confusion,1
+Unlabeled litter,Clear plastic bottle,cross_material_confusion,1
+Plastic film,Crisp packet,cross_material_confusion,1
+Other plastic wrapper,Clear plastic bottle,within_material_confusion,1
+Plastic utensils,Plastic straw,within_material_confusion,1
+Other plastic wrapper,Crisp packet,cross_material_confusion,1
+Unlabeled litter,Plastic film,cross_material_confusion,1
+Tissues,Single-use carrier bag,cross_material_confusion,1
+Foam cup,Clear plastic bottle,within_material_confusion,1
+Plastic utensils,Other plastic,within_material_confusion,1
+Paper bag,Plastic film,cross_material_confusion,1
+Normal paper,Plastic film,cross_material_confusion,1
+Other plastic,Drink can,cross_material_confusion,1
+Squeezable tube,Drink can,cross_material_confusion,1
+Drink can,Metal bottle cap,within_material_confusion,1
+Disposable plastic cup,Other plastic wrapper,within_material_confusion,1
+Plastic film,Drink can,cross_material_confusion,1
+Other carton,Clear plastic bottle,cross_material_confusion,1
+Disposable food container,Plastic film,within_material_confusion,1
+Other plastic,Plastic bottle cap,within_material_confusion,1
+Other plastic wrapper,Drink can,cross_material_confusion,1
+Plastic bottle cap,Metal bottle cap,cross_material_confusion,1
+Single-use carrier bag,Clear plastic bottle,within_material_confusion,1
+Drink can,Plastic film,cross_material_confusion,1
+Drink carton,Drink can,cross_material_confusion,1
+Drink carton,Corrugated carton,cross_material_confusion,1

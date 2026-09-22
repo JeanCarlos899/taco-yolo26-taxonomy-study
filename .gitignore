@@ -1,1 +1,42 @@
 data/batch_*
+.venv*/
+datasets/
+runs/
+figures/
+logs/
+tmp/
+paper/tmp/
+__pycache__/
+*.pyc
+yolo11n.pt
+yolo26n.pt
+weights/
+
+# Resultados brutos e predições são grandes; preservamos somente artefatos
+# tabulares/JSON leves necessários para auditar e reproduzir o artigo.
+results/**
+!results/*.csv
+!results/*.json
+!results/seeds/
+!results/seeds/*/
+!results/seeds/*/*.csv
+!results/seeds/*/*.json
+
+# A partição fixa é parte do protocolo experimental.
+splits/**
+!splits/split.json
+
+# O artigo mantém figuras vetoriais e o PDF final; PNGs são apenas previews.
+!paper/figures/
+!paper/figures/*.pdf
+paper/figures/*.png
+paper/figures/qualitative_grid.pdf
+
+# Arquivos intermediários do LaTeX.
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz

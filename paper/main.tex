@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{float}
+
+\graphicspath{{figures/}}
+
+\title{O Custo da Granularidade Semântica na Detecção de Resíduos:\
+um Estudo Controlado com TACO e YOLO26n}
+
+% TODO: substituir autoria, afiliação e e-mail antes da submissão.
+\author{Nome do(a) Autor(a)\inst{1}}
+\address{Instituição do(a) Autor(a)\\
+  Cidade -- Estado -- Brasil
+  \email{email@exemplo.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{resumo}
+A detecção de resíduos em cenas não controladas combina localização com uma decisão semântica cuja dificuldade depende da taxonomia. Este trabalho quantifica esse custo no TACO usando as mesmas imagens e caixas em três taxonomias: 60 classes detalhadas, seis grupos por material e uma classe para resíduo. Modelos YOLO26n foram treinados sob protocolo idêntico com três sementes e avaliados em teste fixo. O AP$_{50}$ médio foi $0{,}146\pm0{,}022$, $0{,}183\pm0{,}023$ e $0{,}567\pm0{,}002$ para Fine, Material e Binary. Ao reavaliar as mesmas detecções Fine após remapeamento hierárquico, o AP$_{50}$ passou de $0{,}103\pm0{,}007$ para $0{,}171\pm0{,}015$ no nível de material e $0{,}466\pm0{,}014$ sem distinção de classe. Um bootstrap pareado confirmou ganhos significativos nos remapeamentos, enquanto a diferença direta de AP entre Fine e Material permaneceu inconclusiva. Classes raras obtiveram AP e revocação substancialmente inferiores. Os resultados indicam que a discriminação semântica sob cauda longa, mais que a localização isolada, é um gargalo central; a taxonomia por material constitui um compromisso útil, embora sua superioridade em AP não seja estatisticamente definitiva.
+\end{resumo}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_methodology}
+\input{sections/04_results}
+\input{sections/05_discussion}
+\input{sections/06_conclusion}
+
+\bibliographystyle{sbc}
+\bibliography{references}
+
+\end{document}

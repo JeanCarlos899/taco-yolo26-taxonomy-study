@@ -1,0 +1,9 @@
+\section{Trabalhos Relacionados}
+
+Proença e Simões \cite{proenca2020taco} introduziram o TACO com 60 categorias pertencentes a 28 supercategorias. Reconhecendo a ambiguidade visual e o desbalanceamento, os autores avaliaram Mask R-CNN em TACO-1, sem classes, e TACO-10, com nove supercategorias frequentes e uma classe residual. Portanto, agrupamento de rótulos no TACO não é inédito. Nosso recorte difere por estabelecer três níveis ordenados, incluir um nível intermediário por material e reavaliar hierarquicamente as mesmas detecções para separar localização de semântica.
+
+Córdova et al. \cite{cordova2022litter} compararam Faster R-CNN, Mask R-CNN, RetinaNet, EfficientDet e YOLOv5 em TACO e PlastOPol, relatando dificuldades com objetos pequenos e cenários naturais complexos. O estudo mostra a relevância de detectores YOLO leves, mas seus números não são diretamente comparáveis aos nossos: taxonomia, partição, versões dos modelos e protocolo diferem. Aqui o objetivo não é estabelecer estado da arte, e sim medir uma variável experimental.
+
+YOLO surgiu como detector de estágio único orientado a inferência em tempo real \cite{redmon2016yolo}. O YOLO26 unifica modelos atuais da Ultralytics e oferece uma cabeça \textit{end-to-end} sem NMS, além de mecanismos de atribuição voltados a objetos pequenos \cite{jocher2026yolo26}. Selecionamos a variante nano por compatibilidade com uma GPU de 6~GB; não comparamos arquiteturas.
+
+Distribuições de cauda longa são conhecidas por prejudicar categorias com poucos exemplos. O LVIS formalizou esse desafio em detecção e segmentação de grande vocabulário \cite{gupta2019lvis}; perdas balanceadas por classe são uma linha de mitigação \cite{cui2019classbalanced}. Neste estudo não alteramos amostragem ou função de perda, pois isso adicionaria fatores experimentais. Em vez disso, medimos o desempenho nos estratos raro, médio e frequente.

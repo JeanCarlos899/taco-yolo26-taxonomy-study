@@ -1,0 +1,13 @@
+{
+  "precision": 0.6268980477223427,
+  "recall": 0.45368916797488223,
+  "f1": 0.5264116575591985,
+  "ap50": 0.47688513571721636,
+  "map50_95": 0.3165936866547747,
+  "map50": 0.47688513571721636,
+  "taxonomy": "material",
+  "evaluation": "class_agnostic",
+  "num_classes_evaluated": 1,
+  "test_images": 225,
+  "test_instances": 637
+}

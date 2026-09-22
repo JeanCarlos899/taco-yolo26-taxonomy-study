@@ -1,0 +1,54 @@
+\section{Resultados}
+
+\subsection{Efeito da taxonomia}
+
+A Tabela~\ref{tab:main} resume os modelos treinados. Material elevou o AP$_{50}$ médio de 0,146 para 0,183 e o $F_1$ de 0,232 para 0,296 em relação a Fine. Binary alcançou 0,567 de AP$_{50}$ e apresentou a menor variação entre sementes ($\sigma=0{,}002$). Esse ganho não constitui uma comparação de capacidade semântica equivalente: Binary só precisa separar resíduo de fundo.
+
+\begin{table}[H]
+  \centering
+  \caption{Teste por taxonomia: média $\pm$ desvio-padrão de três sementes.}
+  \label{tab:main}
+  \resizebox{\linewidth}{!}{\input{tables/main_results}}
+\end{table}
+
+No bootstrap controlado da semente 42, a diferença Fine$-$Material em AP$_{50}$ foi $-0{,}032$, IC95\% $[-0{,}079;0{,}008]$; em AP$_{50:95}$, $-0{,}012$, IC95\% $[-0{,}049;0{,}019]$. Ambos incluem zero, logo os dados não sustentam superioridade inequívoca em AP. Para $F_1$, a diferença foi $-0{,}055$, IC95\% $[-0{,}118;-0{,}001]$, favorável a Material, embora próxima do limite.
+
+\subsection{Localização versus semântica}
+
+A Tabela~\ref{tab:hierarchy} usa exclusivamente as predições dos modelos Fine e o avaliador controlado. Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; ao ignorar classes, chegou a $0{,}466$. No bootstrap da semente 42, os ganhos Material$-$Fine e Binary$-$Fine foram, respectivamente, $+0{,}072$ (IC95\% $[0{,}026;0{,}127]$) e $+0{,}357$ (IC95\% $[0{,}305;0{,}409]$). Como caixas e escores são os mesmos, esses aumentos quantificam erros removidos apenas ao relaxar a exigência semântica.
+
+\begin{table}[H]
+  \centering
+  \caption{Mesmas predições Fine avaliadas em três níveis pelo avaliador controlado (média $\pm$ desvio-padrão).}
+  \label{tab:hierarchy}
+  \input{tables/hierarchical_results}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{taxonomy_and_hierarchy.pdf}
+  \caption{À esquerda, modelos treinados separadamente e avaliados pelo Ultralytics; à direita, mesmas predições Fine remapeadas e avaliadas pelo protocolo controlado. Barras de erro: um desvio-padrão entre sementes.}
+  \label{fig:hierarchy}
+\end{figure}
+
+\subsection{Cauda longa e tipos de erro}
+
+A Tabela~\ref{tab:tail} mostra crescimento monotônico com a frequência. Classes raras obtiveram AP$_{50}=0{,}046$ e recall $0{,}030$, enquanto as frequentes atingiram 0,207 e 0,282. Logo, a dificuldade Fine não se distribui uniformemente entre rótulos.
+
+\begin{table}[H]
+  \centering
+  \caption{Desempenho Fine por frequência no treino, agregado em três sementes.}
+  \label{tab:tail}
+  \input{tables/long_tail_results}
+\end{table}
+
+Como diagnóstico adicional, na semente 42 e limiar de confiança 0,25, o casamento sem classe em IoU$\geq0{,}5$ produziu 97 acertos Fine, 51 confusões dentro do mesmo material e 73 entre materiais. Houve ainda 43 predições com sobreposição $0{,}1\leq$IoU$<0{,}5$, classificadas como falhas de localização, 42 falsos positivos com IoU$<0{,}1$ e 416 objetos não detectados. Esses totais dependem do limiar e servem para caracterização, não como substitutos das curvas de AP.
+
+A Figura~\ref{fig:qualitative} liga essa decomposição às imagens de teste. A primeira linha apresenta o mesmo recorte sem anotações, com a verdade-terreno e com uma saída correta. Na segunda, uma lata é localizada corretamente, mas confundida com aerossol, preservando o material; uma embalagem metálica é confundida com papel/cartão; e uma predição sobre latas não atinge o limiar de IoU. Assim, os exemplos ilustram erros semanticamente distintos mesmo quando há evidência visual e sobreposição espacial.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.94\linewidth]{qualitative_analysis.pdf}
+  \caption{Casos reais do teste Fine, semente 42. A primeira linha separa entrada, anotação e saída correta; a segunda exemplifica confusão intra-material, confusão inter-material e falha de localização. As imagens foram recortadas apenas para legibilidade.}
+  \label{fig:qualitative}
+\end{figure}

@@ -1,0 +1,23 @@
+{
+  "seed": 2026,
+  "ultralytics": {
+    "metrics/precision(B)": 0.6977978452500907,
+    "metrics/recall(B)": 0.5117739403453689,
+    "metrics/mAP50(B)": 0.5642384377910541,
+    "metrics/mAP50-95(B)": 0.41026261163341743,
+    "fitness": 0.41026261163341743
+  },
+  "controlled_evaluator": {
+    "precision": 0.8121546961325967,
+    "recall": 0.46153846153846156,
+    "f1": 0.5885885885885886,
+    "ap50": 0.5611119162188403,
+    "map50_95": 0.4035949069416268,
+    "map50": 0.5611119162188403,
+    "taxonomy": "binary",
+    "evaluation": "class_aware",
+    "num_classes_evaluated": 1,
+    "test_images": 225,
+    "test_instances": 637
+  }
+}

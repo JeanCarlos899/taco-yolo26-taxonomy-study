@@ -1,0 +1,118 @@
+{
+  "policy": "clip COCO boxes to image boundaries; official annotations.json remains unchanged",
+  "count": 7,
+  "corrections": [
+    {
+      "annotation_id": 371,
+      "file_name": "batch_10/000008.jpg",
+      "original_bbox": [
+        1003.0,
+        -1.0,
+        787.0,
+        411.0
+      ],
+      "clipped_bbox": [
+        1003.0,
+        0.0,
+        787.0,
+        410.0
+      ]
+    },
+    {
+      "annotation_id": 387,
+      "file_name": "batch_10/000011.jpg",
+      "original_bbox": [
+        1408.0,
+        -1.0,
+        369.0,
+        471.0
+      ],
+      "clipped_bbox": [
+        1408.0,
+        0.0,
+        369.0,
+        470.0
+      ]
+    },
+    {
+      "annotation_id": 707,
+      "file_name": "batch_11/000008.jpg",
+      "original_bbox": [
+        0.0,
+        -1.0,
+        1352.0,
+        2364.0
+      ],
+      "clipped_bbox": [
+        0.0,
+        0.0,
+        1352.0,
+        2363.0
+      ]
+    },
+    {
+      "annotation_id": 859,
+      "file_name": "batch_11/000077.jpg",
+      "original_bbox": [
+        -1.0,
+        366.0,
+        198.0,
+        307.0
+      ],
+      "clipped_bbox": [
+        0.0,
+        366.0,
+        197.0,
+        307.0
+      ]
+    },
+    {
+      "annotation_id": 1621,
+      "file_name": "batch_13/000056.jpg",
+      "original_bbox": [
+        799.0,
+        -1.0,
+        492.0,
+        484.0
+      ],
+      "clipped_bbox": [
+        799.0,
+        0.0,
+        492.0,
+        483.0
+      ]
+    },
+    {
+      "annotation_id": 1777,
+      "file_name": "batch_14/000048.jpg",
+      "original_bbox": [
+        171.03125,
+        -1.3166667,
+        518.35625,
+        413.4333367
+      ],
+      "clipped_bbox": [
+        171.03125,
+        0.0,
+        518.35625,
+        412.11667
+      ]
+    },
+    {
+      "annotation_id": 2186,
+      "file_name": "batch_15/000078.jpg",
+      "original_bbox": [
+        1311.0,
+        -0.5,
+        286.0,
+        589.0
+      ],
+      "clipped_bbox": [
+        1311.0,
+        0.0,
+        286.0,
+        588.5
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+seed: 42
+train_fraction: 0.70
+val_fraction: 0.15
+test_fraction: 0.15
+model: yolo26n.pt
+imgsz: 640
+epochs: 60
+patience: 15
+batch: 24
+device: 0
+workers: 0
+deterministic: true
+amp: true
+optimizer: AdamW
+lr0: 0.001
+taxonomy_order:
+  - fine
+  - material
+  - binary
+frequency_groups:
+  rare_max: 19
+  medium_max: 100
