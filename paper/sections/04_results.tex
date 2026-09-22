@@ -11,11 +11,11 @@ A Tabela~\ref{tab:main} resume os modelos treinados. Material elevou o AP$_{50}$
   \resizebox{\linewidth}{!}{\input{tables/main_results}}
 \end{table}
 
-O bootstrap repetido nas três sementes preservou o sinal favorável a Material, mas distinguiu consistência de evidência estatística. A diferença Fine$-$Material em AP$_{50}$ foi $-0{,}051\pm0{,}022$ entre as médias bootstrap, porém o IC95\% excluiu zero somente na semente 123; o mesmo ocorreu em AP$_{50:95}$ ($-0{,}029\pm0{,}023$). Em $F_1$, a diferença de $-0{,}074\pm0{,}027$ teve IC inteiramente negativo nas três sementes. Assim, o ganho direto de Material é sustentado para o ponto operacional de $F_1$, não de forma uniforme para AP.
+O bootstrap separa média superior de evidência repetível. Embora Material tenha superado Fine em média nas três métricas, seus ganhos de AP tiveram IC95\% acima de zero em apenas uma das três sementes. O ganho de $F_1$, por outro lado, foi sustentado nas três. Portanto, os modelos treinados separadamente permitem afirmar uma melhora consistente em $F_1$, mas não uma superioridade inequívoca de AP.
 
 \subsection{Localização versus semântica}
 
-A Tabela~\ref{tab:hierarchy} usa exclusivamente as predições dos modelos Fine e o avaliador controlado. Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; ao ignorar classes, chegou a $0{,}466$. No bootstrap multissemente, Fine$\rightarrow$Material elevou AP$_{50}$ em $0{,}068\pm0{,}012$, com os três ICs acima de zero; para AP$_{50:95}$, o ganho de $0{,}039\pm0{,}010$ foi sustentado em duas sementes, pois o IC da semente 2026 foi $[-0{,}008;0{,}073]$. Fine$\rightarrow$Binary foi sustentado nas três sementes e nas três métricas. Caixas e escores permanecem fixos, mas o remapeamento recupera confusões e altera a macro-média; a decomposição seguinte mede diretamente os tipos de casamento.
+A Tabela~\ref{tab:hierarchy} responde a uma pergunta diferente: o que acontece quando as \emph{mesmas} caixas e confianças produzidas pelo modelo Fine são julgadas com menos detalhe semântico? Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; ao ignorar classes, chegou a $0{,}466$. Como não há novo treinamento nesta análise, o ganho mostra quanto da penalização depende dos rótulos, embora a mudança da macro-média impeça interpretá-lo como contagem pura de erros semânticos. A Tabela~\ref{tab:bootstrap} informa se esse efeito se repete entre sementes.
 
 \begin{table}[H]
   \centering
@@ -27,10 +27,12 @@ A Tabela~\ref{tab:hierarchy} usa exclusivamente as predições dos modelos Fine 
 \begin{table}[H]
   \centering
   \footnotesize
-  \caption{Bootstrap pareado por semente. $\overline{\Delta}\pm\sigma$ resume as três diferenças médias; a última coluna conta ICs de 95\% que excluem zero. Setas indicam o remapeamento das mesmas predições Fine.}
+  \caption{Síntese do bootstrap pareado nas três sementes.}
   \label{tab:bootstrap}
   \input{tables/bootstrap_multiseed}
 \end{table}
+
+Cada célula da Tabela~\ref{tab:bootstrap} apresenta ganho médio $\pm$ desvio-padrão e, entre parênteses, quantos ICs de 95\% excluem zero. Valores positivos favorecem a alternativa mais simples; 3/3 indica evidência repetida nas três sementes, enquanto 1/3 recomenda cautela. ``Fine como'' denota remapeamento das mesmas predições, sem novo treinamento.
 
 \begin{figure}[H]
   \centering
