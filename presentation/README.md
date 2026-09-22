@@ -15,4 +15,4 @@ O PDF final é copiado para `presentation/slides_taco_yolo26.pdf`.
 
 ## Estrutura sugerida de fala
 
-A apresentação possui 11 slides e foi dimensionada para aproximadamente 8 a 10 minutos. O roteiro progride da pergunta central para o desenho experimental, resultados, diagnóstico de erros e conclusões.
+A apresentação possui 12 slides e foi dimensionada para aproximadamente 8 a 10 minutos. O roteiro progride da pergunta central e da estrutura das anotações para o desenho experimental, resultados, diagnóstico de erros e conclusões.

@@ -140,6 +140,38 @@
 \end{frame}
 
 % 4
+\begin{frame}{Como o TACO representa cada objeto}
+  \vspace{0.05cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.205\textwidth}
+      \centering{\color{ufpidark}\bfseries Imagem original}\par\vspace{0.10cm}
+      \includegraphics[height=3.65cm,width=\linewidth,keepaspectratio]{assets/taco_original_example.png}
+    \end{column}
+    \begin{column}{0.205\textwidth}
+      \centering{\color{ufpidark}\bfseries Segmentação Fine}\par\vspace{0.10cm}
+      \includegraphics[height=3.65cm,width=\linewidth,keepaspectratio]{assets/taco_segmentation_example.png}
+    \end{column}
+    \begin{column}{0.205\textwidth}
+      \centering{\color{ufpidark}\bfseries Caixas COCO}\par\vspace{0.10cm}
+      \includegraphics[height=3.65cm,width=\linewidth,keepaspectratio]{assets/taco_bbox_example.png}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      {\fontsize{14}{17}\selectfont\bfseries O JSON fornece}\par
+      \vspace{0.08cm}
+      {\fontsize{11}{14}\selectfont Máscara poligonal\\Caixa delimitadora\\Categoria Fine}\par
+      \vspace{0.14cm}
+      {\color{ufpidark}\fontsize{13}{16}\selectfont\bfseries Remapeamento}\par
+      \vspace{0.06cm}
+      {\fontsize{10.5}{13}\selectfont
+      Drink can $\rightarrow$ Metal $\rightarrow$ Litter}
+      \vspace{0.18cm}
+
+      {\color{muted}\fontsize{9.5}{12}\selectfont 13 objetos e 10 classes Fine. O YOLO utiliza as caixas; as máscaras documentam a anotação original.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% 5
 \begin{frame}{Desenho experimental controlado}
   \vspace{-0.05cm}
   \includegraphics[height=3.45cm,width=\textwidth,keepaspectratio]{../paper/figures/methodology_pipeline.pdf}
@@ -160,7 +192,7 @@
   \end{columns}
 \end{frame}
 
-% 5
+% 6
 \begin{frame}{Três níveis de detalhe semântico}
   \vspace{0.35cm}
   \begin{columns}[T,onlytextwidth]
@@ -193,7 +225,7 @@
   {\color{muted}\fontsize{12.5}{16}\selectfont A redução de classes diminui a informação exigida do detector.}
 \end{frame}
 
-% 6
+% 7
 \begin{frame}{Desempenho dos modelos treinados}
   \begin{columns}[c,onlytextwidth]
     \begin{column}{0.66\textwidth}
@@ -237,65 +269,57 @@
   \end{columns}
 \end{frame}
 
-% 7
-\begin{frame}{Mesmas caixas, rótulos mais amplos}
-  \begin{columns}[c,onlytextwidth]
-    \begin{column}{0.60\textwidth}
-      \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-          ybar,
-          width=\linewidth,
-          height=5.2cm,
-          ymin=0,ymax=0.52,
-          ylabel={AP$_{50}$ controlado},
-          symbolic x coords={Fine,Material,Binary},
-          xtick=data,
-          bar width=28pt,
-          axis line style={draw=muted},
-          tick style={draw=none},
-          ymajorgrids=true,
-          grid style={draw=soft},
-          nodes near coords,
-          nodes near coords style={font=\small,anchor=south},
-        ]
-          \addplot+[draw=ufpidark,fill=ufpidark] coordinates {(Fine,0.103) (Material,0.171) (Binary,0.466)};
-        \end{axis}
-      \end{tikzpicture}
-    \end{column}
-    \begin{column}{0.37\textwidth}
-      {\fontsize{19}{24}\selectfont\bfseries A geometria e a confiança permanecem fixas.}\par
-      \vspace{0.35cm}
-      O aumento ocorre ao aceitar rótulos menos específicos.
-      \vspace{0.35cm}
-      Isso evidencia uma penalização semântica importante, além das falhas de localização.
-    \end{column}
-  \end{columns}
-\end{frame}
-
 % 8
-\begin{frame}{O que os intervalos de confiança sustentam}
-  \vspace{0.1cm}
-  {\fontsize{14.5}{18}\selectfont Bootstrap pareado por imagem, com 2.000 reamostragens em cada semente. Um resultado 3/3 indica IC de 95\% acima de zero nas três execuções.}
-
+\begin{frame}{Uma predição, três critérios de acerto}
+  {\color{muted}\fontsize{12}{15}\selectfont Caixas e confianças do modelo Fine permanecem idênticas; apenas o critério de classe é alterado.}
   \vspace{0.35cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.31\textwidth}
-      \bigmetric{3/3}{Material melhora $F_1$ frente a Fine}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \bigmetric{1/3}{ganho de AP$_{50}$ de Material frente a Fine}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \bigmetric{3/3}{ganho hierárquico em AP$_{50}$}
-    \end{column}
-  \end{columns}
 
-  \vspace{0.4cm}
-  {\color{muted}\fontsize{12}{15}\selectfont Leitura prática: a melhora de Material é consistente no ponto operacional, mas sua superioridade global em AP permanece inconclusiva.}
+  \centering
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{p{2.2cm}p{6.8cm}r}
+    \toprule
+    \textbf{Avaliação} & \textbf{Quando a detecção conta como correta} & \textbf{AP$_{50}$} \\
+    \midrule
+    Fine & classe exata, entre 60 categorias & $0{,}103\pm0{,}007$ \\
+    Material & material correto, entre seis grupos & $0{,}171\pm0{,}015$ \\
+    Binary & qualquer resíduo corretamente localizado & $0{,}466\pm0{,}014$ \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.45cm}
+  {\color{ufpidark}\fontsize{14}{18}\selectfont\bfseries Rótulos mais amplos recuperam detecções já localizadas.}
 \end{frame}
 
 % 9
+\begin{frame}{Evidência estatística nas três sementes}
+  \vspace{0.10cm}
+  \centering
+  \renewcommand{\arraystretch}{1.38}
+  {\fontsize{9.5}{12}\selectfont
+  \begin{tabular}{p{4.2cm}rrrc}
+    \toprule
+    \textbf{Comparação} & \textbf{$\Delta$AP$_{50}$} & \textbf{Suporte} & \textbf{$\Delta F_1$} & \textbf{Suporte} \\
+    \midrule
+    Material treinado vs. Fine & $+0{,}051\pm0{,}022$ & 1/3 & $+0{,}074\pm0{,}027$ & \textcolor{ufpidark}{\bfseries 3/3} \\
+    Fine $\rightarrow$ Material (mesmas caixas) & $+0{,}068\pm0{,}012$ & \textcolor{ufpidark}{\bfseries 3/3} & $+0{,}101\pm0{,}008$ & \textcolor{ufpidark}{\bfseries 3/3} \\
+    Fine $\rightarrow$ Binary (mesmas caixas) & $+0{,}345\pm0{,}016$ & \textcolor{ufpidark}{\bfseries 3/3} & $+0{,}318\pm0{,}011$ & \textcolor{ufpidark}{\bfseries 3/3} \\
+    \bottomrule
+  \end{tabular}}
+
+  \vspace{0.45cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      {\color{ufpidark}\bfseries $\Delta$ = ganho médio $\pm$ DP}\par
+      \vspace{0.08cm}{\fontsize{11}{14}\selectfont Diferença positiva favorece a taxonomia mais simples.}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\color{ufpidark}\bfseries Suporte = sementes com IC95\% $>0$}\par
+      \vspace{0.08cm}{\fontsize{11}{14}\selectfont 3/3 indica repetição da evidência nas três execuções.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% 10
 \begin{frame}{Os erros semânticos não explicam tudo}
   \begin{columns}[c,onlytextwidth]
     \begin{column}{0.43\textwidth}
@@ -316,32 +340,40 @@
   \end{columns}
 \end{frame}
 
-% 10
+% 11
 \begin{frame}{Casos reais do teste Fine}
   \vspace{0.10cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.235\textwidth}
       \centering{\color{ufpidark}\bfseries Acerto}\par\vspace{0.10cm}
       \includegraphics[width=\linewidth,trim=360 205 15 15,clip]{../paper/figures/qualitative_analysis.pdf}
+      \vspace{0.08cm}\par
+      {\fontsize{9.5}{11}\selectfont\textbf{GT = Pred.:} Other plastic bottle}
     \end{column}
     \begin{column}{0.235\textwidth}
       \centering{\color{ufpidark}\bfseries Intra-material}\par\vspace{0.10cm}
       \includegraphics[width=\linewidth,trim=15 18 360 195,clip]{../paper/figures/qualitative_analysis.pdf}
+      \vspace{0.08cm}\par
+      {\fontsize{9.5}{11}\selectfont\textbf{GT:} Drink can\\\textbf{Pred.:} Aerosol}
     \end{column}
     \begin{column}{0.235\textwidth}
       \centering{\color{ufpidark}\bfseries Inter-material}\par\vspace{0.10cm}
       \includegraphics[width=\linewidth,trim=180 18 185 195,clip]{../paper/figures/qualitative_analysis.pdf}
+      \vspace{0.08cm}\par
+      {\fontsize{9.5}{11}\selectfont\textbf{GT:} Aluminium foil\\\textbf{Pred.:} Other carton}
     \end{column}
     \begin{column}{0.235\textwidth}
       \centering{\color{ufpidark}\bfseries Omissão}\par\vspace{0.10cm}
       \includegraphics[width=\linewidth,trim=345 18 5 195,clip]{../paper/figures/qualitative_analysis.pdf}
+      \vspace{0.08cm}\par
+      {\fontsize{9.5}{11}\selectfont\textbf{GT:} Plastic lid\\\textbf{Pred.:} nenhuma}
     \end{column}
   \end{columns}
   \vspace{0.20cm}
-  \centering{\color{muted}\fontsize{10.5}{12}\selectfont Predições da semente 42. Linhas brancas: verdade-terreno; linhas pretas tracejadas: predição.}
+  \centering{\color{muted}\fontsize{10}{12}\selectfont GT em branco; predição em preto tracejado. Semente 42.}
 \end{frame}
 
-% 11
+% 12
 \begin{frame}{Conclusões e limites}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.58\textwidth}
