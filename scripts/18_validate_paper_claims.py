@@ -84,6 +84,13 @@ def main() -> None:
                           "estratos operacionais deste estudo"]
     missing = [item for item in required_fragments if item not in corpus]
     require(not missing, f"Expected factual fragments missing from TeX: {missing}")
+    required_identity = ["Jean Carlos Rodrigues Sousa", "Karielly de Carvalho", "Marcos",
+                         "Universidade Federal do Piauí (UFPI)",
+                         "Campus Senador Helvídio Nunes de Barros (CSHNB)",
+                         "Picos -- PI -- Brasil"]
+    require(all(item in corpus for item in required_identity), "Author or affiliation data is incomplete.")
+    require("email@exemplo.com" not in corpus and "Nome do(a) Autor(a)" not in corpus,
+            "Placeholder identity remains in the paper.")
 
     required_assets = ["methodology_pipeline.pdf", "class_rank_distribution.pdf",
                        "taxonomy_and_hierarchy.pdf", "qualitative_analysis.pdf",
@@ -100,6 +107,7 @@ def main() -> None:
             "bootstrap_multiseed_interpretation": True,
             "error_decomposition_multiseed": True,
             "tex_factual_fragments": True,
+            "author_and_affiliation": True,
             "required_figures": True,
         },
     }

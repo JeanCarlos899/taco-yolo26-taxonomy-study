@@ -8,6 +8,7 @@
     "bootstrap_multiseed_interpretation": true,
     "error_decomposition_multiseed": true,
     "tex_factual_fragments": true,
+    "author_and_affiliation": true,
     "required_figures": true
   }
 }
