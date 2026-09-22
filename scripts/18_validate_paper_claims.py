@@ -18,7 +18,8 @@ def require(condition: bool, message: str) -> None:
 
 
 def text_corpus() -> str:
-    files = [PAPER / "main.tex", *sorted((PAPER / "sections").glob("*.tex"))]
+    files = [PAPER / "main.tex", *sorted((PAPER / "sections").glob("*.tex")),
+             *sorted((PAPER / "tables").glob("*.tex"))]
     return "\n".join(path.read_text(encoding="utf-8") for path in files)
 
 
@@ -28,8 +29,8 @@ def main() -> None:
     config = yaml.safe_load((ROOT / "configs" / "experiment.yaml").read_text(encoding="utf-8"))
     native = pd.read_csv(ROOT / "results" / "multiseed_summary.csv").set_index("taxonomy")
     hierarchy = pd.read_csv(ROOT / "results" / "hierarchical_multiseed_summary.csv").set_index("evaluation_taxonomy")
-    bootstrap = pd.read_csv(ROOT / "results" / "bootstrap_comparisons.csv")
-    errors = pd.read_csv(ROOT / "results" / "fine_error_decomposition.csv").set_index("category")["count"]
+    bootstrap = pd.read_csv(ROOT / "results" / "bootstrap_multiseed_summary.csv")
+    errors = pd.read_csv(ROOT / "results" / "multiseed_error_raw.csv")
 
     require(facts["dataset"] == {"images": 1500, "objects": 4784, "fine_classes": 60,
                                  "images_without_objects": 0, "boxes_clipped_during_conversion": 7},
@@ -48,19 +49,37 @@ def main() -> None:
         require(round(float(hierarchy.loc[taxonomy, "ap50_mean"]), 3) == expected,
                 f"Hierarchical AP50 changed for {taxonomy}.")
 
-    direct_ap = bootstrap[(bootstrap.comparison == "fine_direct_minus_material_direct") &
-                          (bootstrap.metric == "ap50")].iloc[0]
-    require(bool(direct_ap.includes_zero), "Direct Fine-Material AP50 interval no longer includes zero.")
-    require(errors.to_dict() == {"correct_fine": 97, "within_material_confusion": 51,
-                                 "cross_material_confusion": 73, "localization_failure": 11,
-                                 "duplicate_detection": 32, "background_false_positive": 42,
-                                 "missed_detection": 416},
-            "Error decomposition changed.")
+    expected_support = {
+        ("fine_direct_minus_material_direct", "ap50"): 1,
+        ("fine_direct_minus_material_direct", "map50_95"): 1,
+        ("fine_direct_minus_material_direct", "f1"): 3,
+        ("fine_as_material_minus_fine_direct", "ap50"): 3,
+        ("fine_as_material_minus_fine_direct", "map50_95"): 2,
+        ("fine_as_material_minus_fine_direct", "f1"): 3,
+        ("fine_as_binary_minus_fine_direct", "ap50"): 3,
+        ("fine_as_binary_minus_fine_direct", "map50_95"): 3,
+        ("fine_as_binary_minus_fine_direct", "f1"): 3,
+    }
+    observed_support = {(row.comparison, row.metric): int(row.seeds_excluding_zero)
+                        for row in bootstrap.itertuples()}
+    require(observed_support == expected_support, "Multiseed bootstrap support changed.")
+    expected_errors = {
+        42: [97, 51, 73, 11, 32, 42, 416],
+        123: [106, 57, 79, 16, 42, 48, 395],
+        2026: [97, 52, 85, 22, 48, 52, 403],
+    }
+    categories = ["correct_fine", "within_material_confusion", "cross_material_confusion",
+                  "localization_failure", "duplicate_detection", "background_false_positive",
+                  "missed_detection"]
+    for seed, expected in expected_errors.items():
+        observed = errors[errors.seed == seed].set_index("category")["count"]
+        require([int(observed[name]) for name in categories] == expected,
+                f"Error decomposition changed for seed {seed}.")
 
     required_fragments = ["1.500 imagens", "4.784 objetos", "1.050/225/225", "3.359/788/637",
                           "0,146", "0,183", "0,567", "0{,}103", "0{,}171", "0{,}466",
-                          "2.000 reamostragens", "97 acertos", "51 confusões", "73 entre materiais",
-                          "11 falhas de localização", "32 duplicatas", "42 falsos positivos", "416 objetos"]
+                          "2.000 reamostragens", "56{,}95", "404{,}7", "63{,}5",
+                          "Fine$\\rightarrow$Material", "Fine$\\rightarrow$Binary", "1/3", "2/3", "3/3"]
     missing = [item for item in required_fragments if item not in corpus]
     require(not missing, f"Expected factual fragments missing from TeX: {missing}")
 
@@ -76,8 +95,8 @@ def main() -> None:
             "training_configuration": True,
             "native_multiseed_metrics": True,
             "hierarchical_multiseed_metrics": True,
-            "bootstrap_interpretation": True,
-            "error_decomposition": True,
+            "bootstrap_multiseed_interpretation": True,
+            "error_decomposition_multiseed": True,
             "tex_factual_fragments": True,
             "required_figures": True,
         },

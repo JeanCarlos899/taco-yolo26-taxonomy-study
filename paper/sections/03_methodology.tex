@@ -60,4 +60,4 @@ Aplicamos bootstrap percentil pareado \cite{efron1993bootstrap} para obter ICs d
   IC_{95\%}=[Q_{0{,}025}(\Delta),Q_{0{,}975}(\Delta)].
   \label{eq:bootstrap}
 \end{equation}
-Fizemos 2.000 reamostragens, com os mesmos índices nos dois lados. O bootstrap usa as predições da semente 42; as demais análises agregam três sementes. Para cauda longa, a frequência é calculada apenas no treino: rara ($n\leq19$), média ($20\leq n\leq100$) e frequente ($n>100$). Métricas por classe incluem somente rótulos presentes no teste fixo.
+Fizemos 2.000 reamostragens para cada uma das três sementes, com os mesmos índices nos dois lados de cada comparação. Reportamos a média e o desvio-padrão das diferenças médias do bootstrap entre sementes e quantos dos três ICs excluem zero. O cálculo foi acelerado pré-computando os casamentos por classe e limiar de IoU; testes automatizados confirmaram equivalência numérica com o avaliador original a $10^{-12}$. Para cauda longa, a frequência é calculada apenas no treino: rara ($n\leq19$), média ($20\leq n\leq100$) e frequente ($n>100$). Métricas por classe incluem somente rótulos presentes no teste fixo.

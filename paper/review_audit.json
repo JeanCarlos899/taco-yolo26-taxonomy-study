@@ -29,6 +29,7 @@
   "bootstrap_difference_definition": "Mean of bootstrap differences, not observed point difference",
   "qualitative_candidates": [
     {
+      "seed": 42,
       "file_name": "batch_10/000029.jpg",
       "category": "localization_failure",
       "iou": 0.20579403638606744,
@@ -52,6 +53,7 @@
       "event_index": 33
     },
     {
+      "seed": 42,
       "file_name": "batch_11/000082.jpg",
       "category": "localization_failure",
       "iou": 0.4087227868617238,
@@ -75,6 +77,7 @@
       "event_index": 137
     },
     {
+      "seed": 42,
       "file_name": "batch_12/000049.jpg",
       "category": "localization_failure",
       "iou": 0.14068536633309245,
@@ -98,6 +101,7 @@
       "event_index": 226
     },
     {
+      "seed": 42,
       "file_name": "batch_13/000010.jpg",
       "category": "localization_failure",
       "iou": 0.3506932480730314,
@@ -121,6 +125,7 @@
       "event_index": 236
     },
     {
+      "seed": 42,
       "file_name": "batch_14/000038.jpg",
       "category": "localization_failure",
       "iou": 0.2393704574551954,
@@ -144,6 +149,7 @@
       "event_index": 294
     },
     {
+      "seed": 42,
       "file_name": "batch_14/000038.jpg",
       "category": "localization_failure",
       "iou": 0.15722697531673924,
@@ -167,6 +173,7 @@
       "event_index": 295
     },
     {
+      "seed": 42,
       "file_name": "batch_14/000047.jpg",
       "category": "localization_failure",
       "iou": 0.28544974728476075,
@@ -190,6 +197,7 @@
       "event_index": 304
     },
     {
+      "seed": 42,
       "file_name": "batch_14/000047.jpg",
       "category": "localization_failure",
       "iou": 0.28469696080476176,
@@ -213,6 +221,7 @@
       "event_index": 305
     },
     {
+      "seed": 42,
       "file_name": "batch_7/000039.JPG",
       "category": "localization_failure",
       "iou": 0.3208326483022158,
@@ -236,6 +245,7 @@
       "event_index": 532
     },
     {
+      "seed": 42,
       "file_name": "batch_8/000066.jpg",
       "category": "localization_failure",
       "iou": 0.42564906703506206,
@@ -259,6 +269,7 @@
       "event_index": 628
     },
     {
+      "seed": 42,
       "file_name": "batch_9/000095.jpg",
       "category": "localization_failure",
       "iou": 0.3775056243607283,

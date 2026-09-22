@@ -1,0 +1,2798 @@
+{
+  "stable_correct": [
+    {
+      "key": "batch_13/000092.jpg|975.500,367.000,2038.500,3953.000",
+      "file_name": "batch_13/000092.jpg",
+      "gt_box": [
+        975.5,
+        367.0,
+        2038.5,
+        3953.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.7044534683227539,
+          "iou": 0.8327007275952824
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.9759324789047241,
+          "iou": 0.9414371525479204
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.8787497282028198,
+          "iou": 0.9078541047064946
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|845.000,2616.000,2017.000,3679.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        845.0,
+        2616.0,
+        2017.0,
+        3679.0
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.5211608409881592,
+          "iou": 0.9588183789248597
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.4916382431983948,
+          "iou": 0.979303091867383
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.45899394154548645,
+          "iou": 0.9759340012830862
+        }
+      }
+    },
+    {
+      "key": "batch_13/000039.jpg|974.000,1801.000,1527.000,3335.000",
+      "file_name": "batch_13/000039.jpg",
+      "gt_box": [
+        974.0,
+        1801.0,
+        1527.0,
+        3335.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.38819417357444763,
+          "iou": 0.8754330459335566
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.46710407733917236,
+          "iou": 0.9249610801368501
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.36291438341140747,
+          "iou": 0.9060011535020308
+        }
+      }
+    },
+    {
+      "key": "batch_14/000047.jpg|1596.756,1917.727,2092.756,2723.727",
+      "file_name": "batch_14/000047.jpg",
+      "gt_box": [
+        1596.7557000000002,
+        1917.7272,
+        2092.75574,
+        2723.727
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.7460022568702698,
+          "iou": 0.758272498379968
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.8048263192176819,
+          "iou": 0.9579688367575501
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.6714461445808411,
+          "iou": 0.9409146428933467
+        }
+      }
+    },
+    {
+      "key": "batch_14/000047.jpg|1232.267,2069.733,1727.631,2615.733",
+      "file_name": "batch_14/000047.jpg",
+      "gt_box": [
+        1232.2671,
+        2069.733,
+        1727.6307,
+        2615.733
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.700909435749054,
+          "iou": 0.9534290232554153
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.9104819297790527,
+          "iou": 0.9628338508438572
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.6928741931915283,
+          "iou": 0.9806281538248525
+        }
+      }
+    },
+    {
+      "key": "batch_12/000049.jpg|1272.000,1706.000,1668.000,2223.000",
+      "file_name": "batch_12/000049.jpg",
+      "gt_box": [
+        1272.0,
+        1706.0,
+        1668.0,
+        2223.0
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.36558276414871216,
+          "iou": 0.9648859738705355
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.31602388620376587,
+          "iou": 0.9772573419250082
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.4760158360004425,
+          "iou": 0.9014770334440307
+        }
+      }
+    },
+    {
+      "key": "batch_13/000028.jpg|317.000,3052.000,756.000,3469.000",
+      "file_name": "batch_13/000028.jpg",
+      "gt_box": [
+        317.0,
+        3052.0,
+        756.0,
+        3469.0
+      ],
+      "true_class": "Plastic bottle cap",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.37716755270957947,
+          "iou": 0.9136907083740294
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.789728045463562,
+          "iou": 0.9166962502112487
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.6874101758003235,
+          "iou": 0.8899068659559253
+        }
+      }
+    },
+    {
+      "key": "batch_11/000023.jpg|2258.571,1709.619,2770.571,2046.619",
+      "file_name": "batch_11/000023.jpg",
+      "gt_box": [
+        2258.5713,
+        1709.619,
+        2770.5713,
+        2046.619
+      ],
+      "true_class": "Plastic bottle cap",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.5930263996124268,
+          "iou": 0.7767253805140364
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.7412663698196411,
+          "iou": 0.9117337763754668
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.5029418468475342,
+          "iou": 0.9104976929335937
+        }
+      }
+    },
+    {
+      "key": "batch_14/000091.jpg|1435.000,2140.500,1764.000,2484.500",
+      "file_name": "batch_14/000091.jpg",
+      "gt_box": [
+        1435.0,
+        2140.5,
+        1764.0,
+        2484.5
+      ],
+      "true_class": "Plastic bottle cap",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.5044842958450317,
+          "iou": 0.8933530632388104
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.7068862915039062,
+          "iou": 0.9668722583583366
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.5251719355583191,
+          "iou": 0.9682581776381382
+        }
+      }
+    },
+    {
+      "key": "batch_12/000032.jpg|1335.000,2283.000,1562.000,2715.000",
+      "file_name": "batch_12/000032.jpg",
+      "gt_box": [
+        1335.0,
+        2283.0,
+        1562.0,
+        2715.0
+      ],
+      "true_class": "Other plastic wrapper",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6793457269668579,
+          "iou": 0.9339335172676603
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.8094571232795715,
+          "iou": 0.9152650142232053
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6930174827575684,
+          "iou": 0.9358126996995602
+        }
+      }
+    },
+    {
+      "key": "batch_1/000001.jpg|826.000,744.000,1290.000,949.000",
+      "file_name": "batch_1/000001.jpg",
+      "gt_box": [
+        826.0,
+        744.0,
+        1290.0,
+        949.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.8529800772666931,
+          "iou": 0.9567176558497802
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.9328386187553406,
+          "iou": 0.9657325993707254
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.970295786857605,
+          "iou": 0.9385562413483938
+        }
+      }
+    },
+    {
+      "key": "batch_15/000028.jpg|822.000,1605.000,1300.000,1786.000",
+      "file_name": "batch_15/000028.jpg",
+      "gt_box": [
+        822.0,
+        1605.0,
+        1300.0,
+        1786.0
+      ],
+      "true_class": "Plastic straw",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic straw",
+          "confidence": 0.6126607060432434,
+          "iou": 0.8705350081181348
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic straw",
+          "confidence": 0.7514406442642212,
+          "iou": 0.9490234932917918
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic straw",
+          "confidence": 0.8303428292274475,
+          "iou": 0.9321434107757502
+        }
+      }
+    },
+    {
+      "key": "batch_11/000046.jpg|1736.000,1128.000,1973.000,1474.000",
+      "file_name": "batch_11/000046.jpg",
+      "gt_box": [
+        1736.0,
+        1128.0,
+        1973.0,
+        1474.0
+      ],
+      "true_class": "Other plastic wrapper",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.756117582321167,
+          "iou": 0.9123781655254798
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.858245313167572,
+          "iou": 0.8781186603431713
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6998158693313599,
+          "iou": 0.8578355334010264
+        }
+      }
+    },
+    {
+      "key": "batch_15/000000.jpg|569.000,2678.000,935.000,2874.000",
+      "file_name": "batch_15/000000.jpg",
+      "gt_box": [
+        569.0,
+        2678.0,
+        935.0,
+        2874.0
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.6816920042037964,
+          "iou": 0.9355964819208751
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.2664472758769989,
+          "iou": 0.9316788690289822
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.4527558982372284,
+          "iou": 0.9312057558367793
+        }
+      }
+    },
+    {
+      "key": "batch_11/000016.jpg|361.120,61.794,491.200,291.840",
+      "file_name": "batch_11/000016.jpg",
+      "gt_box": [
+        361.12,
+        61.79385964912281,
+        491.2,
+        291.83991228070175
+      ],
+      "true_class": "Styrofoam piece",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.8218802809715271,
+          "iou": 0.986046786235876
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.3622484803199768,
+          "iou": 0.9643277282252238
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.8649734854698181,
+          "iou": 0.9635876348605527
+        }
+      }
+    },
+    {
+      "key": "batch_15/000000.jpg|1146.000,347.000,1309.000,517.000",
+      "file_name": "batch_15/000000.jpg",
+      "gt_box": [
+        1146.0,
+        347.0,
+        1309.0,
+        517.0
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.520740270614624,
+          "iou": 0.8227493777456547
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.655543863773346,
+          "iou": 0.8345700908183327
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.4932252764701843,
+          "iou": 0.8597256914817594
+        }
+      }
+    },
+    {
+      "key": "batch_12/000026.jpg|2547.000,3723.000,2668.000,3883.000",
+      "file_name": "batch_12/000026.jpg",
+      "gt_box": [
+        2547.0,
+        3723.0,
+        2668.0,
+        3883.0
+      ],
+      "true_class": "Cigarette",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Cigarette",
+          "confidence": 0.3069482445716858,
+          "iou": 0.8036879309986309
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Cigarette",
+          "confidence": 0.3774281442165375,
+          "iou": 0.7958792879931198
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Cigarette",
+          "confidence": 0.3734557628631592,
+          "iou": 0.8414010432633486
+        }
+      }
+    },
+    {
+      "key": "batch_7/000029.JPG|121.176,308.627,262.745,404.314",
+      "file_name": "batch_7/000029.JPG",
+      "gt_box": [
+        121.17647058823529,
+        308.62745098039215,
+        262.7450980392157,
+        404.3137254901961
+      ],
+      "true_class": "Plastic lid",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.3682993948459625,
+          "iou": 0.8594394514032898
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.5472422242164612,
+          "iou": 0.9339747513279593
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.6859311461448669,
+          "iou": 0.9369926656892572
+        }
+      }
+    },
+    {
+      "key": "batch_8/000008.jpg|266.275,223.922,341.176,340.784",
+      "file_name": "batch_8/000008.jpg",
+      "gt_box": [
+        266.27450980392155,
+        223.92156862745094,
+        341.1764705882353,
+        340.78431372549016
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.7540680766105652,
+          "iou": 0.932626697264988
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.6720917224884033,
+          "iou": 0.9464612929548067
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.8603042364120483,
+          "iou": 0.9293272173908006
+        }
+      }
+    },
+    {
+      "key": "batch_8/000038.jpg|171.765,151.961,224.118,282.353",
+      "file_name": "batch_8/000038.jpg",
+      "gt_box": [
+        171.76470588235293,
+        151.9607843137255,
+        224.11764705882354,
+        282.3529411764706
+      ],
+      "true_class": "Glass bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Glass bottle",
+          "confidence": 0.7790735960006714,
+          "iou": 0.8333050518938169
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Glass bottle",
+          "confidence": 0.951074481010437,
+          "iou": 0.7508298746811136
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Glass bottle",
+          "confidence": 0.7461740374565125,
+          "iou": 0.8650809877735395
+        }
+      }
+    },
+    {
+      "key": "batch_6/000093.JPG|317.451,295.686,380.196,399.216",
+      "file_name": "batch_6/000093.JPG",
+      "gt_box": [
+        317.45098039215685,
+        295.6862745098039,
+        380.19607843137254,
+        399.2156862745098
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.44050851464271545,
+          "iou": 0.7983834695622203
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.7017647624015808,
+          "iou": 0.938578785897365
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.4145025312900543,
+          "iou": 0.931678253762895
+        }
+      }
+    },
+    {
+      "key": "batch_5/000038.JPG|286.078,232.549,376.863,303.529",
+      "file_name": "batch_5/000038.JPG",
+      "gt_box": [
+        286.078431372549,
+        232.54901960784312,
+        376.8627450980392,
+        303.52941176470586
+      ],
+      "true_class": "Styrofoam piece",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.5018525123596191,
+          "iou": 0.9599375787628553
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.9065394997596741,
+          "iou": 0.9705849886300199
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.6513611674308777,
+          "iou": 0.9725718996136079
+        }
+      }
+    },
+    {
+      "key": "batch_9/000090.jpg|133.673,394.720,219.320,461.600",
+      "file_name": "batch_9/000090.jpg",
+      "gt_box": [
+        133.6732456140351,
+        394.72,
+        219.3201754385965,
+        461.6
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.49381574988365173,
+          "iou": 0.9627855584012901
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.5356767773628235,
+          "iou": 0.926556608241563
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.7881547212600708,
+          "iou": 0.9179229704352309
+        }
+      }
+    },
+    {
+      "key": "batch_7/000129.JPG|378.824,234.902,463.333,300.980",
+      "file_name": "batch_7/000129.JPG",
+      "gt_box": [
+        378.8235294117647,
+        234.90196078431373,
+        463.3333333333333,
+        300.98039215686276
+      ],
+      "true_class": "Other plastic wrapper",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.40099236369132996,
+          "iou": 0.9525305177442024
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.8050349354743958,
+          "iou": 0.9800778868092499
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.8966065645217896,
+          "iou": 0.962739088982844
+        }
+      }
+    },
+    {
+      "key": "batch_9/000045.jpg|122.157,324.510,191.765,402.353",
+      "file_name": "batch_9/000045.jpg",
+      "gt_box": [
+        122.15686274509804,
+        324.5098039215686,
+        191.76470588235293,
+        402.3529411764706
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9003225564956665,
+          "iou": 0.6358933705562633
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.8869968056678772,
+          "iou": 0.6594578119807412
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9249629378318787,
+          "iou": 0.6715483715760792
+        }
+      }
+    },
+    {
+      "key": "batch_6/000045.JPG|122.353,259.216,166.471,376.471",
+      "file_name": "batch_6/000045.JPG",
+      "gt_box": [
+        122.35294117647058,
+        259.2156862745098,
+        166.47058823529412,
+        376.4705882352941
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.922698974609375,
+          "iou": 0.9336462895618315
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.9757006764411926,
+          "iou": 0.9361368604331342
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.9611417651176453,
+          "iou": 0.9204409696070627
+        }
+      }
+    },
+    {
+      "key": "batch_9/000017.jpg|257.059,286.471,321.961,363.137",
+      "file_name": "batch_9/000017.jpg",
+      "gt_box": [
+        257.05882352941177,
+        286.4705882352941,
+        321.96078431372547,
+        363.1372549019608
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9201981425285339,
+          "iou": 0.8881826884420606
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.910020112991333,
+          "iou": 0.9139013945978861
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9326745271682739,
+          "iou": 0.8598796169722213
+        }
+      }
+    },
+    {
+      "key": "batch_8/000012.jpg|189.085,245.966,267.516,309.300",
+      "file_name": "batch_8/000012.jpg",
+      "gt_box": [
+        189.08496078431372,
+        245.96639215686272,
+        267.5163333333333,
+        309.29972549019607
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.8583208918571472,
+          "iou": 0.95017846729152
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.8986260890960693,
+          "iou": 0.9495837934891378
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.8237037658691406,
+          "iou": 0.9469980345525616
+        }
+      }
+    },
+    {
+      "key": "batch_8/000066.jpg|158.431,327.647,215.294,404.314",
+      "file_name": "batch_8/000066.jpg",
+      "gt_box": [
+        158.4313725490196,
+        327.6470588235294,
+        215.2941176470588,
+        404.3137254901961
+      ],
+      "true_class": "Drink can",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.6519721150398254,
+          "iou": 0.9656817710114183
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.9356256127357483,
+          "iou": 0.9700130837322123
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Drink can",
+          "confidence": 0.7881839871406555,
+          "iou": 0.9494636990887435
+        }
+      }
+    },
+    {
+      "key": "batch_9/000004.jpg|459.020,248.039,513.922,326.667",
+      "file_name": "batch_9/000004.jpg",
+      "gt_box": [
+        459.01960784313724,
+        248.0392156862745,
+        513.9215686274509,
+        326.6666666666667
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.6442917585372925,
+          "iou": 0.9357010962397174
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.9077563285827637,
+          "iou": 0.9283540435412626
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.6175896525382996,
+          "iou": 0.908342328181709
+        }
+      }
+    }
+  ],
+  "stable_semantic_error": [
+    {
+      "key": "batch_14/000006.jpg|375.000,607.000,2780.000,3987.000",
+      "file_name": "batch_14/000006.jpg",
+      "gt_box": [
+        375.0,
+        607.0,
+        2780.0,
+        3987.0
+      ],
+      "true_class": "Other plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.4159405827522278,
+          "iou": 0.9172463263041075
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Corrugated carton",
+          "confidence": 0.270546555519104,
+          "iou": 0.9386629638254436
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.7277188897132874,
+          "iou": 0.856036249321487
+        }
+      }
+    },
+    {
+      "key": "batch_14/000013.jpg|465.000,1150.000,4038.000,2342.000",
+      "file_name": "batch_14/000013.jpg",
+      "gt_box": [
+        465.0,
+        1150.0,
+        4038.0,
+        2342.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.30661848187446594,
+          "iou": 0.930053444380928
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.9172313213348389,
+          "iou": 0.9080989192802382
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.9520278573036194,
+          "iou": 0.8545479191411715
+        }
+      }
+    },
+    {
+      "key": "batch_12/000012.jpg|682.000,1178.000,1960.000,3261.000",
+      "file_name": "batch_12/000012.jpg",
+      "gt_box": [
+        682.0,
+        1178.0,
+        1960.0,
+        3261.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.6212207078933716,
+          "iou": 0.8629498449703361
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9027901887893677,
+          "iou": 0.7372641552525943
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9439026117324829,
+          "iou": 0.9016212882848761
+        }
+      }
+    },
+    {
+      "key": "batch_11/000084.jpg|565.000,1955.000,2466.000,2988.000",
+      "file_name": "batch_11/000084.jpg",
+      "gt_box": [
+        565.0,
+        1955.0,
+        2466.0,
+        2988.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.3549497425556183,
+          "iou": 0.9891366901580674
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.8926510810852051,
+          "iou": 0.9723858869235732
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.372163325548172,
+          "iou": 0.9704917411744112
+        }
+      }
+    },
+    {
+      "key": "batch_13/000034.jpg|1084.000,3356.000,1941.000,4159.000",
+      "file_name": "batch_13/000034.jpg",
+      "gt_box": [
+        1084.0,
+        3356.0,
+        1941.0,
+        4159.0
+      ],
+      "true_class": "Other plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.4742297828197479,
+          "iou": 0.8821691213845724
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.8543192148208618,
+          "iou": 0.8835605813183292
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6658874750137329,
+          "iou": 0.9359708933350931
+        }
+      }
+    },
+    {
+      "key": "batch_12/000022.jpg|1045.190,1893.381,1828.190,2743.381",
+      "file_name": "batch_12/000022.jpg",
+      "gt_box": [
+        1045.1904,
+        1893.381,
+        1828.1904,
+        2743.3809
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.8515928983688354,
+          "iou": 0.9497524093681277
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.6745397448539734,
+          "iou": 0.9598510434237083
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Single-use carrier bag",
+          "confidence": 0.6012351512908936,
+          "iou": 0.959329251714303
+        }
+      }
+    },
+    {
+      "key": "batch_12/000017.jpg|876.000,2061.000,1527.000,2875.000",
+      "file_name": "batch_12/000017.jpg",
+      "gt_box": [
+        876.0,
+        2061.0,
+        1527.0,
+        2875.0
+      ],
+      "true_class": "Crisp packet",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.25430527329444885,
+          "iou": 0.9215269025898905
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6520895957946777,
+          "iou": 0.9292426396198419
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.4308817684650421,
+          "iou": 0.9261519663227248
+        }
+      }
+    },
+    {
+      "key": "batch_13/000056.jpg|1522.000,883.000,2060.000,1826.000",
+      "file_name": "batch_13/000056.jpg",
+      "gt_box": [
+        1522.0,
+        883.0,
+        2060.0,
+        1826.0
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.38325169682502747,
+          "iou": 0.932116414742479
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.2815984785556793,
+          "iou": 0.9042753266241552
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.35173043608665466,
+          "iou": 0.8338877677729688
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|1178.000,1369.000,1821.000,1940.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        1178.0,
+        1369.0,
+        1821.0,
+        1940.0
+      ],
+      "true_class": "Disposable food container",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.2970201075077057,
+          "iou": 0.9383001454709012
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.6147475838661194,
+          "iou": 0.976893082871066
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.9276183843612671,
+          "iou": 0.9517576519608807
+        }
+      }
+    },
+    {
+      "key": "batch_12/000064.jpg|1131.956,2074.000,1702.438,2716.000",
+      "file_name": "batch_12/000064.jpg",
+      "gt_box": [
+        1131.9558,
+        2074.0,
+        1702.4376,
+        2716.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Garbage bag",
+          "confidence": 0.28588080406188965,
+          "iou": 0.8827441043053084
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.5892744660377502,
+          "iou": 0.9798303153643811
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Single-use carrier bag",
+          "confidence": 0.37327009439468384,
+          "iou": 0.9596132024408609
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|1178.000,1368.000,1819.000,1922.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        1178.0,
+        1368.0,
+        1819.0,
+        1922.0
+      ],
+      "true_class": "Plastic lid",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.3153798282146454,
+          "iou": 0.9482520634930887
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.2753639221191406,
+          "iou": 0.9729750725239592
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.613510012626648,
+          "iou": 0.948816476431136
+        }
+      }
+    },
+    {
+      "key": "batch_12/000037.jpg|1611.000,1311.000,1977.000,2151.000",
+      "file_name": "batch_12/000037.jpg",
+      "gt_box": [
+        1611.0,
+        1311.0,
+        1977.0,
+        2151.0
+      ],
+      "true_class": "Unlabeled litter",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.5345752239227295,
+          "iou": 0.785832102314673
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.949978232383728,
+          "iou": 0.780646112524099
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Glass bottle",
+          "confidence": 0.5652481317520142,
+          "iou": 0.8621205311748318
+        }
+      }
+    },
+    {
+      "key": "batch_11/000033.jpg|699.000,1964.000,1297.000,2463.000",
+      "file_name": "batch_11/000033.jpg",
+      "gt_box": [
+        699.0,
+        1964.0,
+        1297.0,
+        2463.0
+      ],
+      "true_class": "Tissues",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic",
+          "confidence": 0.4358980059623718,
+          "iou": 0.9645851691868329
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9339635968208313,
+          "iou": 0.9860689873952796
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.7868724465370178,
+          "iou": 0.9717349998472601
+        }
+      }
+    },
+    {
+      "key": "batch_12/000033.jpg|1164.000,3272.500,1580.000,3887.500",
+      "file_name": "batch_12/000033.jpg",
+      "gt_box": [
+        1164.0,
+        3272.5,
+        1580.0,
+        3887.5
+      ],
+      "true_class": "Drink carton",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.286940336227417,
+          "iou": 0.6646378338966091
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.4640997648239136,
+          "iou": 0.9037973342505401
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.583125650882721,
+          "iou": 0.6543303648873522
+        }
+      }
+    },
+    {
+      "key": "batch_13/000056.jpg|799.000,0.000,1291.000,483.000",
+      "file_name": "batch_13/000056.jpg",
+      "gt_box": [
+        799.0,
+        0.0,
+        1291.0,
+        483.0
+      ],
+      "true_class": "Normal paper",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.30060821771621704,
+          "iou": 0.9164496810070415
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.7832938432693481,
+          "iou": 0.9692506896829467
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.8086616396903992,
+          "iou": 0.9572627080424604
+        }
+      }
+    },
+    {
+      "key": "batch_12/000025.jpg|990.000,862.000,1487.000,1203.000",
+      "file_name": "batch_12/000025.jpg",
+      "gt_box": [
+        990.0,
+        862.0,
+        1487.0,
+        1203.0
+      ],
+      "true_class": "Cigarette",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.4626188278198242,
+          "iou": 0.9542901000246695
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.5272067189216614,
+          "iou": 0.8655008868958857
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.8246579766273499,
+          "iou": 0.8750171146400316
+        }
+      }
+    },
+    {
+      "key": "batch_1/000007.jpg|730.000,126.000,1005.000,735.000",
+      "file_name": "batch_1/000007.jpg",
+      "gt_box": [
+        730.0,
+        126.0,
+        1005.0,
+        735.0
+      ],
+      "true_class": "Food Can",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.32442641258239746,
+          "iou": 0.9411334547856558
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Aerosol",
+          "confidence": 0.782092273235321,
+          "iou": 0.9499029408676862
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.5214383602142334,
+          "iou": 0.9238830872103884
+        }
+      }
+    },
+    {
+      "key": "batch_12/000092.jpg|734.000,582.000,1137.000,975.000",
+      "file_name": "batch_12/000092.jpg",
+      "gt_box": [
+        734.0,
+        582.0,
+        1137.0,
+        975.0
+      ],
+      "true_class": "Plastic lid",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.3529754877090454,
+          "iou": 0.8566155715339973
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.8583624362945557,
+          "iou": 0.9033000563725044
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.5360060334205627,
+          "iou": 0.8663440190853263
+        }
+      }
+    },
+    {
+      "key": "batch_3/IMG_4934.JPG|20.392,107.255,427.843,464.510",
+      "file_name": "batch_3/IMG_4934.JPG",
+      "gt_box": [
+        20.392156862745097,
+        107.25490196078431,
+        427.84313725490193,
+        464.5098039215686
+      ],
+      "true_class": "Normal paper",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Corrugated carton",
+          "confidence": 0.7507929801940918,
+          "iou": 0.6908991466933312
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Corrugated carton",
+          "confidence": 0.4739159047603607,
+          "iou": 0.7555908752241737
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Corrugated carton",
+          "confidence": 0.6739653944969177,
+          "iou": 0.7084403468666153
+        }
+      }
+    },
+    {
+      "key": "batch_13/000056.jpg|659.000,3734.000,1066.000,4065.000",
+      "file_name": "batch_13/000056.jpg",
+      "gt_box": [
+        659.0,
+        3734.0,
+        1066.0,
+        4065.0
+      ],
+      "true_class": "Tissues",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.4807605445384979,
+          "iou": 0.9193137851234662
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.8776571750640869,
+          "iou": 0.9148752983185736
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.7210509181022644,
+          "iou": 0.8965274192116046
+        }
+      }
+    },
+    {
+      "key": "batch_12/000017.jpg|1785.000,3287.000,2105.000,3682.000",
+      "file_name": "batch_12/000017.jpg",
+      "gt_box": [
+        1785.0,
+        3287.0,
+        2105.0,
+        3682.0
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.4153725802898407,
+          "iou": 0.8432103952239443
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9016059041023254,
+          "iou": 0.6411251904162331
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.48091909289360046,
+          "iou": 0.8469025683276855
+        }
+      }
+    },
+    {
+      "key": "batch_12/000029.jpg|1910.000,1933.000,2391.000,2176.000",
+      "file_name": "batch_12/000029.jpg",
+      "gt_box": [
+        1910.0,
+        1933.0,
+        2391.0,
+        2176.0
+      ],
+      "true_class": "Normal paper",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic",
+          "confidence": 0.2737489640712738,
+          "iou": 0.9350719079224358
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.5419891476631165,
+          "iou": 0.9075668391598293
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.40101438760757446,
+          "iou": 0.9123090374003291
+        }
+      }
+    },
+    {
+      "key": "batch_14/000040.jpg|1039.000,2148.000,1358.000,2455.000",
+      "file_name": "batch_14/000040.jpg",
+      "gt_box": [
+        1039.0,
+        2148.0,
+        1358.0,
+        2455.0
+      ],
+      "true_class": "Metal bottle cap",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.8238401412963867,
+          "iou": 0.9261592389855892
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic bottle cap",
+          "confidence": 0.7040055990219116,
+          "iou": 0.953321639837173
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Plastic lid",
+          "confidence": 0.36377644538879395,
+          "iou": 0.9585886783934673
+        }
+      }
+    },
+    {
+      "key": "batch_2/000005.JPG|64.706,150.784,292.157,368.431",
+      "file_name": "batch_2/000005.JPG",
+      "gt_box": [
+        64.70588235294117,
+        150.7843137254902,
+        292.156862745098,
+        368.4313725490196
+      ],
+      "true_class": "Crisp packet",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.3923025131225586,
+          "iou": 0.974596004169608
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.5737379193305969,
+          "iou": 0.98529413855723
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.7071711421012878,
+          "iou": 0.9571062250887178
+        }
+      }
+    },
+    {
+      "key": "batch_15/000028.jpg|436.000,880.000,665.000,1096.000",
+      "file_name": "batch_15/000028.jpg",
+      "gt_box": [
+        436.0,
+        880.0,
+        665.0,
+        1096.0
+      ],
+      "true_class": "Wrapping paper",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.4404584467411041,
+          "iou": 0.9544991301825059
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Unlabeled litter",
+          "confidence": 0.6259410977363586,
+          "iou": 0.9802975493232908
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.42209678888320923,
+          "iou": 0.9578199139704691
+        }
+      }
+    },
+    {
+      "key": "batch_15/000045.jpg|610.000,1030.000,833.000,1220.000",
+      "file_name": "batch_15/000045.jpg",
+      "gt_box": [
+        610.0,
+        1030.0,
+        833.0,
+        1220.0
+      ],
+      "true_class": "Styrofoam piece",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.5385030508041382,
+          "iou": 0.9573351568194682
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.2780846357345581,
+          "iou": 0.9398702753744015
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Aluminium foil",
+          "confidence": 0.2772715091705322,
+          "iou": 0.9364898369626854
+        }
+      }
+    },
+    {
+      "key": "batch_1/000066.JPG|80.980,219.608,305.098,400.392",
+      "file_name": "batch_1/000066.JPG",
+      "gt_box": [
+        80.98039215686275,
+        219.6078431372549,
+        305.09803921568624,
+        400.3921568627451
+      ],
+      "true_class": "Egg carton",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Paper bag",
+          "confidence": 0.9243768453598022,
+          "iou": 0.956582313450233
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Paper bag",
+          "confidence": 0.2767234444618225,
+          "iou": 0.9206320987727833
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Paper bag",
+          "confidence": 0.8549201488494873,
+          "iou": 0.9421949095066781
+        }
+      }
+    },
+    {
+      "key": "batch_15/000062.jpg|624.000,121.000,948.000,214.000",
+      "file_name": "batch_15/000062.jpg",
+      "gt_box": [
+        624.0,
+        121.0,
+        948.0,
+        214.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.44250452518463135,
+          "iou": 0.8877859660022834
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.34574827551841736,
+          "iou": 0.8947985923710623
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6551437973976135,
+          "iou": 0.9247301561264512
+        }
+      }
+    },
+    {
+      "key": "batch_6/000026.JPG|137.451,283.137,293.333,451.569",
+      "file_name": "batch_6/000026.JPG",
+      "gt_box": [
+        137.45098039215685,
+        283.1372549019608,
+        293.3333333333333,
+        451.5686274509804
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Crisp packet",
+          "confidence": 0.37714606523513794,
+          "iou": 0.9655556703008875
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.44215303659439087,
+          "iou": 0.9458550072163724
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.4122680723667145,
+          "iou": 0.9639359497525761
+        }
+      }
+    },
+    {
+      "key": "batch_12/000029.jpg|2301.000,1771.000,2445.000,1936.000",
+      "file_name": "batch_12/000029.jpg",
+      "gt_box": [
+        2301.0,
+        1771.0,
+        2445.0,
+        1936.0
+      ],
+      "true_class": "Normal paper",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic",
+          "confidence": 0.36319655179977417,
+          "iou": 0.9390127855378742
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Unlabeled litter",
+          "confidence": 0.34799784421920776,
+          "iou": 0.9031985366898984
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.32719072699546814,
+          "iou": 0.8955682154960855
+        }
+      }
+    }
+  ],
+  "seed_disagreement": [
+    {
+      "key": "batch_13/000065.jpg|1.000,971.000,2515.000,4159.000",
+      "file_name": "batch_13/000065.jpg",
+      "gt_box": [
+        1.0,
+        971.0,
+        2515.0,
+        4159.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.34027600288391113,
+          "iou": 0.5607974075914973
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_14/000004.jpg|534.000,354.000,3606.000,2818.000",
+      "file_name": "batch_14/000004.jpg",
+      "gt_box": [
+        534.0,
+        354.0,
+        3606.0,
+        2818.0
+      ],
+      "true_class": "Other plastic wrapper",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.28571924567222595,
+          "iou": 0.8066154095772688
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.4696969985961914,
+          "iou": 0.9134544399606159
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.679103672504425,
+          "iou": 0.9180383962720446
+        }
+      }
+    },
+    {
+      "key": "batch_13/000046.jpg|945.000,184.000,3373.000,2630.000",
+      "file_name": "batch_13/000046.jpg",
+      "gt_box": [
+        945.0,
+        184.0,
+        3373.0,
+        2630.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Single-use carrier bag",
+          "confidence": 0.8164768218994141,
+          "iou": 0.9548492643330615
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.8650727868080139,
+          "iou": 0.9503454905495818
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.9778367280960083,
+          "iou": 0.9503530773192767
+        }
+      }
+    },
+    {
+      "key": "batch_13/000010.jpg|168.000,7.000,2465.000,1756.000",
+      "file_name": "batch_13/000010.jpg",
+      "gt_box": [
+        168.0,
+        7.0,
+        2465.0,
+        1756.0
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.7694981694221497,
+          "iou": 0.9404659930942384
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.8584640026092529,
+          "iou": 0.9488630148414267
+        }
+      }
+    },
+    {
+      "key": "batch_13/000067.jpg|395.000,1032.000,4153.000,2074.000",
+      "file_name": "batch_13/000067.jpg",
+      "gt_box": [
+        395.0,
+        1032.0,
+        4153.0,
+        2074.0
+      ],
+      "true_class": "Glass bottle",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.40733474493026733,
+          "iou": 0.7105492152059663
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.7340019941329956,
+          "iou": 0.845339060538773
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_14/000000.jpg|885.000,599.000,3439.000,1946.000",
+      "file_name": "batch_14/000000.jpg",
+      "gt_box": [
+        885.0,
+        599.0,
+        3439.0,
+        1946.0
+      ],
+      "true_class": "Other plastic wrapper",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.2507069706916809,
+          "iou": 0.903017457420744
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.6824449896812439,
+          "iou": 0.9593524654130123
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.5134433507919312,
+          "iou": 0.9636780907405642
+        }
+      }
+    },
+    {
+      "key": "batch_13/000028.jpg|1400.000,829.000,2293.000,3603.000",
+      "file_name": "batch_13/000028.jpg",
+      "gt_box": [
+        1400.0,
+        829.0,
+        2293.0,
+        3603.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.3054822087287903,
+          "iou": 0.8655460043943197
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.6724669933319092,
+          "iou": 0.8614236775162444
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|644.000,438.000,2178.000,1474.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        644.0,
+        438.0,
+        2178.0,
+        1474.0
+      ],
+      "true_class": "Glass bottle",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.35241082310676575,
+          "iou": 0.7019987255984086
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_13/000031.jpg|1171.000,2252.000,2410.000,3534.000",
+      "file_name": "batch_13/000031.jpg",
+      "gt_box": [
+        1171.0,
+        2252.0,
+        2410.0,
+        3534.0
+      ],
+      "true_class": "Other plastic",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.4656675457954407,
+          "iou": 0.654003085570384
+        }
+      }
+    },
+    {
+      "key": "batch_13/000032.jpg|595.000,2205.000,1900.000,3328.000",
+      "file_name": "batch_13/000032.jpg",
+      "gt_box": [
+        595.0,
+        2205.0,
+        1900.0,
+        3328.0
+      ],
+      "true_class": "Plastic lid",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Disposable food container",
+          "confidence": 0.2552754878997803,
+          "iou": 0.9834025084071084
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Disposable food container",
+          "confidence": 0.258670449256897,
+          "iou": 0.9657566415131038
+        }
+      }
+    },
+    {
+      "key": "batch_11/000028.jpg|270.000,2923.000,1462.000,4100.000",
+      "file_name": "batch_11/000028.jpg",
+      "gt_box": [
+        270.0,
+        2923.0,
+        1462.0,
+        4100.0
+      ],
+      "true_class": "Single-use carrier bag",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.9543027877807617,
+          "iou": 0.7930435852929025
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_1/000056.jpg|419.000,8.000,1132.000,1862.000",
+      "file_name": "batch_1/000056.jpg",
+      "gt_box": [
+        419.0,
+        8.0,
+        1132.0,
+        1862.0
+      ],
+      "true_class": "Other plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Aerosol",
+          "confidence": 0.5121359825134277,
+          "iou": 0.8027885832551462
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Aerosol",
+          "confidence": 0.2564464509487152,
+          "iou": 0.7634068466614135
+        }
+      }
+    },
+    {
+      "key": "batch_11/000061.jpg|907.000,1632.000,2033.000,2781.000",
+      "file_name": "batch_11/000061.jpg",
+      "gt_box": [
+        907.0,
+        1632.0,
+        2033.0,
+        2781.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.8951963186264038,
+          "iou": 0.9768670282436579
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Styrofoam piece",
+          "confidence": 0.9161801934242249,
+          "iou": 0.9759727774656785
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.569219708442688,
+          "iou": 0.9734541408666881
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|1817.000,1680.000,3024.000,2740.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        1817.0,
+        1680.0,
+        3024.0,
+        2740.0
+      ],
+      "true_class": "Paper cup",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.3983097970485687,
+          "iou": 0.9851724511106078
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.30226054787635803,
+          "iou": 0.9595191292889168
+        }
+      }
+    },
+    {
+      "key": "batch_14/000037.jpg|988.000,1551.000,2015.000,2793.000",
+      "file_name": "batch_14/000037.jpg",
+      "gt_box": [
+        988.0,
+        1551.0,
+        2015.0,
+        2793.0
+      ],
+      "true_class": "Clear plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.3274315595626831,
+          "iou": 0.9071169815776238
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.9568590521812439,
+          "iou": 0.7689880327269428
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.4323037266731262,
+          "iou": 0.7452182458170907
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|1942.000,664.000,3024.000,1718.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        1942.0,
+        664.0,
+        3024.0,
+        1718.0
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Crisp packet",
+          "confidence": 0.27590715885162354,
+          "iou": 0.7169046487155705
+        }
+      }
+    },
+    {
+      "key": "batch_13/000048.jpg|930.000,1688.000,1645.000,3241.000",
+      "file_name": "batch_13/000048.jpg",
+      "gt_box": [
+        930.0,
+        1688.0,
+        1645.0,
+        3241.0
+      ],
+      "true_class": "Drink carton",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.31410127878189087,
+          "iou": 0.7880085472915657
+        }
+      }
+    },
+    {
+      "key": "batch_13/000034.jpg|864.000,1320.000,1963.000,2318.000",
+      "file_name": "batch_13/000034.jpg",
+      "gt_box": [
+        864.0,
+        1320.0,
+        1963.0,
+        2318.0
+      ],
+      "true_class": "Other plastic bottle",
+      "outcomes": {
+        "42": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.5466005802154541,
+          "iou": 0.9621448671969415
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.384622722864151,
+          "iou": 0.9867208687903735
+        }
+      }
+    },
+    {
+      "key": "batch_13/000050.jpg|2010.000,1415.000,3500.000,2057.000",
+      "file_name": "batch_13/000050.jpg",
+      "gt_box": [
+        2010.0,
+        1415.0,
+        3500.0,
+        2057.0
+      ],
+      "true_class": "Unlabeled litter",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Unlabeled litter",
+          "confidence": 0.4351855218410492,
+          "iou": 0.7409479330089632
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Metal bottle cap",
+          "confidence": 0.7334716320037842,
+          "iou": 0.6893044449245448
+        }
+      }
+    },
+    {
+      "key": "batch_14/000038.jpg|876.191,1597.524,1986.190,2407.524",
+      "file_name": "batch_14/000038.jpg",
+      "gt_box": [
+        876.1905,
+        1597.524,
+        1986.1904,
+        2407.5238
+      ],
+      "true_class": "Glass bottle",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "correct_fine",
+          "predicted_class": "Glass bottle",
+          "confidence": 0.35025620460510254,
+          "iou": 0.9411194786438397
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_11/000082.jpg|899.000,1189.000,2002.000,1981.000",
+      "file_name": "batch_11/000082.jpg",
+      "gt_box": [
+        899.0,
+        1189.0,
+        2002.0,
+        1981.0
+      ],
+      "true_class": "Other plastic wrapper",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.7985105514526367,
+          "iou": 0.8198770144238086
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.9326708912849426,
+          "iou": 0.9674682814473116
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Other plastic wrapper",
+          "confidence": 0.5297768115997314,
+          "iou": 0.9013325282989663
+        }
+      }
+    },
+    {
+      "key": "batch_14/000062.jpg|851.000,1927.000,1647.000,3002.000",
+      "file_name": "batch_14/000062.jpg",
+      "gt_box": [
+        851.0,
+        1927.0,
+        1647.0,
+        3002.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.4298461675643921,
+          "iou": 0.734443209220958
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Plastic film",
+          "confidence": 0.37614309787750244,
+          "iou": 0.7084505954943587
+        }
+      }
+    },
+    {
+      "key": "batch_13/000070.jpg|1467.170,1496.320,2162.170,2492.653",
+      "file_name": "batch_13/000070.jpg",
+      "gt_box": [
+        1467.1702,
+        1496.3195,
+        2162.1702,
+        2492.6528
+      ],
+      "true_class": "Pop tab",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Metal bottle cap",
+          "confidence": 0.7307584881782532,
+          "iou": 0.984605089712215
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_11/000028.jpg|205.000,3081.000,992.000,3959.000",
+      "file_name": "batch_11/000028.jpg",
+      "gt_box": [
+        205.0,
+        3081.0,
+        992.0,
+        3959.0
+      ],
+      "true_class": "Single-use carrier bag",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.426005095243454,
+          "iou": 0.7852926545126155
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_15/000010.jpg|598.000,1024.000,1454.000,1808.000",
+      "file_name": "batch_15/000010.jpg",
+      "gt_box": [
+        598.0,
+        1024.0,
+        1454.0,
+        1808.0
+      ],
+      "true_class": "Paper bag",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Other carton",
+          "confidence": 0.5098187327384949,
+          "iou": 0.8396189360992213
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_13/000031.jpg|935.000,1070.000,1873.000,1704.000",
+      "file_name": "batch_13/000031.jpg",
+      "gt_box": [
+        935.0,
+        1070.0,
+        1873.0,
+        1704.0
+      ],
+      "true_class": "Plastic film",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.25106462836265564,
+          "iou": 0.9702792350094739
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.45697271823883057,
+          "iou": 0.9532021803244394
+        }
+      }
+    },
+    {
+      "key": "batch_12/000092.jpg|1010.000,2975.000,1802.000,3712.000",
+      "file_name": "batch_12/000092.jpg",
+      "gt_box": [
+        1010.0,
+        2975.0,
+        1802.0,
+        3712.0
+      ],
+      "true_class": "Disposable plastic cup",
+      "outcomes": {
+        "42": {
+          "category": "within_material_confusion",
+          "predicted_class": "Clear plastic bottle",
+          "confidence": 0.5519327521324158,
+          "iou": 0.9552141922400114
+        },
+        "123": {
+          "category": "within_material_confusion",
+          "predicted_class": "Plastic film",
+          "confidence": 0.38628506660461426,
+          "iou": 0.9692312329566108
+        },
+        "2026": {
+          "category": "correct_fine",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.48593464493751526,
+          "iou": 0.9528331715795806
+        }
+      }
+    },
+    {
+      "key": "batch_11/000028.jpg|687.000,2055.000,1659.000,2627.000",
+      "file_name": "batch_11/000028.jpg",
+      "gt_box": [
+        687.0,
+        2055.0,
+        1659.0,
+        2627.0
+      ],
+      "true_class": "Styrofoam piece",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Paper cup",
+          "confidence": 0.35516422986984253,
+          "iou": 0.9719601153630274
+        },
+        "2026": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        }
+      }
+    },
+    {
+      "key": "batch_13/000059.jpg|1551.000,711.000,2048.000,1581.000",
+      "file_name": "batch_13/000059.jpg",
+      "gt_box": [
+        1551.0,
+        711.0,
+        2048.0,
+        1581.0
+      ],
+      "true_class": "Plastic lid",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "2026": {
+          "category": "within_material_confusion",
+          "predicted_class": "Disposable plastic cup",
+          "confidence": 0.3272140324115753,
+          "iou": 0.7113897587735328
+        }
+      }
+    },
+    {
+      "key": "batch_12/000037.jpg|1096.000,1282.000,1569.000,2176.000",
+      "file_name": "batch_12/000037.jpg",
+      "gt_box": [
+        1096.0,
+        1282.0,
+        1569.0,
+        2176.0
+      ],
+      "true_class": "Unlabeled litter",
+      "outcomes": {
+        "42": {
+          "category": "missed_detection",
+          "predicted_class": null,
+          "confidence": null,
+          "iou": 0.0
+        },
+        "123": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Drink can",
+          "confidence": 0.25201407074928284,
+          "iou": 0.8469609308966237
+        },
+        "2026": {
+          "category": "cross_material_confusion",
+          "predicted_class": "Glass bottle",
+          "confidence": 0.37157145142555237,
+          "iou": 0.7781220978123708
+        }
+      }
+    }
+  ]
+}

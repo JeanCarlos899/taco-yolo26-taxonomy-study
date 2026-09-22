@@ -1,0 +1,10 @@
+{
+  "model_seed": 123,
+  "method": "paired nonparametric percentile bootstrap by test image",
+  "implementation": "cached exact one-to-one matches; validated against original evaluator",
+  "iterations": 2000,
+  "confidence_level": 0.95,
+  "random_seed": 42,
+  "unit": "image",
+  "test_images": 225
+}
