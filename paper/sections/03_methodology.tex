@@ -2,16 +2,16 @@
 
 A Figura~\ref{fig:pipeline} sintetiza o desenho experimental. A partir de uma única versão auditada do TACO, mantemos a partição e as caixas constantes, derivamos três taxonomias, treinamos cada uma sob protocolo idêntico e aplicamos cinco análises complementares no mesmo conjunto de teste.
 
-\begin{figure}[H]
+\begin{figure}[!t]
   \centering
-  \includegraphics[width=.94\linewidth]{methodology_pipeline.pdf}
+  \includegraphics[width=.97\linewidth]{methodology_pipeline.pdf}
   \caption{Pipeline experimental. Somente a taxonomia varia entre os três ramos de treinamento; imagens, caixas, partição, arquitetura e hiperparâmetros permanecem fixos.}
   \label{fig:pipeline}
 \end{figure}
 
 \subsection{Dados, auditoria e partição}
 
-Usamos exclusivamente \texttt{data/annotations.json} do repositório oficial TACO, em formato COCO \cite{lin2014coco}, e somente \textit{bounding boxes}. A auditoria programática confirmou 1.500 imagens, 4.784 objetos, 60 categorias, nenhuma imagem vazia e nenhum arquivo ausente. Sete caixas excediam a borda em no máximo 1,32 pixel; elas foram recortadas apenas na conversão, mantendo o JSON oficial intacto e registrando cada alteração.
+Usamos exclusivamente o arquivo \path{data/annotations.json}, obtido do repositório oficial TACO \cite{proenca2020tacorepo}. As anotações seguem o formato COCO \cite{lin2014coco}; neste estudo, usamos somente \textit{bounding boxes}. A auditoria programática confirmou 1.500 imagens, 4.784 objetos, 60 categorias, nenhuma imagem vazia e nenhum arquivo ausente. Sete caixas excediam a borda em no máximo 1,32 pixel; elas foram recortadas apenas na conversão, mantendo o JSON oficial intacto e registrando cada alteração.
 
 A partição foi sorteada uma vez por imagem com semente 42: treino, validação e teste receberam, respectivamente, 1.050/225/225 imagens e 3.359/788/637 objetos. As três taxonomias reutilizam exatamente essa partição. As coordenadas COCO $(x,y,w,h)$ foram convertidas para centro, largura e altura normalizados do YOLO; scripts verificaram limites, dimensões positivas, IDs e igualdade das partições. Imagens com orientação EXIF foram transpostas fisicamente antes da conversão.
 
@@ -34,6 +34,30 @@ Treinamos YOLO26n inicializado com pesos COCO, entrada $640\times640$, lote 24, 
 
 No teste fixo, reportamos precisão, revocação, $F_1$, AP$_{50}$ e AP$_{50:95}$ da implementação Ultralytics; esta última média usa IoU de 0,50 a 0,95 em passos de 0,05. A Tabela principal apresenta média e desvio-padrão entre sementes.
 
-Para decompor o erro, um avaliador controlado faz casamento guloso um-para-um em ordem decrescente de confiança e AP interpolado em 101 pontos. Para cada modelo Fine, preservamos caixas e escores, mas remapeamos predição e verdade-terreno para Fine, Material ou Binary. Como essa implementação não é numericamente idêntica ao avaliador nativo, seus valores só são comparados entre si.
+Para uma caixa predita $B$ e uma verdade-terreno $G$, definimos a sobreposição por
+\begin{equation}
+  \operatorname{IoU}(B,G)=\frac{|B\cap G|}{|B\cup G|}.
+  \label{eq:iou}
+\end{equation}
+Em cada limiar $\tau$, o AP é a média da precisão interpolada em 101 níveis de recall. A métrica mais estrita agrega dez limiares:
+\begin{equation}
+  \operatorname{AP}_{50:95}=\frac{1}{10}\sum_{k=0}^{9}
+  \operatorname{AP}_{0{,}50+0{,}05k}.
+  \label{eq:map}
+\end{equation}
+O $F_1=2PR/(P+R)$ resume precisão e revocação no ponto operacional selecionado pelo avaliador.
 
-Aplicamos bootstrap percentil pareado \cite{efron1993bootstrap} para obter ICs de 95\%. Fizemos 2.000 reamostragens das 225 imagens de teste, com reposição e os mesmos índices nos dois lados. O bootstrap usa as predições da semente 42; as outras análises agregam três sementes. Para cauda longa, a frequência é calculada apenas no treino: rara ($n\leq19$), média ($20\leq n\leq100$) e frequente ($n>100$).
+Para decompor o erro, um avaliador controlado faz casamento guloso um-para-um em ordem decrescente de confiança. Seja $\pi_L:\mathcal{C}_{Fine}\rightarrow\mathcal{C}_L$ o mapeamento para o nível $L\in\{Fine,Material,Binary\}$. Cada detecção $(B_i,c_i,s_i)$ é reavaliada como
+\begin{equation}
+  (B_i,c_i,s_i)\mapsto(B_i,\pi_L(c_i),s_i),
+  \label{eq:remap}
+\end{equation}
+preservando geometria e confiança. Como o número de classes e a macro-média também mudam, o ganho hierárquico combina o crédito recuperado por confusões colapsadas com o efeito da agregação de categorias. Esta implementação não é numericamente idêntica ao avaliador nativo; seus valores são comparados apenas entre si.
+
+Aplicamos bootstrap percentil pareado \cite{efron1993bootstrap} para obter ICs de 95\%. Em cada réplica $b$, reamostramos com reposição as 225 imagens e calculamos
+\begin{equation}
+  \Delta^{(b)}=M_A(\mathcal{I}^{(b)})-M_B(\mathcal{I}^{(b)}),\quad
+  IC_{95\%}=[Q_{0{,}025}(\Delta),Q_{0{,}975}(\Delta)].
+  \label{eq:bootstrap}
+\end{equation}
+Fizemos 2.000 reamostragens, com os mesmos índices nos dois lados. O bootstrap usa as predições da semente 42; as demais análises agregam três sementes. Para cauda longa, a frequência é calculada apenas no treino: rara ($n\leq19$), média ($20\leq n\leq100$) e frequente ($n>100$). Métricas por classe incluem somente rótulos presentes no teste fixo.

@@ -15,7 +15,7 @@ No bootstrap controlado da semente 42, a diferença Fine$-$Material em AP$_{50}$
 
 \subsection{Localização versus semântica}
 
-A Tabela~\ref{tab:hierarchy} usa exclusivamente as predições dos modelos Fine e o avaliador controlado. Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; ao ignorar classes, chegou a $0{,}466$. No bootstrap da semente 42, os ganhos Material$-$Fine e Binary$-$Fine foram, respectivamente, $+0{,}072$ (IC95\% $[0{,}026;0{,}127]$) e $+0{,}357$ (IC95\% $[0{,}305;0{,}409]$). Como caixas e escores são os mesmos, esses aumentos quantificam erros removidos apenas ao relaxar a exigência semântica.
+A Tabela~\ref{tab:hierarchy} usa exclusivamente as predições dos modelos Fine e o avaliador controlado. Ao aceitar a macroclasse de material, AP$_{50}$ passou de $0{,}103$ para $0{,}171$; ao ignorar classes, chegou a $0{,}466$. No bootstrap da semente 42, as diferenças Material$-$Fine e Binary$-$Fine foram, respectivamente, $+0{,}072$ (IC95\% $[0{,}026;0{,}127]$) e $+0{,}357$ (IC95\% $[0{,}305;0{,}409]$). Caixas e escores permanecem fixos, mas o remapeamento recupera confusões e altera a macro-média; a decomposição seguinte mede diretamente os tipos de casamento.
 
 \begin{table}[H]
   \centering
@@ -31,24 +31,35 @@ A Tabela~\ref{tab:hierarchy} usa exclusivamente as predições dos modelos Fine 
   \label{fig:hierarchy}
 \end{figure}
 
+\subsection{Exemplos nos níveis Material e Binary}
+
+A Figura~\ref{fig:model-level} amplia a análise visual para os outros modelos. Em (a), o modelo Material localiza e classifica corretamente um filme plástico. Os painéis (b) e (c) usam a mesma garrafa: o modelo Material preserva a localização, mas prevê Paper/Cardboard em vez de Plastic, enquanto o modelo Binary a reconhece como \textit{Litter}. Esse par mostra, em uma entrada controlada, como remover a exigência de material pode recuperar um acerto. O painel (d) estabelece o limite dessa simplificação: mesmo sem precisar distinguir materiais, o modelo Binary omite um pneu grande no limiar de confiança 0,25. Logo, reduzir a taxonomia elimina certos erros semânticos, mas não garante cobertura espacial.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.94\linewidth]{model_level_examples.pdf}
+  \caption{Predições reais dos modelos Material e Binary, semente 42. Os painéis (b) e (c) mostram a mesma imagem sob duas taxonomias; (d) mostra uma omissão binária.}
+  \label{fig:model-level}
+\end{figure}
+
 \subsection{Cauda longa e tipos de erro}
 
-A Tabela~\ref{tab:tail} mostra crescimento monotônico com a frequência. Classes raras obtiveram AP$_{50}=0{,}046$ e recall $0{,}030$, enquanto as frequentes atingiram 0,207 e 0,282. Logo, a dificuldade Fine não se distribui uniformemente entre rótulos.
+A Tabela~\ref{tab:tail} mostra crescimento monotônico com a frequência. Entre as classes presentes no teste, as raras obtiveram AP$_{50}=0{,}046$ e recall $0{,}053$, enquanto as frequentes atingiram 0,207 e 0,282. Logo, a dificuldade Fine não se distribui uniformemente entre rótulos.
 
 \begin{table}[H]
   \centering
-  \caption{Desempenho Fine por frequência no treino, agregado em três sementes.}
+  \caption{Desempenho Fine por frequência no treino, agregado em três sementes; somente classes com suporte no teste.}
   \label{tab:tail}
   \input{tables/long_tail_results}
 \end{table}
 
-Como diagnóstico adicional, na semente 42 e limiar de confiança 0,25, o casamento sem classe em IoU$\geq0{,}5$ produziu 97 acertos Fine, 51 confusões dentro do mesmo material e 73 entre materiais. Houve ainda 43 predições com sobreposição $0{,}1\leq$IoU$<0{,}5$, classificadas como falhas de localização, 42 falsos positivos com IoU$<0{,}1$ e 416 objetos não detectados. Esses totais dependem do limiar e servem para caracterização, não como substitutos das curvas de AP.
+Como diagnóstico adicional, na semente 42 e limiar de confiança 0,25, o casamento sem classe em IoU$\geq0{,}5$ produziu 97 acertos Fine, 51 confusões dentro do mesmo material e 73 entre materiais. Assim, 124 de 221 casamentos espaciais (56,1\%) tinham classe Fine incorreta. Houve ainda 11 falhas de localização ($0{,}1\leq$IoU$<0{,}5$), 32 duplicatas sobre objetos já casados, 42 falsos positivos de fundo (IoU$<0{,}1$) e 416 objetos não detectados. Esses totais dependem do limiar e servem para caracterização, não como substitutos das curvas de AP \cite{bolya2020tide}.
 
-A Figura~\ref{fig:qualitative} liga essa decomposição às imagens de teste. A primeira linha apresenta o mesmo recorte sem anotações, com a verdade-terreno e com uma saída correta. Na segunda, uma lata é localizada corretamente, mas confundida com aerossol, preservando o material; uma embalagem metálica é confundida com papel/cartão; e uma predição sobre latas não atinge o limiar de IoU. Assim, os exemplos ilustram erros semanticamente distintos mesmo quando há evidência visual e sobreposição espacial.
+A Figura~\ref{fig:qualitative} liga essa decomposição às imagens de teste. A primeira linha apresenta o mesmo recorte sem anotações, com a verdade-terreno e com uma saída correta. Na segunda, uma lata é localizada corretamente, mas confundida com aerossol, preservando o material; uma embalagem metálica é confundida com papel/cartão; e uma tampa plástica anotada não recebe predição. Os exemplos tornam visíveis erros semânticos e espaciais de naturezas distintas.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.94\linewidth]{qualitative_analysis.pdf}
-  \caption{Casos reais do teste Fine, semente 42. A primeira linha separa entrada, anotação e saída correta; a segunda exemplifica confusão intra-material, confusão inter-material e falha de localização. As imagens foram recortadas apenas para legibilidade.}
+  \caption{Casos reais do teste Fine, semente 42. A primeira linha separa entrada, anotação e saída correta; a segunda exemplifica confusão intra-material, confusão inter-material e omissão. As imagens foram recortadas apenas para legibilidade.}
   \label{fig:qualitative}
 \end{figure}

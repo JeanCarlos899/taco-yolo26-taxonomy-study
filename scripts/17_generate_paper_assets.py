@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import shutil
+from collections import defaultdict
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -12,7 +13,8 @@ from PIL import Image
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 from evaluation_utils import evaluate_predictions
-from pipeline_utils import ROOT, category_map, coco, load_json, save_csv, save_json, taxonomy_names
+from pipeline_utils import (ROOT, annotations_by_image, category_map, coco, dataset_dir,
+                            load_json, save_csv, save_json, taxonomy_names)
 
 
 SEEDS = (42, 123, 2026)
@@ -78,7 +80,8 @@ def long_tail_multiseed() -> pd.DataFrame:
         metrics = pd.read_csv(result_root(seed) / "fine_class_metrics.csv")
         merged = distribution[["class_id", "frequency_group", "train_instances"]].merge(metrics, on="class_id")
         for group in ("Rare", "Medium", "Frequent"):
-            current = merged[merged.frequency_group == group]
+            # Metrics are defined only for classes represented in the fixed test set.
+            current = merged[(merged.frequency_group == group) & (merged.test_instances > 0)]
             rows.append({"seed": seed, "frequency_group": group,
                          "num_classes": int(len(current)),
                          "mean_train_instances": current.train_instances.mean(),
@@ -138,8 +141,8 @@ def latex_tables(hierarchy: pd.DataFrame, long_tail: pd.DataFrame) -> None:
 
 def methodology_figure() -> None:
     """Create a publication-native vector diagram of the full experimental design."""
-    fig, ax = plt.subplots(figsize=(7.25, 3.15))
-    ax.set_xlim(0, 12); ax.set_ylim(0, 6); ax.axis("off")
+    fig, ax = plt.subplots(figsize=(7.35, 3.7))
+    ax.set_xlim(0, 13.2); ax.set_ylim(0, 7.1); ax.axis("off")
 
     def box(x, y, w, h, title, subtitle, color, text_color="white"):
         patch = FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.08,rounding_size=0.12",
@@ -154,28 +157,32 @@ def methodology_figure() -> None:
         ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=11,
                                      linewidth=1.15, color="#555555"))
 
-    box(.15, 2.25, 1.65, 1.55, "TACO oficial", "1.500 imagens\n4.784 objetos", BLUE)
-    box(2.25, 2.25, 1.75, 1.55, "Auditoria", "caixas, EXIF e\nintegridade", "#555555")
-    box(4.45, 2.25, 1.65, 1.55, "Partição fixa", "70/15/15\npor imagem", "#7a7a7a")
-    arrow(1.80, 3.02, 2.25, 3.02); arrow(4.00, 3.02, 4.45, 3.02)
-
-    branch_x = 6.7
-    for y, title, sub, color in ((4.35, "Fine", "60 classes", ORANGE),
-                                  (2.45, "Material", "6 classes", GOLD),
-                                  (.55, "Binary", "1 classe", "#8c8c8c")):
-        box(branch_x, y, 1.55, 1.05, title, sub, color, DARK if color == GOLD else "white")
-        arrow(6.10, 3.02, branch_x, y + .52)
-
-    box(8.75, 2.25, 1.45, 1.55, "YOLO26n", "mesmo protocolo\n3 sementes", DARK)
-    for y in (4.87, 2.97, 1.07):
-        arrow(8.25, y, 8.75, 3.02)
-    box(10.65, 2.25, 1.20, 1.55, "Teste", "225 imagens\nfixas", BLUE)
-    arrow(10.20, 3.02, 10.65, 3.02)
-
-    ax.text(9.95, .38, "Avaliação nativa  •  hierárquica  •  bootstrap pareado  •  cauda longa  •  erros",
-            ha="center", va="center", fontsize=7.5, color=DARK,
-            bbox=dict(boxstyle="round,pad=.35", facecolor="white", edgecolor="#777777"))
-    arrow(11.25, 2.25, 10.35, .72)
+    ax.text(1.65, 6.72, "DADOS", ha="center", fontsize=8, fontweight="bold", color="#555555")
+    ax.text(5.45, 6.72, "TAXONOMIAS", ha="center", fontsize=8, fontweight="bold", color="#555555")
+    ax.text(8.45, 6.72, "TREINAMENTO", ha="center", fontsize=8, fontweight="bold", color="#555555")
+    ax.text(11.35, 6.72, "AVALIAÇÃO", ha="center", fontsize=8, fontweight="bold", color="#555555")
+    box(.15, 4.55, 1.75, 1.35, "TACO oficial", "1.500 imagens\n4.784 objetos", BLUE)
+    box(2.25, 4.55, 1.75, 1.35, "Auditoria", "integridade, EXIF\ne caixas", "#555555")
+    arrow(1.90, 5.22, 2.25, 5.22)
+    box(2.25, 2.45, 1.75, 1.35, "Partição fixa", "1.050 / 225 / 225\npor imagem", "#777777")
+    arrow(3.12, 4.55, 3.12, 3.80)
+    rows = ((5.35, "Fine", "60 classes", ORANGE, "white"),
+            (3.75, "Material", "6 classes", GOLD, DARK),
+            (2.15, "Binary", "1 classe", "#8c8c8c", "white"))
+    for y, title, sub, color, text_color in rows:
+        box(4.75, y-.50, 1.55, 1.0, title, sub, color, text_color)
+        box(7.65, y-.50, 1.60, 1.0, "YOLO26n", "protocolo fixo\n3 sementes", DARK)
+        arrow(6.30, y, 7.65, y)
+        box(10.45, y-.50, 1.80, 1.0, "Teste fixo", "225 imagens\nmétricas nativas", BLUE)
+        arrow(9.25, y, 10.45, y)
+    ax.plot([4.00, 4.38], [3.12, 3.12], color="#555555", linewidth=1.15)
+    ax.plot([4.38, 4.38], [2.15, 5.35], color="#555555", linewidth=1.15)
+    for y, *_ in rows:
+        arrow(4.38, y, 4.75, y)
+    ax.text(8.45, .62, "Predições salvas  →  remapeamento hierárquico  →  bootstrap pareado  →  análise de erros",
+            ha="center", va="center", fontsize=7.7, color=DARK,
+            bbox=dict(boxstyle="round,pad=.38", facecolor="white", edgecolor="#666666", linewidth=.9))
+    arrow(11.35, 1.65, 9.85, .93)
     fig.tight_layout(pad=.15)
     fig.savefig(FIGURES / "methodology_pipeline.pdf", bbox_inches="tight")
     fig.savefig(FIGURES / "methodology_pipeline.png", dpi=300, bbox_inches="tight")
@@ -222,6 +229,82 @@ def _draw_event(ax, event, title: str, show_gt=True, show_pred=True, raw=False, 
     ax.axis("off")
 
 
+def _taxonomy_events(taxonomy: str) -> list[dict]:
+    data = coco()
+    names = taxonomy_names(data, taxonomy)
+    remap = category_map(data, taxonomy)
+    test_names = {Path(name).as_posix() for name in load_json(ROOT / "splits/split.json")["test"]}
+    images = {row["id"]: row for row in data["images"]
+              if Path(row["file_name"]).as_posix() in test_names}
+    grouped = annotations_by_image(data)
+    truths = {}
+    for image in images.values():
+        file_name = Path(image["file_name"]).as_posix()
+        with Image.open(dataset_dir(taxonomy) / "images/test" / Path(file_name)) as actual:
+            sx, sy = actual.width / image["width"], actual.height / image["height"]
+        truths[file_name] = []
+        for ann in grouped[image["id"]]:
+            x, y, w, h = map(float, ann["bbox"])
+            truths[file_name].append({"class_id": remap[ann["category_id"]],
+                                      "bbox_xyxy": [x*sx, y*sy, (x+w)*sx, (y+h)*sy]})
+    predictions = [row for row in load_json(ROOT / f"results/predictions/{taxonomy}.json")
+                   if row["confidence"] >= .25]
+    by_image = defaultdict(list)
+    for row in predictions:
+        by_image[row["file_name"]].append(row)
+    events = []
+    for file_name, image_truths in truths.items():
+        unmatched = set(range(len(image_truths)))
+        for pred in sorted(by_image[file_name], key=lambda row: row["confidence"], reverse=True):
+            options = [(j, _iou(pred["bbox_xyxy"], image_truths[j]["bbox_xyxy"])) for j in unmatched]
+            j, overlap = max(options, key=lambda item: item[1]) if options else (-1, 0.)
+            if overlap < .5:
+                continue
+            unmatched.remove(j)
+            truth = image_truths[j]
+            category = "correct" if truth["class_id"] == pred["class_id"] else "semantic_error"
+            events.append({"file_name": file_name, "category": category, "iou": overlap,
+                           "confidence": pred["confidence"], "gt_box": truth["bbox_xyxy"],
+                           "pred_box": pred["bbox_xyxy"], "true_class": names[truth["class_id"]],
+                           "predicted_class": names[pred["class_id"]]})
+        for j in unmatched:
+            truth = image_truths[j]
+            events.append({"file_name": file_name, "category": "missed", "iou": 0.,
+                           "confidence": None, "gt_box": truth["bbox_xyxy"], "pred_box": None,
+                           "true_class": names[truth["class_id"]], "predicted_class": None})
+    return events
+
+
+def model_level_figure() -> None:
+    material = _taxonomy_events("material")
+    binary = _taxonomy_events("binary")
+
+    def pick(rows, category, file_name):
+        return max((row for row in rows if row["category"] == category and row["file_name"] == file_name),
+                   key=lambda row: row.get("confidence") or
+                                   ((row["gt_box"][2]-row["gt_box"][0]) *
+                                    (row["gt_box"][3]-row["gt_box"][1])))
+
+    panels = [
+        (pick(material, "correct", "batch_13/000046.jpg"), "(a) Material: acerto (Plastic)", True),
+        (pick(material, "semantic_error", "batch_14/000006.jpg"),
+         "(b) Material: Plastic → Paper/Cardboard", True),
+        (pick(binary, "correct", "batch_14/000006.jpg"),
+         "(c) Binary: acerto na imagem (b)", True),
+        (pick(binary, "missed", "batch_11/000056.jpg"),
+         "(d) Binary: omissão de pneu", False),
+    ]
+    fig, axes = plt.subplots(2, 2, figsize=(7.25, 5.25))
+    for ax, (event, title, show_pred) in zip(axes.flat, panels):
+        _draw_event(ax, event, title, show_pred=show_pred)
+    fig.text(.5, .012, "Branco contínuo: verdade-terreno   •   Preto tracejado: predição   •   confiança ≥ 0,25",
+             ha="center", fontsize=7.4, color=DARK)
+    fig.tight_layout(rect=(0, .035, 1, 1), pad=.55)
+    fig.savefig(FIGURES / "model_level_examples.pdf", bbox_inches="tight")
+    fig.savefig(FIGURES / "model_level_examples.png", dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
 def qualitative_figure() -> None:
     events = load_json(ROOT / "results" / "fine_error_events.json")
 
@@ -231,11 +314,10 @@ def qualitative_figure() -> None:
     correct = event("correct_fine", "batch_3/IMG_4915.JPG")
     within = event("within_material_confusion", "batch_1/000050.jpg")
     cross = event("cross_material_confusion", "batch_3/IMG_4926.JPG")
-    loc = max((row for row in events if row["category"] == "localization_failure" and
-               row["file_name"] == "batch_14/000047.jpg"), key=lambda row: row.get("confidence") or 0)
-    missed = [row for row in events if row["category"] == "missed_detection" and
-              row["file_name"] == loc["file_name"] and row.get("gt_box")]
-    loc_gt = max((row["gt_box"] for row in missed), key=lambda box: _iou(box, loc["pred_box"]))
+    missed = max((row for row in events if row["category"] == "missed_detection" and
+                  row.get("true_class") == "Plastic lid" and row.get("gt_box")),
+                 key=lambda row: (row["gt_box"][2]-row["gt_box"][0]) *
+                                 (row["gt_box"][3]-row["gt_box"][1]))
 
     fig, axes = plt.subplots(2, 3, figsize=(7.25, 5.15))
     _draw_event(axes[0, 0], correct, "(a) Entrada", raw=True)
@@ -243,7 +325,7 @@ def qualitative_figure() -> None:
     _draw_event(axes[0, 2], correct, "(c) Saída correta", show_gt=False, show_pred=True)
     _draw_event(axes[1, 0], within, "(d) Intra-material: lata → aerossol")
     _draw_event(axes[1, 1], cross, "(e) Inter-material: metal → papel")
-    _draw_event(axes[1, 2], loc, "(f) Localização insuficiente", gt_override=loc_gt)
+    _draw_event(axes[1, 2], missed, "(f) Omissão: tampa plástica", show_pred=False)
     fig.text(.5, .015, "Branco contínuo: verdade-terreno   •   Preto tracejado: predição (semente 42)",
              ha="center", fontsize=7.5, color=DARK)
     fig.tight_layout(rect=(0, .035, 1, 1), pad=.45)
@@ -298,6 +380,7 @@ def figures(hierarchy: pd.DataFrame, long_tail: pd.DataFrame) -> None:
     fig.savefig(FIGURES / "long_tail.pdf", bbox_inches="tight"); fig.savefig(FIGURES / "long_tail.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 
     qualitative_figure()
+    model_level_figure()
 
 
 def manifest() -> None:

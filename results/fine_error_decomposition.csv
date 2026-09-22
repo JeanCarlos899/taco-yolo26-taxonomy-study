@@ -2,6 +2,7 @@ category,count
 correct_fine,97
 within_material_confusion,51
 cross_material_confusion,73
-localization_failure,43
+localization_failure,11
+duplicate_detection,32
 background_false_positive,42
 missed_detection,416

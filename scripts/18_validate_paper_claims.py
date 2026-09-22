@@ -52,19 +52,21 @@ def main() -> None:
                           (bootstrap.metric == "ap50")].iloc[0]
     require(bool(direct_ap.includes_zero), "Direct Fine-Material AP50 interval no longer includes zero.")
     require(errors.to_dict() == {"correct_fine": 97, "within_material_confusion": 51,
-                                 "cross_material_confusion": 73, "localization_failure": 43,
-                                 "background_false_positive": 42, "missed_detection": 416},
+                                 "cross_material_confusion": 73, "localization_failure": 11,
+                                 "duplicate_detection": 32, "background_false_positive": 42,
+                                 "missed_detection": 416},
             "Error decomposition changed.")
 
     required_fragments = ["1.500 imagens", "4.784 objetos", "1.050/225/225", "3.359/788/637",
                           "0,146", "0,183", "0,567", "0{,}103", "0{,}171", "0{,}466",
                           "2.000 reamostragens", "97 acertos", "51 confusões", "73 entre materiais",
-                          "43 predições", "42 falsos positivos", "416 objetos"]
+                          "11 falhas de localização", "32 duplicatas", "42 falsos positivos", "416 objetos"]
     missing = [item for item in required_fragments if item not in corpus]
     require(not missing, f"Expected factual fragments missing from TeX: {missing}")
 
     required_assets = ["methodology_pipeline.pdf", "class_rank_distribution.pdf",
-                       "taxonomy_and_hierarchy.pdf", "qualitative_analysis.pdf"]
+                       "taxonomy_and_hierarchy.pdf", "qualitative_analysis.pdf",
+                       "model_level_examples.pdf"]
     require(all((PAPER / "figures" / name).exists() for name in required_assets), "A paper figure is missing.")
 
     report = {

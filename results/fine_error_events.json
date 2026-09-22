@@ -67,7 +67,7 @@
   },
   {
     "file_name": "batch_1/000007.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9719749563217458,
     "confidence": 0.27057451009750366,
     "gt_box": null,
@@ -106,7 +106,7 @@
   },
   {
     "file_name": "batch_1/000007.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8897820876093456,
     "confidence": 0.2584288716316223,
     "gt_box": null,
@@ -257,7 +257,7 @@
   },
   {
     "file_name": "batch_1/000050.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9621118650482794,
     "confidence": 0.2606736123561859,
     "gt_box": null,
@@ -1689,7 +1689,7 @@
   },
   {
     "file_name": "batch_10/000088.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9276430229598868,
     "confidence": 0.2789899408817291,
     "gt_box": null,
@@ -1874,7 +1874,7 @@
   },
   {
     "file_name": "batch_11/000005.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.530110630841814,
     "confidence": 0.36365824937820435,
     "gt_box": null,
@@ -2251,7 +2251,7 @@
   },
   {
     "file_name": "batch_11/000033.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9756891296835117,
     "confidence": 0.31505149602890015,
     "gt_box": null,
@@ -2492,7 +2492,7 @@
   },
   {
     "file_name": "batch_11/000082.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.944440874138126,
     "confidence": 0.4368155598640442,
     "gt_box": null,
@@ -2702,7 +2702,7 @@
   },
   {
     "file_name": "batch_12/000025.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8797010633816827,
     "confidence": 0.44979217648506165,
     "gt_box": null,
@@ -3601,7 +3601,7 @@
   },
   {
     "file_name": "batch_12/000029.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8854506115905463,
     "confidence": 0.4226726293563843,
     "gt_box": null,
@@ -3662,7 +3662,7 @@
   },
   {
     "file_name": "batch_12/000029.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9262396881497358,
     "confidence": 0.26122453808784485,
     "gt_box": null,
@@ -3976,7 +3976,7 @@
   },
   {
     "file_name": "batch_12/000037.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.7682601166902158,
     "confidence": 0.4603000283241272,
     "gt_box": null,
@@ -4117,7 +4117,7 @@
   },
   {
     "file_name": "batch_12/000049.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9368547329847086,
     "confidence": 0.2866155803203583,
     "gt_box": null,
@@ -5228,7 +5228,7 @@
   },
   {
     "file_name": "batch_14/000006.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8806373415739229,
     "confidence": 0.35007932782173157,
     "gt_box": null,
@@ -5328,7 +5328,7 @@
   },
   {
     "file_name": "batch_14/000037.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.7479622526987663,
     "confidence": 0.2530728578567505,
     "gt_box": null,
@@ -5654,7 +5654,7 @@
   },
   {
     "file_name": "batch_14/000051.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9471398869355181,
     "confidence": 0.6169899106025696,
     "gt_box": null,
@@ -6484,7 +6484,7 @@
   },
   {
     "file_name": "batch_15/000063.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.7299523402984148,
     "confidence": 0.39791491627693176,
     "gt_box": null,
@@ -6842,7 +6842,7 @@
   },
   {
     "file_name": "batch_2/000046.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9423886839362029,
     "confidence": 0.3199894428253174,
     "gt_box": null,
@@ -7219,7 +7219,7 @@
   },
   {
     "file_name": "batch_2/000079.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8694335395788779,
     "confidence": 0.3727852404117584,
     "gt_box": null,
@@ -7570,7 +7570,7 @@
   },
   {
     "file_name": "batch_3/IMG_4869.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9199503918148656,
     "confidence": 0.44712182879447937,
     "gt_box": null,
@@ -7609,7 +7609,7 @@
   },
   {
     "file_name": "batch_3/IMG_4915.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9657505632113493,
     "confidence": 0.6314478516578674,
     "gt_box": null,
@@ -7782,7 +7782,7 @@
   },
   {
     "file_name": "batch_4/000016.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9672846094798172,
     "confidence": 0.3022219240665436,
     "gt_box": null,
@@ -7843,7 +7843,7 @@
   },
   {
     "file_name": "batch_4/000051.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9044122161769169,
     "confidence": 0.2574566602706909,
     "gt_box": null,
@@ -7921,7 +7921,7 @@
   },
   {
     "file_name": "batch_4/000061.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.88632577223864,
     "confidence": 0.2617558538913727,
     "gt_box": null,
@@ -8026,7 +8026,7 @@
   },
   {
     "file_name": "batch_4/000080.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8049000497556027,
     "confidence": 0.29261741042137146,
     "gt_box": null,
@@ -8457,7 +8457,7 @@
   },
   {
     "file_name": "batch_5/000033.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.8542532589952986,
     "confidence": 0.30376991629600525,
     "gt_box": null,
@@ -8866,7 +8866,7 @@
   },
   {
     "file_name": "batch_6/000062.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9840640550849826,
     "confidence": 0.45178163051605225,
     "gt_box": null,
@@ -8949,7 +8949,7 @@
   },
   {
     "file_name": "batch_6/000059.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9803380467400085,
     "confidence": 0.34151965379714966,
     "gt_box": null,
@@ -9115,7 +9115,7 @@
   },
   {
     "file_name": "batch_6/000032.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.6278333743940723,
     "confidence": 0.4356843829154968,
     "gt_box": null,
@@ -10281,7 +10281,7 @@
   },
   {
     "file_name": "batch_7/000070.JPG",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.805125972938535,
     "confidence": 0.34141457080841064,
     "gt_box": null,
@@ -11702,7 +11702,7 @@
   },
   {
     "file_name": "batch_8/000072.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9790997854211474,
     "confidence": 0.3390926718711853,
     "gt_box": null,
@@ -12009,7 +12009,7 @@
   },
   {
     "file_name": "batch_9/000004.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9388184696261117,
     "confidence": 0.3804457485675812,
     "gt_box": null,
@@ -13025,7 +13025,7 @@
   },
   {
     "file_name": "batch_9/000090.jpg",
-    "category": "localization_failure",
+    "category": "duplicate_detection",
     "iou": 0.9387605431801853,
     "confidence": 0.32783597707748413,
     "gt_box": null,

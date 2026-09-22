@@ -214,7 +214,12 @@ def matched_error_events(confidence: float = 0.25, match_iou: float = 0.5) -> li
             else:
                 all_overlaps = [iou(pred["bbox_xyxy"], truth["bbox_xyxy"]) for truth in truths]
                 best_overlap = max(all_overlaps, default=0.0)
-                category = "localization_failure" if best_overlap >= 0.1 else "background_false_positive"
+                if best_overlap >= match_iou:
+                    category = "duplicate_detection"
+                elif best_overlap >= 0.1:
+                    category = "localization_failure"
+                else:
+                    category = "background_false_positive"
                 events.append({"file_name": file_name, "category": category, "iou": best_overlap,
                                "confidence": pred["confidence"], "gt_box": None, "pred_box": pred["bbox_xyxy"],
                                "true_class": None, "predicted_class": fine_names[pred["class_id"]],
@@ -234,7 +239,7 @@ def error_analysis() -> list[dict[str, Any]]:
     counts = Counter(event["category"] for event in events)
     rows = [{"category": category, "count": counts[category]} for category in (
         "correct_fine", "within_material_confusion", "cross_material_confusion",
-        "localization_failure", "background_false_positive", "missed_detection")]
+        "localization_failure", "duplicate_detection", "background_false_positive", "missed_detection")]
     save_csv(ROOT / "results/fine_error_decomposition.csv", rows, list(rows[0]))
     confusions = Counter((event["true_class"], event["predicted_class"], event["category"])
                          for event in events if "confusion" in event["category"])

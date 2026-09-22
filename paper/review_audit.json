@@ -1,0 +1,285 @@
+{
+  "error_counts": {
+    "correct_fine": 97,
+    "within_material_confusion": 51,
+    "duplicate_detection": 32,
+    "missed_detection": 416,
+    "background_false_positive": 42,
+    "cross_material_confusion": 73,
+    "localization_failure": 11
+  },
+  "localization_events_with_iou_at_least_05": 0,
+  "matched_instances": 221,
+  "semantic_confusions_among_matches": 124,
+  "fine_classes_with_test_support": 48,
+  "frequency_groups": {
+    "Frequent": {
+      "total_classes": 10,
+      "classes_with_test_support": 10
+    },
+    "Medium": {
+      "total_classes": 22,
+      "classes_with_test_support": 22
+    },
+    "Rare": {
+      "total_classes": 28,
+      "classes_with_test_support": 16
+    }
+  },
+  "bootstrap_difference_definition": "Mean of bootstrap differences, not observed point difference",
+  "qualitative_candidates": [
+    {
+      "file_name": "batch_10/000029.jpg",
+      "category": "localization_failure",
+      "iou": 0.20579403638606744,
+      "confidence": 0.3841226100921631,
+      "gt_box": [
+        86.3673245614035,
+        308.48,
+        182.90021929824562,
+        398.24
+      ],
+      "pred_box": [
+        88.93780517578125,
+        311.47039794921875,
+        127.85205078125,
+        357.29327392578125
+      ],
+      "true_class": "Clear plastic bottle",
+      "predicted_class": "Plastic film",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 33
+    },
+    {
+      "file_name": "batch_11/000082.jpg",
+      "category": "localization_failure",
+      "iou": 0.4087227868617238,
+      "confidence": 0.4383780062198639,
+      "gt_box": [
+        1402.0,
+        0.0,
+        2569.0,
+        246.0
+      ],
+      "pred_box": [
+        1352.59228515625,
+        0.5258331298828125,
+        1910.3399658203125,
+        240.89854431152344
+      ],
+      "true_class": "Plastic film",
+      "predicted_class": "Clear plastic bottle",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 137
+    },
+    {
+      "file_name": "batch_12/000049.jpg",
+      "category": "localization_failure",
+      "iou": 0.14068536633309245,
+      "confidence": 0.3678322732448578,
+      "gt_box": [
+        1489.0,
+        2992.0,
+        1607.0,
+        3092.0
+      ],
+      "pred_box": [
+        1437.742431640625,
+        2660.989990234375,
+        1611.938720703125,
+        3080.761474609375
+      ],
+      "true_class": "Unlabeled litter",
+      "predicted_class": "Plastic film",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 226
+    },
+    {
+      "file_name": "batch_13/000010.jpg",
+      "category": "localization_failure",
+      "iou": 0.3506932480730314,
+      "confidence": 0.4434189200401306,
+      "gt_box": [
+        1475.0,
+        689.0,
+        3620.0,
+        1449.0
+      ],
+      "pred_box": [
+        2341.870361328125,
+        992.220947265625,
+        3598.454345703125,
+        1454.1763916015625
+      ],
+      "true_class": "Plastic straw",
+      "predicted_class": "Plastic straw",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 236
+    },
+    {
+      "file_name": "batch_14/000038.jpg",
+      "category": "localization_failure",
+      "iou": 0.2393704574551954,
+      "confidence": 0.3513341248035431,
+      "gt_box": [
+        876.1905,
+        1597.524,
+        1986.1904,
+        2407.5238
+      ],
+      "pred_box": [
+        902.9686889648438,
+        1931.92626953125,
+        1363.8433837890625,
+        2398.9033203125
+      ],
+      "true_class": "Glass bottle",
+      "predicted_class": "Drink can",
+      "true_material": null,
+      "predicted_material": "Metal",
+      "event_index": 294
+    },
+    {
+      "file_name": "batch_14/000038.jpg",
+      "category": "localization_failure",
+      "iou": 0.15722697531673924,
+      "confidence": 0.2594313323497772,
+      "gt_box": [
+        876.1905,
+        1597.524,
+        1986.1904,
+        2407.5238
+      ],
+      "pred_box": [
+        1543.04736328125,
+        1623.3096923828125,
+        1970.368408203125,
+        1954.1212158203125
+      ],
+      "true_class": "Glass bottle",
+      "predicted_class": "Drink can",
+      "true_material": null,
+      "predicted_material": "Metal",
+      "event_index": 295
+    },
+    {
+      "file_name": "batch_14/000047.jpg",
+      "category": "localization_failure",
+      "iou": 0.28544974728476075,
+      "confidence": 0.46146348118782043,
+      "gt_box": [
+        1596.7557000000002,
+        1917.7272,
+        2092.75574,
+        2723.727
+      ],
+      "pred_box": [
+        1692.2266845703125,
+        1911.4744873046875,
+        2090.686279296875,
+        2205.90478515625
+      ],
+      "true_class": "Drink can",
+      "predicted_class": "Drink can",
+      "true_material": null,
+      "predicted_material": "Metal",
+      "event_index": 304
+    },
+    {
+      "file_name": "batch_14/000047.jpg",
+      "category": "localization_failure",
+      "iou": 0.28469696080476176,
+      "confidence": 0.41389602422714233,
+      "gt_box": [
+        1596.7557000000002,
+        1917.7272,
+        2092.75574,
+        2723.727
+      ],
+      "pred_box": [
+        1690.50634765625,
+        1908.270263671875,
+        2087.950439453125,
+        2206.786865234375
+      ],
+      "true_class": "Drink can",
+      "predicted_class": "Metal bottle cap",
+      "true_material": null,
+      "predicted_material": "Metal",
+      "event_index": 305
+    },
+    {
+      "file_name": "batch_7/000039.JPG",
+      "category": "localization_failure",
+      "iou": 0.3208326483022158,
+      "confidence": 0.3287436366081238,
+      "gt_box": [
+        86.47058823529412,
+        587.4509803921569,
+        133.72549019607843,
+        614.1176470588235
+      ],
+      "pred_box": [
+        95.71353149414062,
+        586.4796142578125,
+        117.77151489257812,
+        606.0911865234375
+      ],
+      "true_class": "Plastic film",
+      "predicted_class": "Plastic film",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 532
+    },
+    {
+      "file_name": "batch_8/000066.jpg",
+      "category": "localization_failure",
+      "iou": 0.42564906703506206,
+      "confidence": 0.459595263004303,
+      "gt_box": [
+        201.9607843137255,
+        184.50980392156862,
+        264.9019607843137,
+        250.98039215686273
+      ],
+      "pred_box": [
+        221.18389892578125,
+        209.5225830078125,
+        264.6142578125,
+        250.5262451171875
+      ],
+      "true_class": "Disposable plastic cup",
+      "predicted_class": "Plastic bottle cap",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 628
+    },
+    {
+      "file_name": "batch_9/000095.jpg",
+      "category": "localization_failure",
+      "iou": 0.3775056243607283,
+      "confidence": 0.26989254355430603,
+      "gt_box": [
+        87.72807017543859,
+        588.0,
+        100.6951754385965,
+        615.52
+      ],
+      "pred_box": [
+        87.22586059570312,
+        586.5380249023438,
+        117.50112915039062,
+        617.7614135742188
+      ],
+      "true_class": "Other plastic wrapper",
+      "predicted_class": "Other plastic wrapper",
+      "true_material": null,
+      "predicted_material": "Plastic",
+      "event_index": 711
+    }
+  ]
+}
