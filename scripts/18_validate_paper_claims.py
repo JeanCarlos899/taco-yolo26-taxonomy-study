@@ -84,10 +84,12 @@ def main() -> None:
                           "estratos operacionais deste estudo"]
     missing = [item for item in required_fragments if item not in corpus]
     require(not missing, f"Expected factual fragments missing from TeX: {missing}")
-    required_identity = ["Jean Carlos Rodrigues Sousa", "Karielly de Carvalho", "Marcos",
+    required_identity = ["Jean Carlos Rodrigues Sousa", "Karielly de Carvalho",
+                         "Marcos A. G. B. Brito",
                          "Universidade Federal do Piauí (UFPI)",
                          "Campus Senador Helvídio Nunes de Barros (CSHNB)",
-                         "Picos -- PI -- Brasil"]
+                         "Picos -- PI -- Brasil", "jean.rodrigues", "karielly.carvalho",
+                         "marcos.brito", "@ufpi.edu.br"]
     require(all(item in corpus for item in required_identity), "Author or affiliation data is incomplete.")
     require("email@exemplo.com" not in corpus and "Nome do(a) Autor(a)" not in corpus,
             "Placeholder identity remains in the paper.")
