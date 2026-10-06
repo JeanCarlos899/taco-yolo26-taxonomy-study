@@ -23,18 +23,23 @@ def main():
     output = []
     baseline = mean(scores[seed, 'fine'] for seed in (42, 123, 2026))
     assert baseline > 0
-    tex = [r'\begin{tabular}{lc}', r'\toprule', r'\textbf{O que precisa acertar} & \textbf{Ganho relativo de AP$_{50}$} \\', r'\midrule', r'Tipo exato (Fine) & Referência \\']
+    baseline_display = f'{baseline:.3f}'.replace('.', '{,}')
+    tex = [r'\begin{tabular}{lcc}', r'\toprule', r'\textbf{O que precisa acertar} & \textbf{AP$_{50}$ médio} & \textbf{Ganho relativo} \\', r'\midrule', f'Tipo exato (Fine) & ${baseline_display}$ & Referência ' + r'\\']
     labels = {'material': 'Material do resíduo', 'binary': 'Presença de resíduo'}
     for level in ('material', 'binary'):
         differences = [scores[seed, level] - scores[seed, 'fine'] for seed in (42, 123, 2026)]
         assert all(value > 0 for value in differences)
         average, sd = mean(differences), stdev(differences)
+        target_mean = mean(scores[seed, level] for seed in (42, 123, 2026))
         relative_percent = 100 * average / baseline
+        assert abs(relative_percent - 100 * (target_mean / baseline - 1)) < 1e-10
         output.append({'target': level, 'num_seeds': 3, 'fine_ap50_baseline_mean': baseline,
+                       'target_ap50_mean': target_mean,
                        'relative_ap50_gain_percent': relative_percent, 'ap50_gain_mean': average,
                        'ap50_gain_std': sd, **{f'gain_seed_{seed}': value for seed, value in zip((42, 123, 2026), differences)}})
         value = f'+{relative_percent:.1f}'.replace('.', '{,}')
-        tex.append(f'{labels[level]} & $\\mathbf{{{value}\\%}}$ ' + r'\\')
+        score_display = f'{target_mean:.3f}'.replace('.', '{,}')
+        tex.append(f'{labels[level]} & ${score_display}$ & $\\mathbf{{{value}\\%}}$ ' + r'\\')
     with (ROOT / 'results/presentation_hierarchy_gains.csv').open('w', encoding='utf-8', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(output[0]))
         writer.writeheader()
