@@ -194,157 +194,192 @@
 \end{frame}
 
 % 6
-\begin{frame}{Três níveis de detalhe semântico}
-  \vspace{0.35cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.30\textwidth}
-      {\color{ufpidark}\fontsize{29}{32}\selectfont\bfseries 60}\par
-      {\fontsize{18}{22}\selectfont\bfseries Fine}\par
-      \vspace{0.22cm}
-      Categorias oficiais, como lata de alumínio, garrafa de vidro e tampa plástica.
-    \end{column}
-    \begin{column}{0.03\textwidth}
-      \centering{\color{soft}\rule{1pt}{4.2cm}}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      {\color{ufpidark}\fontsize{29}{32}\selectfont\bfseries 6}\par
-      {\fontsize{18}{22}\selectfont\bfseries Material}\par
-      \vspace{0.22cm}
-      Plastic, Metal, Glass, Paper/Cardboard, Organic e Other.
-    \end{column}
-    \begin{column}{0.03\textwidth}
-      \centering{\color{soft}\rule{1pt}{4.2cm}}
-    \end{column}
-    \begin{column}{0.30\textwidth}
-      {\color{ufpidark}\fontsize{29}{32}\selectfont\bfseries 1}\par
-      {\fontsize{18}{22}\selectfont\bfseries Binary}\par
-      \vspace{0.22cm}
-      Todo objeto recebe o rótulo \textit{Litter}. A tarefa preserva apenas resíduo versus fundo.
-    \end{column}
-  \end{columns}
-  \vfill
-  {\color{muted}\fontsize{12.5}{16}\selectfont A redução de classes diminui a informação exigida do detector.}
+\begin{frame}{O que cada modelo reconhece}
+  \vspace{0.09cm}
+  {\fontsize{11.5}{14.8}\selectfont Exemplo de rótulo para uma mesma garrafa plástica}\par
+  \vspace{0.18cm}
+  \renewcommand{\arraystretch}{1.20}
+  {\fontsize{10.7}{13.1}\selectfont
+  \begin{tabular}{p{2.5cm}cp{6.5cm}}
+    \toprule
+    \textbf{Modelo} & \textbf{Classes} & \textbf{Resposta esperada} \\
+    \midrule
+    Fine & 60 & Tipo específico: garrafa plástica \\
+    Material & 6 & Material: plástico \\
+    Binary & 1 & Presença de resíduo \\
+    \bottomrule
+  \end{tabular}}\par
+  \vspace{0.21cm}
+  {\color{muted}\fontsize{9.0}{11.5}\selectfont Material reúne plástico, metal, vidro, papel/papelão, orgânico e outros. Binary mantém uma classe de objeto, além do fundo.}\par
+  \vspace{0.15cm}
+  {\color{ufpidark}\fontsize{11.5}{14.8}\selectfont\bfseries Quanto mais amplo o rótulo, menos detalhes o modelo precisa distinguir.}
 \end{frame}
 
 % 7
-\begin{frame}{Desempenho dos modelos treinados}
-  \begin{columns}[c,onlytextwidth]
-    \begin{column}{0.66\textwidth}
-      \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-          ybar=1.8pt,
-          width=\linewidth,
-          height=5.15cm,
-          ymin=0,ymax=0.64,
-          ylabel={Métrica no teste},
-          symbolic x coords={Fine,Material,Binary},
-          xtick=data,
-          bar width=14pt,
-          axis line style={draw=muted},
-          tick style={draw=none},
-          ymajorgrids=true,
-          grid style={draw=soft},
-          legend style={draw=none,at={(0.5,1.02)},anchor=south,legend columns=2,font=\small},
-          nodes near coords,
-          nodes near coords style={font=\scriptsize,anchor=south},
-          every axis plot/.append style={fill opacity=1},
-        ]
-          \addplot+[draw=ufpidark,fill=ufpidark] coordinates {(Fine,0.146) (Material,0.183) (Binary,0.567)};
-          \addplot+[draw=ufpilight,fill=ufpilight] coordinates {(Fine,0.232) (Material,0.296) (Binary,0.593)};
-          \legend{AP$_{50}$,$F_1$}
-        \end{axis}
-      \end{tikzpicture}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      {\color{ufpidark}\bfseries Resultado principal}\par
-      \vspace{0.2cm}
-      Material melhora o $F_1$ em relação a Fine.
-      \vspace{0.35cm}
-
-      Binary apresenta o maior desempenho, mas elimina a informação de composição.
-      \vspace{0.35cm}
-
-      {\color{muted}\fontsize{11.5}{14}\selectfont Barras: média de três sementes.}
-    \end{column}
-  \end{columns}
+\begin{frame}{Como interpretar os resultados}
+  \vspace{0.12cm}
+  {\color{ufpidark}\fontsize{16.4}{19.7}\selectfont\bfseries AP$_{50}$: qualidade da detecção}\par
+  \vspace{0.09cm}
+  {\fontsize{11.5}{14.8}\selectfont Resume a relação entre precisão e recuperação de objetos ao variar a confiança. Exige a classe correta e sobreposição de pelo menos 50\% com a caixa anotada.}\par
+  \vspace{0.27cm}
+  {\color{ufpidark}\fontsize{16.4}{19.7}\selectfont\bfseries $F_1$: equilíbrio entre precisão e recall}\par
+  \vspace{0.09cm}
+  {\fontsize{11.5}{14.8}\selectfont Combina a proporção de detecções corretas com a proporção de objetos recuperados em um ponto de operação.}\par
+  \vspace{0.21cm}
+  {\color{muted}\fontsize{9.8}{12.3}\selectfont Ambas variam de 0 a 1. Valores maiores indicam melhor desempenho segundo o critério avaliado.}
 \end{frame}
 
 % 8
-\begin{frame}{Uma predição, três critérios de acerto}
-  {\color{muted}\fontsize{12}{15}\selectfont Caixas e confianças do modelo Fine permanecem idênticas; apenas o critério de classe é alterado.}
-  \vspace{0.35cm}
-
+\begin{frame}{Resultados dos modelos treinados}
+  \vspace{0.06cm}
+  {\fontsize{10.7}{13.9}\selectfont Cada linha corresponde a um treinamento com uma taxonomia diferente.}\par
+  \vspace{0.18cm}
   \centering
-  \renewcommand{\arraystretch}{1.45}
-  \begin{tabular}{p{2.2cm}p{6.8cm}r}
+  \renewcommand{\arraystretch}{1.15}
+  {\fontsize{11.5}{14.8}\selectfont
+  \begin{tabular}{lcc}
     \toprule
-    \textbf{Avaliação} & \textbf{Quando a detecção conta como correta} & \textbf{AP$_{50}$} \\
+    \textbf{Modelo} & \textbf{AP$_{50}$} & \textbf{$F_1$} \\
     \midrule
-    Fine & classe exata, entre 60 categorias & $0{,}103\pm0{,}007$ \\
-    Material & material correto, entre seis grupos & $0{,}171\pm0{,}015$ \\
-    Binary & qualquer resíduo corretamente localizado & $0{,}466\pm0{,}014$ \\
+    Fine (60 classes) & $0{,}146\pm0{,}022$ & $0{,}232\pm0{,}005$ \\
+    Material (6 classes) & $0{,}183\pm0{,}023$ & $0{,}296\pm0{,}006$ \\
+    Binary (1 classe) & $0{,}567\pm0{,}002$ & $0{,}593\pm0{,}004$ \\
     \bottomrule
-  \end{tabular}
-
-  \vspace{0.45cm}
-  {\color{ufpidark}\fontsize{14}{18}\selectfont\bfseries Rótulos mais amplos recuperam detecções já localizadas.}
+  \end{tabular}}\par
+  \vspace{0.18cm}
+  \raggedright
+  {\fontsize{10.7}{13.9}\selectfont Binary obtém os maiores valores, mas informa apenas onde há resíduo. Material preserva a composição e supera Fine na média.}\par
+  \vspace{0.11cm}
+  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média $\pm$ desvio-padrão de três sementes. Avaliação nativa do Ultralytics. As tarefas exigem níveis diferentes de detalhe.}
 \end{frame}
 
 % 9
-\begin{frame}{Evidência estatística nas três sementes}
-  \vspace{0.10cm}
-  \centering
-  \renewcommand{\arraystretch}{1.38}
-  {\fontsize{9.5}{12}\selectfont
-  \begin{tabular}{p{4.2cm}rrrc}
+\begin{frame}{Exemplo: lata prevista como aerossol}
+  \vspace{0.15cm}
+  {\fontsize{11.5}{14.8}\selectfont\textbf{Exemplo ilustrativo:} o objeto é uma lata de bebida, mas o Fine prevê aerossol. A caixa tem sobreposição suficiente.}\par
+  \vspace{0.21cm}
+  \renewcommand{\arraystretch}{1.20}
+  {\fontsize{10.7}{13.9}\selectfont
+  \begin{tabular}{p{2.0cm}p{7.0cm}l}
     \toprule
-    \textbf{Comparação} & \textbf{$\Delta$AP$_{50}$} & \textbf{Suporte} & \textbf{$\Delta F_1$} & \textbf{Suporte} \\
+    \textbf{Critério} & \textbf{O que é comparado} & \textbf{Resultado} \\
     \midrule
-    Material treinado vs. Fine & $+0{,}051\pm0{,}022$ & 1/3 & $+0{,}074\pm0{,}027$ & \textcolor{ufpidark}{\bfseries 3/3} \\
-    Fine $\rightarrow$ Material (mesmas caixas) & $+0{,}068\pm0{,}012$ & \textcolor{ufpidark}{\bfseries 3/3} & $+0{,}101\pm0{,}008$ & \textcolor{ufpidark}{\bfseries 3/3} \\
-    Fine $\rightarrow$ Binary (mesmas caixas) & $+0{,}345\pm0{,}016$ & \textcolor{ufpidark}{\bfseries 3/3} & $+0{,}318\pm0{,}011$ & \textcolor{ufpidark}{\bfseries 3/3} \\
+    Fine & Lata de bebida e aerossol & Erro \\
+    Material & Metal e metal & Acerto \\
+    Binary & Resíduo e resíduo & Acerto \\
     \bottomrule
-  \end{tabular}}
-
-  \vspace{0.45cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.48\textwidth}
-      {\color{ufpidark}\bfseries $\Delta$ = ganho médio $\pm$ DP}\par
-      \vspace{0.08cm}{\fontsize{11}{14}\selectfont Diferença positiva favorece a taxonomia mais simples.}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      {\color{ufpidark}\bfseries Suporte = sementes com IC95\% $>0$}\par
-      \vspace{0.08cm}{\fontsize{11}{14}\selectfont 3/3 indica repetição da evidência nas três execuções.}
-    \end{column}
-  \end{columns}
+  \end{tabular}}\par
+  \vspace{0.24cm}
+  {\color{ufpidark}\fontsize{12.3}{15.6}\selectfont\bfseries A caixa permanece igual. A exigência sobre a classe diminui.}\par
+  \vspace{0.11cm}
+  {\color{muted}\fontsize{9.0}{11.5}\selectfont Esta avaliação reutiliza as saídas do Fine. Não há novo treinamento nem melhora da localização.}
 \end{frame}
 
 % 10
-\begin{frame}{Os erros semânticos não explicam tudo}
-  \vspace{0.20cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.47\textwidth}
-      {\fontsize{17}{21}\selectfont\bfseries Entre detecções localizadas}\par
-      \vspace{0.30cm}
-      {\color{ufpidark}\fontsize{28}{31}\selectfont\bfseries 56,95\%}\par
-      \vspace{0.06cm}
-      {\fontsize{12.5}{15}\selectfont classe Fine incorreta}\par
-      \vspace{0.22cm}
-      {\color{muted}\fontsize{11}{14}\selectfont $132{,}3$ confusões em $232{,}3$ casamentos espaciais, em média.}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      {\fontsize{17}{21}\selectfont\bfseries Entre objetos anotados}\par
-      \vspace{0.30cm}
-      {\color{ufpidark}\fontsize{28}{31}\selectfont\bfseries 63,5\%}\par
-      \vspace{0.06cm}
-      {\fontsize{12.5}{15}\selectfont objetos omitidos}\par
-      \vspace{0.22cm}
-      {\color{muted}\fontsize{11}{14}\selectfont $404{,}7$ omissões entre os 637 objetos do teste, em média.}
-    \end{column}
-  \end{columns}
-  \vspace{0.45cm}
-  {\color{muted}\fontsize{10.5}{13}\selectfont Médias de três sementes, confiança 0,25. Casamento espacial definido por IoU $\geq 0{,}5$. As porcentagens têm denominadores diferentes.}
+\begin{frame}{Fine com classes agrupadas}
+  \vspace{0.15cm}
+  {\fontsize{10.7}{13.9}\selectfont Todas as linhas usam as mesmas caixas e confianças. Os rótulos previstos e os rótulos de referência são agrupados.}\par
+  \vspace{0.21cm}
+  \centering
+  \renewcommand{\arraystretch}{1.20}
+  {\fontsize{11.5}{14.8}\selectfont
+  \begin{tabular}{lc}
+    \toprule
+    \textbf{Exigência de classe} & \textbf{AP$_{50}$} \\
+    \midrule
+    Tipo exato (Fine) & $0{,}103\pm0{,}007$ \\
+    Material correto & $0{,}171\pm0{,}015$ \\
+    Presença de resíduo & $0{,}466\pm0{,}014$ \\
+    \bottomrule
+  \end{tabular}}\par
+  \vspace{0.21cm}
+  \raggedright
+  {\color{ufpidark}\fontsize{11.5}{14.8}\selectfont\bfseries Parte da penalização vem de distinguir classes, mesmo quando o objeto está localizado.}\par
+  \vspace{0.11cm}
+  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média $\pm$ desvio-padrão. Avaliador próprio comum aos três critérios. Os valores desta tabela não são diretamente comparáveis à avaliação nativa do slide 8.}
+\end{frame}
+
+% 11
+\begin{frame}{Como verificar se o ganho se repete}
+  \vspace{0.12cm}
+  {\color{ufpidark}\fontsize{14.8}{18.0}\selectfont\bfseries Três treinamentos por modelo}\par
+  \vspace{0.07cm}
+  {\fontsize{11.5}{14.8}\selectfont Sementes 42, 123 e 2026 alteram o componente aleatório do treinamento. A partição de dados permanece fixa.}\par
+  \vspace{0.24cm}
+  {\color{ufpidark}\fontsize{14.8}{18.0}\selectfont\bfseries Intervalo de confiança de 95\% para o ganho}\par
+  \vspace{0.07cm}
+  {\fontsize{11.5}{14.8}\selectfont O bootstrap reamostra as mesmas imagens para os dois métodos comparados. Cada semente recebe 2.000 reamostragens.}\par
+  \vspace{0.21cm}
+  {\fontsize{11.5}{14.8}\selectfont Um intervalo totalmente acima de zero sustenta um ganho positivo. Se inclui zero, a comparação permanece inconclusiva.}
+\end{frame}
+
+% 12
+\begin{frame}{Repetição dos ganhos nas três sementes}
+  \vspace{0.07cm}
+  \renewcommand{\arraystretch}{1.55}
+  {\fontsize{9.8}{13.1}\selectfont
+  \begin{tabular}{p{8.0cm}cc}
+    \toprule
+    \textbf{Comparação} & \textbf{AP$_{50}$} & \textbf{$F_1$} \\
+    \midrule
+    Material treinado supera Fine & 1 de 3 & 3 de 3 \\
+    Fine agrupado por material vs. Fine exato & 3 de 3 & 3 de 3 \\
+    Fine agrupado como resíduo vs. Fine exato & 3 de 3 & 3 de 3 \\
+    \bottomrule
+  \end{tabular}}\par
+  \vspace{0.15cm}
+  {\color{muted}\fontsize{9.0}{11.5}\selectfont Cada célula conta execuções cujo IC95\% do ganho ficou totalmente acima de zero. Avaliador próprio para todas as comparações.}\par
+  \vspace{0.24cm}
+  {\fontsize{11.5}{14.8}\selectfont Material melhora $F_1$ nas três execuções. Em AP$_{50}$, o suporte é limitado.}\par
+  \vspace{0.11cm}
+  {\color{ufpidark}\fontsize{11.5}{14.8}\selectfont\bfseries O efeito de agrupar os rótulos do Fine se repete nas três sementes.}
+\end{frame}
+
+% 13
+\begin{frame}{Objetos não encontrados pelo Fine}
+  \vspace{0.12cm}
+  {\fontsize{12.3}{15.6}\selectfont O teste contém \textbf{637 objetos anotados} em 225 imagens.}\par
+  \vspace{0.27cm}
+  \centering
+  \renewcommand{\arraystretch}{1.20}
+  {\fontsize{12.3}{15.6}\selectfont
+  \begin{tabular}{lcc}
+    \toprule
+     & \textbf{Objetos, em média} & \textbf{Proporção} \\
+    \midrule
+    Com detecção sobreposta & 232,3 & 36,5\% \\
+    Sem detecção sobreposta & 404,7 & 63,5\% \\
+    \bottomrule
+  \end{tabular}}\par
+  \vspace{0.24cm}
+  \raggedright
+  {\color{ufpidark}\fontsize{12.3}{15.6}\selectfont\bfseries Agrupar classes não recupera os objetos que o Fine omitiu.}\par
+  \vspace{0.15cm}
+  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média de três sementes. Confiança $\geq0{,}25$, IoU $\geq0{,}5$ e associação sem exigir a classe correta.}
+\end{frame}
+
+% 14
+\begin{frame}{Classificação dos objetos localizados}
+  \vspace{0.15cm}
+  {\fontsize{11.5}{14.8}\selectfont Agora são consideradas apenas as \textbf{232,3 associações espaciais}, em média.}\par
+  \vspace{0.18cm}
+  \centering
+  \renewcommand{\arraystretch}{1.20}
+  {\fontsize{11.5}{14.8}\selectfont
+  \begin{tabular}{lc}
+    \toprule
+    \textbf{Resultado da classificação} & \textbf{Proporção} \\
+    \midrule
+    Classe Fine correta & 43,05\% \\
+    Classe errada, mesmo material & 22,95\% \\
+    Classe errada, material diferente & 34,00\% \\
+    \bottomrule
+  \end{tabular}}\par
+  \vspace{0.24cm}
+  \raggedright
+  {\fontsize{11.5}{14.8}\selectfont Avaliar por material deixa de penalizar as confusões dentro do mesmo grupo. Confusões entre materiais continuam sendo erros.}\par
+  \vspace{0.12cm}
+  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média de três sementes. Mesmo critério espacial do slide 13. As três proporções somam 100\%.}
 \end{frame}
 
 % 11
