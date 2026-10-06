@@ -74,7 +74,7 @@ def train_one(taxonomy: str, smoke: bool, resume: bool, force: bool, seed: int |
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train YOLO11n under a controlled protocol.")
+    parser = argparse.ArgumentParser(description="Train YOLO26n under a controlled protocol.")
     parser.add_argument("--taxonomy", choices=(*TAXONOMIES, "all"), default="all")
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--resume", action="store_true")

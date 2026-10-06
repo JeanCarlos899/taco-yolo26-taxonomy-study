@@ -13,9 +13,12 @@ Na raiz do projeto, com o ambiente virtual ativo:
 .\.venv\Scripts\python.exe scripts\18_validate_paper_claims.py
 ```
 
-O primeiro comando recalcula as tabelas, os gráficos vetoriais, a prancha qualitativa,
-o manifesto de proveniência e os fatos do artigo. O segundo confronta os números
-centrais do texto com CSVs e JSONs derivados das predições.
+O primeiro comando reavalia as predições salvas com o avaliador comum e gera os
+resultados padronizados. O segundo recalcula as tabelas, os gráficos vetoriais,
+a prancha qualitativa, o manifesto de proveniência e os fatos do artigo. O terceiro
+confronta os números centrais do texto com CSVs e JSONs derivados das predições.
+Esses comandos requerem as predições brutas locais, que não são versionadas;
+consulte `PIPELINE.md` para gerar os treinamentos e avaliações necessários.
 
 ## Compilar
 

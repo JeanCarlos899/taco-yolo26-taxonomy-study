@@ -1,3 +1,26 @@
+# Estudo de granularidade semântica no TACO com YOLO26n
+
+Repositório do artigo **O Custo da Granularidade Semântica na Detecção de Resíduos: um Estudo Controlado com TACO e YOLO26n**, de Jean Carlos Rodrigues Sousa, Karielly de Carvalho e Marcos A. G. B. Brito (UFPI, Campus Picos).
+
+O experimento compara Fine (60 classes), Material (6 classes) e Binary (1 classe), com três sementes de treinamento e uma partição fixa de 1.050/225/225 imagens. Todas as métricas reportadas usam o mesmo avaliador controlado.
+
+## Código e materiais do estudo
+
+- [Pipeline e instruções de execução](PIPELINE.md)
+- [Scripts experimentais](scripts/), [configurações](configs/) e [partição fixa](splits/split.json)
+- [Resultados tabulares e auditorias](results/)
+- [Artigo em PDF](paper/main.pdf) e [fontes LaTeX](paper/)
+- [Slides em PDF](presentation/slides_taco_yolo26.pdf) e [fontes Beamer](presentation/)
+- [Guia de estudo dos slides 1 a 4](output/pdf/guia_karielly_slides_1_a_4.pdf)
+
+As instruções de reprodução das análises e compilação estão em [paper/README.md](paper/README.md) e [presentation/README.md](presentation/README.md).
+
+Imagens da base, ambientes virtuais, datasets convertidos, checkpoints, pesos e predições brutas são excluídos do Git. Os scripts documentam sua obtenção ou geração; a reprodução completa requer baixar os dados e executar os treinamentos e avaliações. Os resultados leves, o artigo e os slides são versionados.
+
+Este projeto deriva do [repositório oficial TACO](https://github.com/pedropro/TACO). A documentação original e os créditos são preservados abaixo.
+
+## Documentação original da base TACO
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/logonav.png" width="25%"/>
 </p>

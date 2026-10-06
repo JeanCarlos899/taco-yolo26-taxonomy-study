@@ -187,7 +187,7 @@
       {\color{ufpidark}\bfseries YOLO26n}\par
       \vspace{0.06cm}{\fontsize{11}{13}\selectfont Entrada 640\\Lote 24\\Até 60 épocas}\par
       \vspace{0.28cm}
-      {\color{ufpidark}\bfseries Sementes}\par
+      {\color{ufpidark}\bfseries Sementes de treinamento}\par
       \vspace{0.06cm}{\fontsize{11}{13}\selectfont 42, 123 e 2026}
     \end{column}
   \end{columns}
@@ -237,7 +237,7 @@
 % 8
 \begin{frame}{Resultados dos modelos treinados}
   \vspace{0.06cm}
-  {\fontsize{10.7}{13.9}\selectfont Cada linha corresponde a um treinamento com uma taxonomia diferente.}\par
+  {\fontsize{10.7}{13.9}\selectfont Três treinamentos por taxonomia: média $\pm$ desvio-padrão.}\par
   \vspace{0.18cm}
   \centering
   \renewcommand{\arraystretch}{1.15}
@@ -246,8 +246,6 @@
   \vspace{0.18cm}
   \raggedright
   {\fontsize{10.7}{13.9}\selectfont Binary obtém os maiores valores, mas informa apenas onde há resíduo. Material preserva a composição e supera Fine na média.}\par
-  \vspace{0.11cm}
-  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média $\pm$ desvio-padrão de três sementes. Mesmo avaliador do slide 10. As tarefas exigem níveis diferentes de detalhe.}
 \end{frame}
 
 % 9
@@ -284,9 +282,6 @@
   \vspace{0.21cm}
   \raggedright
   {\color{ufpidark}\fontsize{13}{17}\selectfont\bfseries As caixas são iguais. Muda o rótulo aceito como correto.}\par
-  \vspace{0.18cm}
-  {\color{muted}\fontsize{10}{13}\selectfont AP$_{50}$ médio: três sementes, mesmo avaliador do slide 8.\\
-  Ganho relativo ao Fine, não proporção de objetos corretos.}
 \end{frame}
 
 % 11
@@ -298,7 +293,7 @@
   \vspace{0.24cm}
   {\color{ufpidark}\fontsize{14.8}{18.0}\selectfont\bfseries Intervalo de confiança de 95\% para o ganho}\par
   \vspace{0.07cm}
-  {\fontsize{11.5}{14.8}\selectfont O bootstrap reamostra as mesmas imagens para os dois métodos comparados. Cada semente recebe 2.000 reamostragens.}\par
+  {\fontsize{11.5}{14.8}\selectfont No bootstrap, as imagens de teste são sorteadas com repetição 2.000 vezes por semente, sem novo treinamento. Cada sorteio é igual para os dois métodos comparados.}\par
   \vspace{0.21cm}
   {\fontsize{11.5}{14.8}\selectfont Um intervalo totalmente acima de zero sustenta um ganho positivo. Se inclui zero, a comparação permanece inconclusiva.}
 \end{frame}
@@ -308,7 +303,7 @@
   \vspace{0.07cm}
   \renewcommand{\arraystretch}{1.55}
   {\fontsize{9.8}{13.1}\selectfont
-  \begin{tabular}{p{8.0cm}cc}
+  \begin{tabular}{p{7.5cm}c@{\hspace{0.65cm}}c}
     \toprule
     \textbf{Comparação} & \textbf{AP$_{50}$} & \textbf{$F_1$} \\
     \midrule
@@ -318,7 +313,7 @@
     \bottomrule
   \end{tabular}}\par
   \vspace{0.15cm}
-  {\color{muted}\fontsize{9.0}{11.5}\selectfont Cada célula conta execuções cujo IC95\% do ganho ficou totalmente acima de zero. Avaliador próprio para todas as comparações.}\par
+  {\color{muted}\fontsize{9.0}{11.5}\selectfont Cada célula conta execuções cujo IC95\% do ganho ficou totalmente acima de zero.}\par
   \vspace{0.24cm}
   {\fontsize{11.5}{14.8}\selectfont Material melhora $F_1$ nas três execuções. Em AP$_{50}$, o suporte é limitado.}\par
   \vspace{0.11cm}
@@ -419,9 +414,9 @@
       {\fontsize{12.5}{15}\selectfont Preserva informação de composição e melhora o $F_1$ macro.}\par
       \vspace{0.24cm}
 
-      {\color{ufpidark}\fontsize{16.5}{19}\selectfont\bfseries Binary maximiza a detectabilidade}\par
+      {\color{ufpidark}\fontsize{16.5}{19}\selectfont\bfseries Binary: maiores AP$_{50}$ e $F_1$}\par
       \vspace{0.12cm}
-      {\fontsize{12}{14}\selectfont Sem distinção entre materiais.}
+      {\fontsize{12}{14}\selectfont Entre as configurações avaliadas, sem distinção de material.}
     \end{column}
     \begin{column}{0.36\textwidth}
       {\fontsize{16}{19}\selectfont\bfseries Limites do estudo}\par

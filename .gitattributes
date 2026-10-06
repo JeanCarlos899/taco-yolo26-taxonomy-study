@@ -1,0 +1,6 @@
+# Preserve binary artifacts byte-for-byte, including PDFs with ASCII streams.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pt binary
