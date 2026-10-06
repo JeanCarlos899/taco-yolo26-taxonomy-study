@@ -2,6 +2,7 @@
   "source": "results/hierarchical_multiseed_raw.csv",
   "sha256": "49adec2fdf11370c5bb8414077c9ce5cd42e9fcde0306bc2b1ce69d6352d0c96",
   "definition": "Per-seed AP50(target) minus AP50(Fine), both from controlled evaluator.",
+  "relative_percent_definition": "100 * (mean AP50(target) - mean AP50(Fine)) / mean AP50(Fine). Ratio of means, not mean of per-seed percentage gains.",
   "dispersion": "Sample standard deviation of the three paired observed differences, not bootstrap CI.",
   "checks": [
     "Nine unique seed/level results",
@@ -12,6 +13,8 @@
     {
       "target": "material",
       "num_seeds": 3,
+      "fine_ap50_baseline_mean": 0.10314730265831622,
+      "relative_ap50_gain_percent": 65.8181832504251,
       "ap50_gain_mean": 0.06788968068152115,
       "ap50_gain_std": 0.012517289618892063,
       "gain_seed_42": 0.07210603891951464,
@@ -21,6 +24,8 @@
     {
       "target": "binary",
       "num_seeds": 3,
+      "fine_ap50_baseline_mean": 0.10314730265831622,
+      "relative_ap50_gain_percent": 351.5861464380442,
       "ap50_gain_mean": 0.3626516265711603,
       "ap50_gain_std": 0.015557907533693743,
       "gain_seed_42": 0.3752196265954848,

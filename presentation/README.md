@@ -50,7 +50,7 @@ Transição: Jean apresenta o experimento e os resultados.
 7. AP50 resume precisão e recuperação ao variar a confiança. F1 combina precisão e recall em um ponto de operação. Valores maiores indicam desempenho melhor segundo a tarefa avaliada.
 8. Comparar os modelos treinados. Binary tem os maiores valores numa tarefa menos detalhada. Material melhora a média em relação a Fine. O sinal ± mostra desvio-padrão entre sementes, não intervalo de confiança.
 9. Explicar o exemplo ilustrativo: lata prevista como aerossol erra o tipo, mas acerta metal. A caixa permanece igual, desde que tenha sobreposição suficiente.
-10. Mostrar o ganho em AP50 ao agrupar as saídas do Fine. A referência é a classe exata, avaliada pelo mesmo código controlado. Não há novo treinamento. +0,068 significa um aumento absoluto de AP50, não 6,8% a mais de objetos corretos. O ganho também incorpora a mudança da macro-média. O sinal ± mostra o DP das diferenças observadas entre sementes. Os valores não devem ser somados ao 0,146 nativo do slide 8.
+10. O mesmo Fine pode ser julgado pelo tipo exato, pelo material ou pela presença de resíduo. A tabela mostra o ganho relativo de AP50: +65,8% por material e +351,6% por presença, tomando como referência o AP50 médio do tipo exato no avaliador controlado. O cálculo usa a diferença entre médias dividida pela média Fine. Não é porcentagem de objetos corretos, não envolve novo treinamento e não deve usar o 0,146 nativo como base. A agregação também altera a macro-média.
 
 Transição: Marcos explica a incerteza dos ganhos e os erros que persistem.
 
