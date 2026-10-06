@@ -281,27 +281,19 @@
 \end{frame}
 
 % 10
-\begin{frame}{Fine com classes agrupadas}
+\begin{frame}{Ganho com classes agrupadas}
   \vspace{0.15cm}
-  {\fontsize{10.7}{13.9}\selectfont Todas as linhas usam as mesmas caixas e confianças. Os rótulos previstos e os rótulos de referência são agrupados.}\par
+  {\fontsize{12}{16}\selectfont Referência: exigir a classe Fine exata. As caixas e confianças permanecem iguais.}\par
   \vspace{0.21cm}
   \centering
   \renewcommand{\arraystretch}{1.20}
   {\fontsize{11.5}{14.8}\selectfont
-  \begin{tabular}{lc}
-    \toprule
-    \textbf{Exigência de classe} & \textbf{AP$_{50}$} \\
-    \midrule
-    Tipo exato (Fine) & $0{,}103\pm0{,}007$ \\
-    Material correto & $0{,}171\pm0{,}015$ \\
-    Presença de resíduo & $0{,}466\pm0{,}014$ \\
-    \bottomrule
-  \end{tabular}}\par
+  \input{assets/hierarchy_gains}}\par
   \vspace{0.21cm}
   \raggedright
-  {\color{ufpidark}\fontsize{11.5}{14.8}\selectfont\bfseries Parte da penalização vem de distinguir classes, mesmo quando o objeto está localizado.}\par
+  {\color{ufpidark}\fontsize{12}{16}\selectfont\bfseries Parte do ganho vem de aceitar rótulos mais amplos. Não há novo treinamento nem melhora das caixas.}\par
   \vspace{0.11cm}
-  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média $\pm$ desvio-padrão. Avaliador próprio comum aos três critérios. Os valores desta tabela não são diretamente comparáveis à avaliação nativa do slide 8.}
+  {\color{muted}\fontsize{9}{12}\selectfont Ganho = AP$_{50}$ agrupado menos AP$_{50}$ Fine, no mesmo avaliador controlado. Média $\pm$ DP das três diferenças por semente. A agregação de classes também altera a macro-média.}
 \end{frame}
 
 % 11

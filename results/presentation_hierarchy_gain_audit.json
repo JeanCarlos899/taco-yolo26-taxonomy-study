@@ -1,0 +1,31 @@
+{
+  "source": "results/hierarchical_multiseed_raw.csv",
+  "sha256": "49adec2fdf11370c5bb8414077c9ce5cd42e9fcde0306bc2b1ce69d6352d0c96",
+  "definition": "Per-seed AP50(target) minus AP50(Fine), both from controlled evaluator.",
+  "dispersion": "Sample standard deviation of the three paired observed differences, not bootstrap CI.",
+  "checks": [
+    "Nine unique seed/level results",
+    "Means match hierarchical summary to 1e-12",
+    "All six gains positive"
+  ],
+  "results": [
+    {
+      "target": "material",
+      "num_seeds": 3,
+      "ap50_gain_mean": 0.06788968068152115,
+      "ap50_gain_std": 0.012517289618892063,
+      "gain_seed_42": 0.07210603891951464,
+      "gain_seed_123": 0.07775435760483533,
+      "gain_seed_2026": 0.05380864552021347
+    },
+    {
+      "target": "binary",
+      "num_seeds": 3,
+      "ap50_gain_mean": 0.3626516265711603,
+      "ap50_gain_std": 0.015557907533693743,
+      "gain_seed_42": 0.3752196265954848,
+      "gain_seed_123": 0.3674843940013978,
+      "gain_seed_2026": 0.3452508591165983
+    }
+  ]
+}

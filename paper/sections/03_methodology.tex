@@ -32,14 +32,14 @@ O YOLO26n foi inicializado com pesos COCO e treinado com entrada $640\times640$,
 
 \subsection{Avaliação e incerteza}
 
-No teste fixo, são reportadas precisão, revocação, $F_1$, AP$_{50}$ e AP$_{50:95}$ da implementação Ultralytics; esta última métrica utiliza IoU de 0,50 a 0,95 em incrementos de 0,05. A tabela principal apresenta média e desvio-padrão entre sementes.
+São empregados dois protocolos com finalidades distintas. Na comparação dos modelos treinados, são reportadas precisão, revocação, $F_1$, AP$_{50}$ e AP$_{50:95}$ da validação nativa Ultralytics. Na reavaliação hierárquica e no bootstrap, é empregado exclusivamente o avaliador controlado do projeto. Cada comparação utiliza um único protocolo; valores absolutos provenientes dos dois avaliadores não são intercambiáveis. A tabela principal apresenta média e desvio-padrão entre sementes.
 
 Para uma caixa predita $B$ e uma verdade-terreno $G$, a sobreposição é definida por
 \begin{equation}
   \operatorname{IoU}(B,G)=\frac{|B\cap G|}{|B\cup G|}.
   \label{eq:iou}
 \end{equation}
-Em cada limiar $\tau$, o AP é a média da precisão interpolada em 101 níveis de revocação. A métrica mais estrita agrega dez limiares:
+Em cada limiar $\tau$, o avaliador nativo integra por trapézios a curva de precisão interpolada em 101 níveis de revocação. O avaliador controlado calcula a média do envelope de precisão nesses níveis. Ambos exigem classe correta e associação espacial, mas diferem na integração e no casamento de detecções. A métrica mais estrita agrega dez limiares de IoU, de 0,50 a 0,95:
 \begin{equation}
   \operatorname{AP}_{50:95}=\frac{1}{10}\sum_{k=0}^{9}
   \operatorname{AP}_{0{,}50+0{,}05k}.
@@ -52,7 +52,7 @@ Para decompor o erro, um avaliador controlado faz casamento guloso um-para-um em
   (B_i,c_i,s_i)\mapsto(B_i,\pi_L(c_i),s_i),
   \label{eq:remap}
 \end{equation}
-preservando geometria e confiança. Como o número de classes e a macro-média também mudam, o ganho hierárquico combina o crédito recuperado por confusões colapsadas com o efeito da agregação de categorias. Esta implementação não é numericamente idêntica ao avaliador nativo; seus valores são comparados apenas entre si.
+preservando geometria e confiança. O próprio Fine é recalculado nesse protocolo para constituir a referência interna; esse valor não representa um novo treinamento ou uma queda de desempenho em relação à validação nativa. Como o número de classes e a macro-média também mudam, o ganho hierárquico combina o crédito recuperado por confusões colapsadas com o efeito da agregação de categorias.
 
 Foi aplicado bootstrap percentil pareado \cite{efron1993bootstrap} para a obtenção de ICs de 95\%. Em cada réplica $b$, as 225 imagens são reamostradas com reposição e calcula-se
 \begin{equation}
