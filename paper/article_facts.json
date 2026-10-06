@@ -29,5 +29,7 @@
     42,
     123,
     2026
-  ]
+  ],
+  "reported_evaluator": "controlled_evaluator",
+  "native_metrics_role": "historical_archive_only"
 }

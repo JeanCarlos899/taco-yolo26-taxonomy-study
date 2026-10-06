@@ -1,0 +1,92 @@
+{
+  "protocol": "controlled evaluator, shared with hierarchy and bootstrap",
+  "new_training": false,
+  "new_inference": false,
+  "inputs": [
+    {
+      "path": "results/predictions/fine.json",
+      "sha256": "45c65589f93c65850e35f6556dc5d91bf8f6b93574532f9c7b280182bdd35b9a"
+    },
+    {
+      "path": "results/predictions/material.json",
+      "sha256": "d602567c0c7b62a1a43516b16999dbe18e879c555ae54e7cdc4bb84ab64301de"
+    },
+    {
+      "path": "results/predictions/binary.json",
+      "sha256": "c485a8b22e15806ac31c938f7cbb0b582276e82a17de1d2bcfa1d6a135d7aac1"
+    },
+    {
+      "path": "results/seeds/123/predictions/fine.json",
+      "sha256": "81b6a017a11d120c0cf099ae4e1c0f8219432a0a7013164c21b07af67cfa401c"
+    },
+    {
+      "path": "results/seeds/123/predictions/material.json",
+      "sha256": "88d798034d81fb1e4fe2e86c5a865effed751906903ba314dacc7bc199e71740"
+    },
+    {
+      "path": "results/seeds/123/predictions/binary.json",
+      "sha256": "019539e7717ab848508ab86ae0305877be0165e2d24249883a85502f5a9fbc68"
+    },
+    {
+      "path": "results/seeds/2026/predictions/fine.json",
+      "sha256": "66fe6906de99b30e55c87011058c1e406650abb172ad1b91c8dee1b019d573cc"
+    },
+    {
+      "path": "results/seeds/2026/predictions/material.json",
+      "sha256": "233bad1d783ebff9c75b7617ff581e76d945ce5a8b015f186ed178891d2c1f96"
+    },
+    {
+      "path": "results/seeds/2026/predictions/binary.json",
+      "sha256": "32d9f1d09b7732c27bc2fb7dd1157cda0afa8a6856c8f972b4445b09601f1cc9"
+    }
+  ],
+  "checks": [
+    "All nine evaluations reproduce stored metrics to 1e-12",
+    "225 images and 637 objects in every evaluation",
+    "Fine equals hierarchical baseline for every seed to 1e-12"
+  ],
+  "summary": [
+    {
+      "taxonomy": "fine",
+      "num_seeds": 3,
+      "precision_mean": 0.23730967498287353,
+      "precision_std": 0.05124780338542988,
+      "recall_mean": 0.16702074675883208,
+      "recall_std": 0.01458865300658993,
+      "f1_mean": 0.16788593993556486,
+      "f1_std": 0.015544689387895367,
+      "map50_mean": 0.10314730265831622,
+      "map50_std": 0.0068469935486382,
+      "map50_95_mean": 0.08182908718573503,
+      "map50_95_std": 0.004641363289296123
+    },
+    {
+      "taxonomy": "material",
+      "num_seeds": 3,
+      "precision_mean": 0.30118446702213747,
+      "precision_std": 0.08526336772223331,
+      "recall_mean": 0.22024578606727835,
+      "recall_std": 0.02403340817653454,
+      "f1_mean": 0.24170933459654964,
+      "f1_std": 0.03710015441051904,
+      "map50_mean": 0.15561523177520312,
+      "map50_std": 0.026361996644850862,
+      "map50_95_mean": 0.11364989017713858,
+      "map50_95_std": 0.024169837139825547
+    },
+    {
+      "taxonomy": "binary",
+      "num_seeds": 3,
+      "precision_mean": 0.7645028583014712,
+      "precision_std": 0.041374583350606974,
+      "recall_mean": 0.48717948717948717,
+      "recall_std": 0.022875450543583857,
+      "f1_mean": 0.5941876702083293,
+      "f1_std": 0.0068808212554262015,
+      "map50_mean": 0.5656888023349997,
+      "map50_std": 0.00397048976792423,
+      "map50_95_mean": 0.4028818947982664,
+      "map50_95_std": 0.0008491834537289444
+    }
+  ]
+}

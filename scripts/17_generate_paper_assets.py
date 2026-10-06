@@ -105,7 +105,7 @@ def long_tail_multiseed() -> pd.DataFrame:
 
 def latex_tables(hierarchy: pd.DataFrame, long_tail: pd.DataFrame) -> None:
     TABLES.mkdir(parents=True, exist_ok=True)
-    main = pd.read_csv(ROOT / "results" / "multiseed_summary.csv").set_index("taxonomy")
+    main = pd.read_csv(ROOT / "results" / "controlled_multiseed_summary.csv").set_index("taxonomy")
     display = {"fine": "Fine", "material": "Material", "binary": "Binary"}
     lines = [r"\begin{tabular}{lrrrrr}", r"\toprule",
              r"Taxonomia & $P$ & $R$ & $F_1$ & AP$_{50}$ & AP$_{50:95}$ \\", r"\midrule"]
@@ -128,7 +128,7 @@ def latex_tables(hierarchy: pd.DataFrame, long_tail: pd.DataFrame) -> None:
     (TABLES / "hierarchical_results.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     lines = [r"\begin{tabular}{lrrrr}", r"\toprule",
-             r"Grupo & \#classes & $n_{treino}$ & AP$_{50}$ & Recall \\", r"\midrule"]
+             r"Grupo & \#classes & $n_{treino}$ & AP$_{50}$ & Revocação \\", r"\midrule"]
     translations = {"Rare": "Raras", "Medium": "Médias", "Frequent": "Frequentes"}
     for group in ("Rare", "Medium", "Frequent"):
         row = long_tail[long_tail.frequency_group == group].iloc[0]
@@ -173,7 +173,7 @@ def methodology_figure() -> None:
         box(4.75, y-.50, 1.55, 1.0, title, sub, color, text_color)
         box(7.65, y-.50, 1.60, 1.0, "YOLO26n", "protocolo fixo\n3 sementes", DARK)
         arrow(6.30, y, 7.65, y)
-        box(10.45, y-.50, 1.80, 1.0, "Teste fixo", "225 imagens\nmétricas nativas", BLUE)
+        box(10.45, y-.50, 1.80, 1.0, "Teste fixo", "225 imagens\navaliador comum", BLUE)
         arrow(9.25, y, 10.45, y)
     ax.plot([4.00, 4.38], [3.12, 3.12], color="#555555", linewidth=1.15)
     ax.plot([4.38, 4.38], [2.15, 5.35], color="#555555", linewidth=1.15)
@@ -349,7 +349,7 @@ def figures(hierarchy: pd.DataFrame, long_tail: pd.DataFrame) -> None:
     fig.savefig(FIGURES / "class_rank_distribution.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.0))
-    main = pd.read_csv(ROOT / "results" / "multiseed_summary.csv").set_index("taxonomy")
+    main = pd.read_csv(ROOT / "results" / "controlled_multiseed_summary.csv").set_index("taxonomy")
     labels = ["Fine", "Material", "Binary"]
     x = np.arange(3); width = .34
     for offset, metric, title, color, hatch in ((-.17, "map50", r"AP$_{50}$", "#333333", ""),
@@ -385,7 +385,9 @@ def figures(hierarchy: pd.DataFrame, long_tail: pd.DataFrame) -> None:
 
 def manifest() -> None:
     inputs = [ROOT / "configs/experiment.yaml", ROOT / "configs/material_mapping.json",
-              ROOT / "splits/split.json", ROOT / "results/multiseed_raw.csv",
+              ROOT / "splits/split.json", ROOT / "results/controlled_multiseed_raw.csv",
+              ROOT / "results/controlled_multiseed_summary.csv", ROOT / "results/hierarchical_multiseed_raw.csv",
+              ROOT / "results/bootstrap_multiseed_summary.csv", ROOT / "results/unified_evaluation_audit.json",
               ROOT / "results/bootstrap_comparisons.csv", ROOT / "results/fine_error_decomposition.csv",
               ROOT / "results/class_distribution.csv"]
     records = []
@@ -417,6 +419,8 @@ def article_facts() -> None:
         "material_macroclasses": material_counts,
         "binary_class": "Litter",
         "seeds": list(SEEDS),
+        "reported_evaluator": "controlled_evaluator",
+        "native_metrics_role": "historical_archive_only",
     })
 
 

@@ -4,6 +4,8 @@
     "dataset_and_split": true,
     "training_configuration": true,
     "native_multiseed_metrics": true,
+    "unified_multiseed_metrics": true,
+    "identical_fine_baseline": true,
     "hierarchical_multiseed_metrics": true,
     "bootstrap_multiseed_interpretation": true,
     "error_decomposition_multiseed": true,

@@ -229,7 +229,7 @@
   \vspace{0.27cm}
   {\color{ufpidark}\fontsize{16.4}{19.7}\selectfont\bfseries $F_1$: equilíbrio entre precisão e recall}\par
   \vspace{0.09cm}
-  {\fontsize{11.5}{14.8}\selectfont Combina a proporção de detecções corretas com a proporção de objetos recuperados em um ponto de operação.}\par
+  {\fontsize{11.5}{14.8}\selectfont Combina precisão e recall no melhor ponto por classe. O resultado agrega as classes por média.}\par
   \vspace{0.21cm}
   {\color{muted}\fontsize{9.8}{12.3}\selectfont Ambas variam de 0 a 1. Valores maiores indicam melhor desempenho segundo o critério avaliado.}
 \end{frame}
@@ -242,20 +242,12 @@
   \centering
   \renewcommand{\arraystretch}{1.15}
   {\fontsize{11.5}{14.8}\selectfont
-  \begin{tabular}{lcc}
-    \toprule
-    \textbf{Modelo} & \textbf{AP$_{50}$} & \textbf{$F_1$} \\
-    \midrule
-    Fine (60 classes) & $0{,}146\pm0{,}022$ & $0{,}232\pm0{,}005$ \\
-    Material (6 classes) & $0{,}183\pm0{,}023$ & $0{,}296\pm0{,}006$ \\
-    Binary (1 classe) & $0{,}567\pm0{,}002$ & $0{,}593\pm0{,}004$ \\
-    \bottomrule
-  \end{tabular}}\par
+  \input{assets/controlled_main_results}}\par
   \vspace{0.18cm}
   \raggedright
   {\fontsize{10.7}{13.9}\selectfont Binary obtém os maiores valores, mas informa apenas onde há resíduo. Material preserva a composição e supera Fine na média.}\par
   \vspace{0.11cm}
-  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média $\pm$ desvio-padrão de três sementes. Avaliação nativa do Ultralytics. As tarefas exigem níveis diferentes de detalhe.}
+  {\color{muted}\fontsize{8.2}{10.7}\selectfont Média $\pm$ desvio-padrão de três sementes. Mesmo avaliador do slide 10. As tarefas exigem níveis diferentes de detalhe.}
 \end{frame}
 
 % 9
@@ -293,7 +285,7 @@
   \raggedright
   {\color{ufpidark}\fontsize{13}{17}\selectfont\bfseries As caixas são iguais. Muda o rótulo aceito como correto.}\par
   \vspace{0.18cm}
-  {\color{muted}\fontsize{10}{13}\selectfont AP$_{50}$ médio: três sementes, avaliador controlado (diferente do slide 8).\\
+  {\color{muted}\fontsize{10}{13}\selectfont AP$_{50}$ médio: três sementes, mesmo avaliador do slide 8.\\
   Ganho relativo ao Fine, não proporção de objetos corretos.}
 \end{frame}
 
@@ -424,7 +416,7 @@
 
       {\color{ufpidark}\fontsize{16.5}{19}\selectfont\bfseries Material oferece um compromisso}\par
       \vspace{0.12cm}
-      {\fontsize{12.5}{15}\selectfont Preserva informação de composição e melhora o ponto operacional.}\par
+      {\fontsize{12.5}{15}\selectfont Preserva informação de composição e melhora o $F_1$ macro.}\par
       \vspace{0.24cm}
 
       {\color{ufpidark}\fontsize{16.5}{19}\selectfont\bfseries Binary maximiza a detectabilidade}\par

@@ -17,9 +17,29 @@
       "bytes": 41432
     },
     {
-      "path": "results/multiseed_raw.csv",
-      "sha256": "e13e3c6dbf524c8e33745b9cd0e431832fbbbaea5d2695996e070d34372b9b39",
-      "bytes": 1032
+      "path": "results/controlled_multiseed_raw.csv",
+      "sha256": "c6fd515594276618de3c4af17c2124e1e589a92875b7411bd4271e4a3df4f941",
+      "bytes": 1039
+    },
+    {
+      "path": "results/controlled_multiseed_summary.csv",
+      "sha256": "038f1e08edc780b384f83f37c97104369f5ebb6f7a80599dedd9da0ace81f63c",
+      "bytes": 770
+    },
+    {
+      "path": "results/hierarchical_multiseed_raw.csv",
+      "sha256": "49adec2fdf11370c5bb8414077c9ce5cd42e9fcde0306bc2b1ce69d6352d0c96",
+      "bytes": 1047
+    },
+    {
+      "path": "results/bootstrap_multiseed_summary.csv",
+      "sha256": "64c1f31edff8a55fb7bea92a7e81fb50174efb26936d3e874cece8e56f5b9ec2",
+      "bytes": 1628
+    },
+    {
+      "path": "results/unified_evaluation_audit.json",
+      "sha256": "693c654fe69abd53a86871362e2ce4fb0cc96451701b2cf37470488b483288e8",
+      "bytes": 3261
     },
     {
       "path": "results/bootstrap_comparisons.csv",

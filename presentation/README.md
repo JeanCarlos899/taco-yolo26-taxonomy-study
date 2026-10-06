@@ -7,6 +7,7 @@ Projeto Beamer em formato 16:9 para uma apresentação curta do estudo sobre gra
 Execute a partir da raiz do repositório:
 
 ```powershell
+python scripts/24_unify_reported_evaluation.py
 python scripts/23_generate_hierarchy_gain_table.py
 Push-Location presentation
 New-Item -ItemType Directory -Force build | Out-Null
@@ -50,7 +51,7 @@ Transição: Jean apresenta o experimento e os resultados.
 7. AP50 resume precisão e recuperação ao variar a confiança. F1 combina precisão e recall em um ponto de operação. Valores maiores indicam desempenho melhor segundo a tarefa avaliada.
 8. Comparar os modelos treinados. Binary tem os maiores valores numa tarefa menos detalhada. Material melhora a média em relação a Fine. O sinal ± mostra desvio-padrão entre sementes, não intervalo de confiança.
 9. Explicar o exemplo ilustrativo: lata prevista como aerossol erra o tipo, mas acerta metal. A caixa permanece igual, desde que tenha sobreposição suficiente.
-10. O mesmo Fine pode ser julgado pelo tipo exato, pelo material ou pela presença de resíduo. A tabela mostra o ganho relativo de AP50: +65,8% por material e +351,6% por presença, tomando como referência o AP50 médio do tipo exato no avaliador controlado. O cálculo usa a diferença entre médias dividida pela média Fine. Não é porcentagem de objetos corretos, não envolve novo treinamento e não deve usar o 0,146 nativo como base. A agregação também altera a macro-média.
+10. O mesmo Fine pode ser julgado pelo tipo exato, pelo material ou pela presença de resíduo. A tabela mostra o ganho relativo de AP50: +65,8% por material e +351,6% por presença, tomando como referência o AP50 médio do tipo exato no avaliador controlado. O cálculo usa a diferença entre médias dividida pela média Fine. Não é porcentagem de objetos corretos, não envolve novo treinamento e usa a mesma referência Fine de 0,103 do slide 8. A agregação também altera a macro-média.
 
 Transição: Marcos explica a incerteza dos ganhos e os erros que persistem.
 
@@ -67,7 +68,7 @@ Transição: Marcos explica a incerteza dos ganhos e os erros que persistem.
 
 ## Artefatos de referência
 
-- Modelos treinados: results/multiseed_summary.csv.
+- Modelos treinados: results/controlled_multiseed_summary.csv. O histórico nativo permanece em results/multiseed_summary.csv.
 - Reavaliação: results/hierarchical_multiseed_summary.csv.
 - Bootstrap: results/bootstrap_multiseed_summary.csv.
 - Erros: results/multiseed_error_summary.csv.

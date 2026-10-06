@@ -29,6 +29,8 @@ def main() -> None:
     facts = json.loads((PAPER / "article_facts.json").read_text(encoding="utf-8"))
     config = yaml.safe_load((ROOT / "configs" / "experiment.yaml").read_text(encoding="utf-8"))
     native = pd.read_csv(ROOT / "results" / "multiseed_summary.csv").set_index("taxonomy")
+    controlled = pd.read_csv(ROOT / "results" / "controlled_multiseed_summary.csv").set_index("taxonomy")
+    controlled_raw = pd.read_csv(ROOT / "results" / "controlled_multiseed_raw.csv")
     hierarchy = pd.read_csv(ROOT / "results" / "hierarchical_multiseed_summary.csv").set_index("evaluation_taxonomy")
     bootstrap = pd.read_csv(ROOT / "results" / "bootstrap_multiseed_summary.csv")
     errors = pd.read_csv(ROOT / "results" / "multiseed_error_raw.csv")
@@ -49,6 +51,26 @@ def main() -> None:
     for taxonomy, expected in expected_hierarchy.items():
         require(round(float(hierarchy.loc[taxonomy, "ap50_mean"]), 3) == expected,
                 f"Hierarchical AP50 changed for {taxonomy}.")
+    require(len(controlled_raw) == 9 and len(controlled_raw[['seed', 'taxonomy']].drop_duplicates()) == 9,
+            "Unified evaluation must contain all nine distinct runs.")
+    for taxonomy in ('fine', 'material', 'binary'):
+        current = controlled_raw[controlled_raw.taxonomy == taxonomy]
+        require(set(current.seed) == {42, 123, 2026}, "A seed is missing from unified evaluation.")
+        for metric in ('precision', 'recall', 'f1', 'map50', 'map50_95'):
+            require(abs(float(current[metric].mean()) - float(controlled.loc[taxonomy, metric + '_mean'])) < 1e-12,
+                    "Unified summary does not match raw results.")
+            require(abs(float(current[metric].std(ddof=1)) - float(controlled.loc[taxonomy, metric + '_std'])) < 1e-12,
+                    "Unified standard deviation does not match raw results.")
+    for metric, hierarchical_metric in [('precision', 'precision'), ('recall', 'recall'), ('f1', 'f1'),
+                                       ('map50', 'ap50'), ('map50_95', 'map50_95')]:
+        require(abs(float(controlled.loc['fine', metric + '_mean']) - float(hierarchy.loc['fine', hierarchical_metric + '_mean'])) < 1e-12,
+                "Fine baseline differs between the main and hierarchical tables.")
+    main_table = (PAPER / 'tables/main_results.tex').read_text(encoding='utf-8')
+    for taxonomy in ('fine', 'material', 'binary'):
+        row = next(line for line in main_table.splitlines() if line.startswith(taxonomy.capitalize() + ' &'))
+        expected = [f"{controlled.loc[taxonomy, metric + '_mean']:.3f}$\\pm${controlled.loc[taxonomy, metric + '_std']:.3f}"
+                    for metric in ('precision', 'recall', 'f1', 'map50', 'map50_95')]
+        require(all(value in row for value in expected), "Main table contains non-unified values.")
 
     expected_support = {
         ("fine_direct_minus_material_direct", "ap50"): 1,
@@ -78,7 +100,7 @@ def main() -> None:
                 f"Error decomposition changed for seed {seed}.")
 
     required_fragments = ["1.500 imagens", "4.784 objetos", "1.050/225/225", "3.359/788/637",
-                          "0,146", "0,183", "0,567", "0{,}103", "0{,}171", "0{,}466",
+                          "0,103", "0,156", "0,566", "0{,}103", "0{,}171", "0{,}466",
                           "2.000 reamostragens", "56{,}95", "404{,}7", "63{,}5",
                           "Fine como Material", "Fine como Binary", "1/3", "2/3", "3/3",
                           "poucas classes de ``cabeça''", "muitas classes da ``cauda''",
@@ -116,6 +138,8 @@ def main() -> None:
             "dataset_and_split": True,
             "training_configuration": True,
             "native_multiseed_metrics": True,
+            "unified_multiseed_metrics": True,
+            "identical_fine_baseline": True,
             "hierarchical_multiseed_metrics": True,
             "bootstrap_multiseed_interpretation": True,
             "error_decomposition_multiseed": True,

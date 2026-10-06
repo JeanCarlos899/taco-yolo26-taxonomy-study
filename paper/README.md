@@ -1,13 +1,14 @@
 # Artigo SBC
 
 O manuscrito principal está em `main.tex`; o PDF compilado está em `main.pdf`.
-Antes da submissão, substitua a autoria, a afiliação e o e-mail marcados no preâmbulo.
+Todas as métricas reportadas utilizam o avaliador controlado comum. Os resultados nativos Ultralytics são preservados como histórico, fora das tabelas principais.
 
 ## Reproduzir tabelas, figuras e verificações
 
 Na raiz do projeto, com o ambiente virtual ativo:
 
 ```powershell
+.\.venv\Scripts\python.exe scripts\24_unify_reported_evaluation.py
 .\.venv\Scripts\python.exe scripts\17_generate_paper_assets.py
 .\.venv\Scripts\python.exe scripts\18_validate_paper_claims.py
 ```

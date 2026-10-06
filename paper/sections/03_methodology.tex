@@ -32,27 +32,27 @@ O YOLO26n foi inicializado com pesos COCO e treinado com entrada $640\times640$,
 
 \subsection{Avaliação e incerteza}
 
-São empregados dois protocolos com finalidades distintas. Na comparação dos modelos treinados, são reportadas precisão, revocação, $F_1$, AP$_{50}$ e AP$_{50:95}$ da validação nativa Ultralytics. Na reavaliação hierárquica e no bootstrap, é empregado exclusivamente o avaliador controlado do projeto. Cada comparação utiliza um único protocolo; valores absolutos provenientes dos dois avaliadores não são intercambiáveis. A tabela principal apresenta média e desvio-padrão entre sementes.
+Todas as análises quantitativas reportadas empregam o mesmo avaliador controlado do projeto: comparação dos modelos treinados, reavaliação hierárquica e bootstrap. As predições dos nove modelos foram reavaliadas sem novo treinamento ou inferência, verificando-se igualdade numérica entre o resultado Fine da tabela principal e sua referência hierárquica em cada semente, com tolerância $10^{-12}$. As saídas foram exportadas com confiança mínima 0,001 e limite de 300 detecções por imagem. Os resultados nativos Ultralytics permanecem arquivados, mas não integram as tabelas ou figuras de desempenho do artigo. A tabela principal apresenta média e desvio-padrão entre sementes.
 
 Para uma caixa predita $B$ e uma verdade-terreno $G$, a sobreposição é definida por
 \begin{equation}
   \operatorname{IoU}(B,G)=\frac{|B\cap G|}{|B\cup G|}.
   \label{eq:iou}
 \end{equation}
-Em cada limiar $\tau$, o avaliador nativo integra por trapézios a curva de precisão interpolada em 101 níveis de revocação. O avaliador controlado calcula a média do envelope de precisão nesses níveis. Ambos exigem classe correta e associação espacial, mas diferem na integração e no casamento de detecções. A métrica mais estrita agrega dez limiares de IoU, de 0,50 a 0,95:
+Em cada limiar $\tau$, o AP de cada classe é calculado como a média do envelope de precisão em 101 níveis de revocação; a métrica reportada é a macro-média das classes com instâncias no teste. São exigidas classe correta e associação espacial um-para-um. A métrica mais estrita agrega dez limiares de IoU, de 0,50 a 0,95:
 \begin{equation}
   \operatorname{AP}_{50:95}=\frac{1}{10}\sum_{k=0}^{9}
   \operatorname{AP}_{0{,}50+0{,}05k}.
   \label{eq:map}
 \end{equation}
-O $F_1=2PR/(P+R)$ resume precisão e revocação no ponto operacional selecionado pelo avaliador.
+Para cada classe, o avaliador seleciona o ponto de confiança que maximiza $F_1=2PR/(P+R)$ em IoU de 0,50. Precisão, revocação e $F_1$ são então agregados por macro-média. Assim, o $F_1$ reportado não corresponde a um único limiar global nem à média harmônica das macro-médias de precisão e revocação.
 
 Para decompor o erro, um avaliador controlado faz casamento guloso um-para-um em ordem decrescente de confiança. Seja $\pi_L:\mathcal{C}_{Fine}\rightarrow\mathcal{C}_L$ o mapeamento para o nível $L\in\{Fine,Material,Binary\}$. Cada detecção $(B_i,c_i,s_i)$ é reavaliada como
 \begin{equation}
   (B_i,c_i,s_i)\mapsto(B_i,\pi_L(c_i),s_i),
   \label{eq:remap}
 \end{equation}
-preservando geometria e confiança. O próprio Fine é recalculado nesse protocolo para constituir a referência interna; esse valor não representa um novo treinamento ou uma queda de desempenho em relação à validação nativa. Como o número de classes e a macro-média também mudam, o ganho hierárquico combina o crédito recuperado por confusões colapsadas com o efeito da agregação de categorias.
+preservando geometria e confiança. A linha Fine é a mesma referência da comparação dos modelos treinados. Como o número de classes e a macro-média também mudam, o ganho hierárquico combina o crédito recuperado por confusões colapsadas com o efeito da agregação de categorias.
 
 Foi aplicado bootstrap percentil pareado \cite{efron1993bootstrap} para a obtenção de ICs de 95\%. Em cada réplica $b$, as 225 imagens são reamostradas com reposição e calcula-se
 \begin{equation}
